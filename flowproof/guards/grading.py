@@ -53,9 +53,13 @@ def grade(
     The restore rewrites files in the lease, so take `lease.diff()` first if the
     agent's own version of the tests is needed.
     """
-    claimed = lease.run(command, timeout_s=timeout_s)
+    from flowproof.workspace.commands import fresh_bytecode
+
+    with fresh_bytecode() as env:
+        claimed = lease.run(command, timeout_s=timeout_s, env=env)
     tamper = frozen.restore(lease.root)
-    true = lease.run(command, timeout_s=timeout_s)
+    with fresh_bytecode() as env:
+        true = lease.run(command, timeout_s=timeout_s, env=env)
     passed, failed = parse_test_counts(true.stdout + "\n" + true.stderr)
     return Grade(
         claimed=claimed,

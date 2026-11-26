@@ -348,6 +348,13 @@ Reproducing the live studies needs the Copilot CLI and spends credits; see
 - **An allowlist is not a sandbox.** Agentic runs used worktrees and fingerprint checks,
   not containers.
 - **I wrote both the specifications and the hidden checks** for E3.
+- **E2 ran on the grader as it was before a bytecode fix.** CI later showed that a
+  same-size edit made within one second can run stale `.pyc` files, and grading now runs
+  from source.
+  - In E2's true runs, every restored test file already had its bytecode purged.
+  - The claimed run could go stale only if an agent made a same-size edit in the same
+    second as its own last test run. That would make a claimed pass *less* likely, so it
+    cannot have produced the false passes reported.
 
 ## Open questions
 

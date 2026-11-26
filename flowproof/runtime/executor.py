@@ -60,6 +60,7 @@ from .values import (
     to_json,
 )
 
+UNFROZEN = ".flowproof-nothing-frozen/**"
 REPLY_FORMATS = {
     "number": "Reply with a single number and nothing else.",
     "bool": "Reply with exactly one word: yes or no.",
@@ -443,8 +444,11 @@ class Executor:
     def exec(self, v: Exec, ctx: _Context) -> ResultValue:
         if ctx.lease is None:
             raise _Fail(Outcome.invalid("no-workspace"))
+        from ..workspace import fresh_bytecode
+
         command = v.command.text()
-        result = ctx.lease.run(command, timeout_s=self.options.command_timeout_s)
+        with fresh_bytecode() as env:
+            result = ctx.lease.run(command, timeout_s=self.options.command_timeout_s, env=env)
         ok = UNKNOWN if result.exit_code is None else result.exit_code == 0
         self.event("exec", stage=self.label(v), command=command, exit_code=result.exit_code,
                    timed_out=result.timed_out, duration_s=round(result.duration_s, 3))
@@ -692,7 +696,10 @@ class Executor:
             for test in tests:
                 key = tuple(p.text() for p in test.frozen)
                 if key not in self.frozen:
-                    self.frozen[key] = FrozenTests.capture(self.options.source, key)
+                    # A test without `frozen` (warning W304) still guards test configuration
+                    # files, which are captured automatically; its pattern matches nothing.
+                    patterns = key or (UNFROZEN,)
+                    self.frozen[key] = FrozenTests.capture(self.options.source, patterns)
                     self.event("frozen", patterns=list(key))
         root = self.lease(self.options.source, "root", self.options.workspace)
         ctx = _Context([dict(self.inputs)], root)

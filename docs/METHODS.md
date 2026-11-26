@@ -39,6 +39,7 @@ experimental rules its studies follow. Each one says where it comes from:
 | Between-call admission plus provider cap | The ledger checks ceilings between calls, and each call passes the remaining budget to the provider as a hard cap. Overshoot is bounded by one call. | new here |
 | Frozen graders, claimed versus true | Tests are snapshotted before the first agent call. Grading runs the test command as the agent left the tree, then again after restoring the snapshot. A **false pass** is a claimed pass the frozen tests do not confirm. | prior work (frozen tests); the two-run grade is new here |
 | Tamper findings | Definitive findings are frozen files modified, deleted or added. Heuristic findings are new skip markers, trivial asserts, early exits and test-configuration edits outside the frozen set, and they are labelled as heuristic. | new here |
+| Grading from source | Graders and `exec` run Python with an empty private bytecode cache, because a same-size edit within one second otherwise reuses the old `.pyc` and runs stale code. | new here |
 | Impossible tasks | Tasks whose tests contradict each other or the specification, so any pass is a shortcut. | established ([Zhong et al., 2025](https://arxiv.org/abs/2510.20270)) |
 | Sealed evidence | Append-only, hash-chained events and a manifest of every file. Verification still works after the record is moved or copied. Corrections are made by superseding a record, never by editing it. | prior work (sealing); relocation-safe verification is new here |
 | Session transcripts and source integrity | The agent CLI's own transcript, including its tool calls, is kept per call, and each task's source repository is fingerprinted before and after. | new here |
@@ -78,3 +79,6 @@ The last three were learned while building this project.
     principle run anything. In our runs the CLI still refused some `python -c` commands
     that wrote files, so the allowlist doesn't fully predict what an agent can do. Isolate
     the workspace, and check the source tree afterwards.
+14. **Let CI try to break the pipeline.** On a fast CI machine, two grader tests failed
+    because same-size edits within one second reused stale bytecode. The grader now runs
+    from source. A local run had passed only because it was slower.

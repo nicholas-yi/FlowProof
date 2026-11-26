@@ -7,8 +7,9 @@ import os
 import signal
 import subprocess
 import sys
+import tempfile
 import time
-from collections.abc import Mapping, Sequence
+from collections.abc import Iterator, Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -58,6 +59,19 @@ class RawResult:
             duration_s=self.duration_s,
             timed_out=self.timed_out,
         )
+
+
+@contextlib.contextmanager
+def fresh_bytecode() -> Iterator[dict[str, str]]:
+    """Environment for running Python code from source, never from cached bytecode.
+
+    Python reuses a `.pyc` when the source's size and whole-second modification time
+    match. A same-size edit made within the same second as an earlier run therefore
+    executes the old code. Graders must not: point the cache at an empty private
+    directory and write nothing.
+    """
+    with tempfile.TemporaryDirectory(prefix="flowproof-pycache-") as prefix:
+        yield {"PYTHONPYCACHEPREFIX": prefix, "PYTHONDONTWRITEBYTECODE": "1"}
 
 
 def run_command(

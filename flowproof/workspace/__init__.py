@@ -18,7 +18,7 @@ from flowproof.workspace.backends import (
     backend_for,
 )
 from flowproof.workspace.changes import Change
-from flowproof.workspace.commands import CommandResult, run_command
+from flowproof.workspace.commands import CommandResult, fresh_bytecode, run_command
 from flowproof.workspace.errors import GitError, WorkspaceError
 
 __all__ = [
@@ -39,5 +39,6 @@ __all__ = [
     "WorktreeBackend",
     "WorktreeLease",
     "backend_for",
+    "fresh_bytecode",
     "run_command",
 ]

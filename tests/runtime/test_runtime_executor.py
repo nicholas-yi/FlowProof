@@ -201,6 +201,21 @@ def test_testing_a_stale_change_is_invalid(repo: Path, tmp_path: Path):
     assert result.outcome.reason == "unknown-condition"
 
 
+def test_a_test_without_frozen_patterns_still_runs(repo: Path, tmp_path: Path):
+    source = f"""
+    workflow loose
+      role author can edit
+      budget at most 1 calls
+      let p = edit author: "fix"
+      let g = test p with {UNITTEST}
+      give g
+    end
+    """
+    result = run(source, MockHarness({"author": [Reply(files={"calc.py": FIXED})]}), repo,
+                 tmp_path)
+    assert result.outcome.status is Status.OK and result.value["passed"] is True
+
+
 def test_unparseable_answers_are_invalid_not_guessed(repo: Path, tmp_path: Path):
     source = """
     workflow n

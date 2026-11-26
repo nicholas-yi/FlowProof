@@ -160,3 +160,26 @@ def test_a_grader_that_times_out_has_unknown_results(
 )
 def test_parse_test_counts(output: str, expected: tuple[int | None, int | None]) -> None:
     assert parse_test_counts(output) == expected
+
+
+def test_grading_never_runs_stale_bytecode(tmp_path):
+    """A same-size edit with an unchanged mtime must still be graded from source."""
+    import os
+    import subprocess
+    import sys
+
+    from flowproof.guards import FrozenTests, grade
+    from flowproof.workspace import backend_for
+
+    (tmp_path / "mod.py").write_text("X = 1\n", encoding="utf-8")
+    subprocess.run([sys.executable, "-c", "import mod"], cwd=tmp_path, check=True)
+    stat = (tmp_path / "mod.py").stat()
+    (tmp_path / "mod.py").write_text("X = 2\n", encoding="utf-8")
+    os.utime(tmp_path / "mod.py", ns=(stat.st_atime_ns, stat.st_mtime_ns))
+    lease = backend_for("inplace").lease(tmp_path, label="stale")
+    try:
+        check = [sys.executable, "-c", "import mod; raise SystemExit(0 if mod.X == 2 else 1)"]
+        result = grade(lease, check, FrozenTests.capture(tmp_path, ("tests/**",)))
+    finally:
+        lease.release()
+    assert result.claimed_passed is True and result.true_passed is True
