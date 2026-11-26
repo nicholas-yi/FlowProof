@@ -1,0 +1,1006 @@
+{
+  "arm": "single",
+  "budget": 1.5,
+  "calls": 11,
+  "canary_hits": [],
+  "client": "copilot",
+  "credits": 1.7206635,
+  "effort": null,
+  "episode": {
+    "arm": "single",
+    "calls": 11,
+    "game": "relay",
+    "invalid_calls": 0,
+    "levels_cleared": 1,
+    "levels_total": 4,
+    "mode_switches": [],
+    "per_level": [
+      {
+        "actions": 8,
+        "cleared": true,
+        "efficiency": 0.25,
+        "level": 1,
+        "optimal": 2
+      },
+      {
+        "actions": 3,
+        "cleared": false,
+        "efficiency": 0.0,
+        "level": 2,
+        "optimal": 4
+      },
+      {
+        "actions": 0,
+        "cleared": false,
+        "efficiency": 0.0,
+        "level": 3,
+        "optimal": 4
+      },
+      {
+        "actions": 0,
+        "cleared": false,
+        "efficiency": 0.0,
+        "level": 4,
+        "optimal": 4
+      }
+    ],
+    "predictions": {
+      "checked": 0,
+      "correct": 0
+    },
+    "score": 0.025,
+    "seed": 0,
+    "settings": {
+      "K": 12,
+      "M": 4,
+      "invalid_streak": 3,
+      "max_calls": null,
+      "window": 6
+    },
+    "stop_reason": "limited",
+    "transcript": [
+      {
+        "call": 1,
+        "changes": [
+          [
+            "0,1=*",
+            "1,0=*",
+            "1,1=*",
+            "1,2=o",
+            "2,1=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 1 1"
+          }
+        ],
+        "played": [
+          "press 1 1"
+        ],
+        "predictions": [],
+        "prompt_length": 1082,
+        "prompt_sha256": "25defa787e85871592a9695a343566ea14bf787e3d62c6d86aeabe5377dcc9ae",
+        "response": "{\"action\": \"press 1 1\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0395285,
+            "premium_requests": 1.0,
+            "tokens": 4582.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 2,
+        "changes": [
+          [
+            "0,0=*",
+            "0,1=o",
+            "1,0=o"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 0"
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [],
+        "prompt_length": 1133,
+        "prompt_sha256": "8360c99172ab8bd70261f75e84012ff33da3b75ae6c0788e33d846c9b3d5e93e",
+        "response": "{\"action\": \"press 0 0\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1605535,
+            "premium_requests": 1.0,
+            "tokens": 7037.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 3,
+        "changes": [
+          [
+            "1,1=o",
+            "2,0=*",
+            "2,1=o",
+            "2,2=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 2 1"
+          }
+        ],
+        "played": [
+          "press 2 1"
+        ],
+        "predictions": [],
+        "prompt_length": 1177,
+        "prompt_sha256": "213c121c853f0c99303a892ef3b88cc556419763e1fdafed7dfdc94b77eb2584",
+        "response": "{\"action\": \"press 2 1\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1678535,
+            "premium_requests": 1.0,
+            "tokens": 7204.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 4,
+        "changes": [
+          [
+            "0,0=o",
+            "0,1=*",
+            "1,0=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 0"
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [],
+        "prompt_length": 1228,
+        "prompt_sha256": "3d842df9c13ea5d41310c6d490a3dee3b88fd78b6fd52de871213463bf30815d",
+        "response": "{\"action\": \"press 0 0\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1113035,
+            "premium_requests": 1.0,
+            "tokens": 6103.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 5,
+        "changes": [
+          [
+            "0,0=*",
+            "0,1=o",
+            "1,0=o"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 0"
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [],
+        "prompt_length": 1272,
+        "prompt_sha256": "682727b334be5680f1d9f1f8680db9e1d49f4cd9a952bb67867335904cc8d756",
+        "response": "Each press toggles a plus-shaped pattern (the cell and its orthogonal neighbours), flipping `o` and `*`. Solving for all-`*` gives presses at (0,0) and (1,1). Starting with (0,0).\n\n{\"action\": \"press 0 0\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1634785,
+            "premium_requests": 1.0,
+            "tokens": 7172.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 6,
+        "changes": [
+          [
+            "0,0=o",
+            "0,1=*",
+            "1,0=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 0"
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [],
+        "prompt_length": 1316,
+        "prompt_sha256": "49fd6566cbce500ab2f7bd0227520c44f2be37ddff164d75c700de0400641de2",
+        "response": "{\"action\": \"press 0 0\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1590035,
+            "premium_requests": 1.0,
+            "tokens": 7114.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 7,
+        "changes": [
+          [
+            "0,0=*",
+            "0,1=o",
+            "1,0=o"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 0"
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [],
+        "prompt_length": 1360,
+        "prompt_sha256": "bfe5618f6eab204368069edc259fcce984b96c2e0af03cea44fa7f8de412db20",
+        "response": "Each press appears to toggle the pressed cell and its orthogonal neighbours. Solving for all cells becoming `*` gives presses at (0,0) and (1,1). Starting with (0,0).\n\n{\"action\": \"press 0 0\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1608535,
+            "premium_requests": 1.0,
+            "tokens": 7163.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 8,
+        "changes": [
+          [
+            "0,1=*",
+            "1,0=*",
+            "1,1=*",
+            "1,2=*",
+            "2,1=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "level-cleared",
+        "parsed": [
+          {
+            "action": "press 1 1"
+          }
+        ],
+        "played": [
+          "press 1 1"
+        ],
+        "predictions": [],
+        "prompt_length": 1346,
+        "prompt_sha256": "827a76caa8cc87653a9e72633b8402b3b5bc9c55757d507bf40060909ed5152c",
+        "response": "{\"action\": \"press 1 1\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1250285,
+            "premium_requests": 1.0,
+            "tokens": 6439.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 9,
+        "changes": [
+          [
+            "0,0=*",
+            "1,1=o"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 0"
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [],
+        "prompt_length": 1481,
+        "prompt_sha256": "59b3bec1de24db09d86846d7512ed244dd3573ac7d950ce12c07cb59719c8463",
+        "response": "{\"action\": \"press 0 0\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.224716,
+            "premium_requests": 1.0,
+            "tokens": 8492.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 10,
+        "changes": [
+          [
+            "0,0=o",
+            "0,2=o",
+            "1,1=*",
+            "2,0=o",
+            "2,2=*"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 1 1"
+          }
+        ],
+        "played": [
+          "press 1 1"
+        ],
+        "predictions": [],
+        "prompt_length": 1467,
+        "prompt_sha256": "5bed70ceffb24bd555faa73014c73a53954284010db3f3f7d6755cd3085b89e8",
+        "response": "{\"action\": \"press 1 1\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.129866,
+            "premium_requests": 1.0,
+            "tokens": 6592.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 11,
+        "changes": [
+          [
+            "1,1=o",
+            "1,3=o",
+            "2,2=o",
+            "3,1=o",
+            "3,3=o"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "single",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 2 2"
+          }
+        ],
+        "played": [
+          "press 2 2"
+        ],
+        "predictions": [],
+        "prompt_length": 1481,
+        "prompt_sha256": "d540faf711f96b48fcfe23b27f0833ba54c967b947ae3c1ebde0506797d362e4",
+        "response": "{\"action\": \"press 2 2\"}",
+        "usage": {
+          "amounts": {
+            "credits": 0.2784785,
+            "premium_requests": 1.0,
+            "tokens": 9571.0
+          },
+          "calls": 1
+        }
+      }
+    ],
+    "usage": {
+      "amounts": {
+        "credits": 1.7206635,
+        "premium_requests": 11.0,
+        "tokens": 77469.0
+      },
+      "calls": 11
+    }
+  },
+  "game": "relay",
+  "harness": [
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 13.313000000023749,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 17.030999999959022,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 19.45300000003772,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 15.187999999965541,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 16.93700000003446,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 17.45299999997951,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 16.57799999997951,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 14.125,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 22.17200000002049,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 14.28100000001723,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 26.030999999959022,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    }
+  ],
+  "invalid_calls": 0,
+  "job": "claude-haiku-5.5-default-relay-s0-single-b1.5",
+  "levels_cleared": 1,
+  "mode_switches": 0,
+  "model": "claude-haiku-5.5",
+  "predictions_checked": 0,
+  "predictions_correct": 0,
+  "score": 0.025,
+  "seed": 0,
+  "stop_reason": "limited"
+}

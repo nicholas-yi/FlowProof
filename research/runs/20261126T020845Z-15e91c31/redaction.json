@@ -1,0 +1,17 @@
+{
+  "note": "original-events.jsonl is the original event log with the same replacements; its hash chain refers to the unredacted lines and is kept for reference only.",
+  "placeholders": [
+    "<home>",
+    "<repo>",
+    "<scratch>",
+    "<temp>",
+    "<user>",
+    "<workspace>"
+  ],
+  "reason": "local paths and account names replaced with placeholders",
+  "replacements": 113,
+  "supersedes": {
+    "id": "20261126T004812Z-de5a0f0a",
+    "manifest_sha256": "4f48c1562b2f4e43e8e567888edb58d0c78e8a3b47cce2466481472df24448ec"
+  }
+}

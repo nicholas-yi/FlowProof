@@ -1,0 +1,441 @@
+{
+  "canary_hits": 0,
+  "cells": {
+    "adaptive@1.5": {
+      "arm": "adaptive",
+      "budget": 1.5,
+      "credits_per_level": 0.9249494375,
+      "credits_unknown_episodes": 0,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 10.666666666666666,
+      "mean_credits_known": 1.6443545555555557,
+      "mean_levels": 1.7777777777777777,
+      "mean_score": 0.1730394913728247,
+      "prediction_accuracy": 0.7682119205298014,
+      "score_ci": [
+        0.06680492347159013,
+        0.32803831970498637
+      ],
+      "stop_reasons": {
+        "limited": 8,
+        "won": 1
+      }
+    },
+    "adaptive@10": {
+      "arm": "adaptive",
+      "budget": 10.0,
+      "credits_per_level": null,
+      "credits_unknown_episodes": 1,
+      "episodes": 9,
+      "invalid_calls": 4,
+      "mean_calls": 31.77777777777778,
+      "mean_credits_known": 5.514491937500001,
+      "mean_levels": 3.2222222222222223,
+      "mean_score": 0.39164637831304494,
+      "prediction_accuracy": 0.7138728323699421,
+      "score_ci": [
+        0.2514285714285714,
+        0.5303824570491238
+      ],
+      "stop_reasons": {
+        "accounting-unknown": 1,
+        "limited": 2,
+        "won": 6
+      }
+    },
+    "adaptive@4": {
+      "arm": "adaptive",
+      "budget": 4.0,
+      "credits_per_level": 1.3447492391304348,
+      "credits_unknown_episodes": 0,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 21.666666666666668,
+      "mean_credits_known": 3.436581388888889,
+      "mean_levels": 2.5555555555555554,
+      "mean_score": 0.2862597495097495,
+      "prediction_accuracy": 0.7587719298245614,
+      "score_ci": [
+        0.14818447293447293,
+        0.43133958633958636
+      ],
+      "stop_reasons": {
+        "limited": 5,
+        "won": 4
+      }
+    },
+    "plan@1.5": {
+      "arm": "plan",
+      "budget": 1.5,
+      "credits_per_level": 0.8956264705882353,
+      "credits_unknown_episodes": 0,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 10.555555555555555,
+      "mean_credits_known": 1.691738888888889,
+      "mean_levels": 1.8888888888888888,
+      "mean_score": 0.12971921596921596,
+      "prediction_accuracy": null,
+      "score_ci": [
+        0.07,
+        0.18967592592592591
+      ],
+      "stop_reasons": {
+        "limited": 9
+      }
+    },
+    "plan@10": {
+      "arm": "plan",
+      "budget": 10.0,
+      "credits_per_level": null,
+      "credits_unknown_episodes": 1,
+      "episodes": 9,
+      "invalid_calls": 2,
+      "mean_calls": 33.55555555555556,
+      "mean_credits_known": 5.0036230625,
+      "mean_levels": 3.2222222222222223,
+      "mean_score": 0.23666212002014164,
+      "prediction_accuracy": null,
+      "score_ci": [
+        0.12202124688454326,
+        0.3647203215377661
+      ],
+      "stop_reasons": {
+        "accounting-unknown": 1,
+        "limited": 2,
+        "won": 6
+      }
+    },
+    "plan@4": {
+      "arm": "plan",
+      "budget": 4.0,
+      "credits_per_level": null,
+      "credits_unknown_episodes": 1,
+      "episodes": 9,
+      "invalid_calls": 1,
+      "mean_calls": 15.777777777777779,
+      "mean_credits_known": 3.1329653125,
+      "mean_levels": 2.3333333333333335,
+      "mean_score": 0.23141859342428603,
+      "prediction_accuracy": null,
+      "score_ci": [
+        0.09146909847479108,
+        0.3916660257305419
+      ],
+      "stop_reasons": {
+        "accounting-unknown": 1,
+        "limited": 4,
+        "won": 4
+      }
+    },
+    "predict@1.5": {
+      "arm": "predict",
+      "budget": 1.5,
+      "credits_per_level": 1.02831925,
+      "credits_unknown_episodes": 0,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 10.222222222222221,
+      "mean_credits_known": 1.5996077222222223,
+      "mean_levels": 1.5555555555555556,
+      "mean_score": 0.10370992841581077,
+      "prediction_accuracy": 0.793859649122807,
+      "score_ci": [
+        0.04947712418300654,
+        0.16667289137877372
+      ],
+      "stop_reasons": {
+        "limited": 9
+      }
+    },
+    "predict@10": {
+      "arm": "predict",
+      "budget": 10.0,
+      "credits_per_level": 2.0280705535714287,
+      "credits_unknown_episodes": 0,
+      "episodes": 9,
+      "invalid_calls": 1,
+      "mean_calls": 34.77777777777778,
+      "mean_credits_known": 6.309552833333333,
+      "mean_levels": 3.111111111111111,
+      "mean_score": 0.31916260610061925,
+      "prediction_accuracy": 0.8348157560355781,
+      "score_ci": [
+        0.20664008506113768,
+        0.4287391842066091
+      ],
+      "stop_reasons": {
+        "limited": 4,
+        "won": 5
+      }
+    },
+    "predict@4": {
+      "arm": "predict",
+      "budget": 4.0,
+      "credits_per_level": null,
+      "credits_unknown_episodes": 1,
+      "episodes": 9,
+      "invalid_calls": 3,
+      "mean_calls": 18.11111111111111,
+      "mean_credits_known": 3.194755375,
+      "mean_levels": 2.888888888888889,
+      "mean_score": 0.38420314253647586,
+      "prediction_accuracy": 0.7994652406417112,
+      "score_ci": [
+        0.2295206028539362,
+        0.539400352733686
+      ],
+      "stop_reasons": {
+        "accounting-unknown": 1,
+        "limited": 3,
+        "won": 5
+      }
+    },
+    "single@1.5": {
+      "arm": "single",
+      "budget": 1.5,
+      "credits_per_level": 1.7847583125,
+      "credits_unknown_episodes": 0,
+      "episodes": 9,
+      "invalid_calls": 1,
+      "mean_calls": 15.444444444444445,
+      "mean_credits_known": 1.5864518333333333,
+      "mean_levels": 0.8888888888888888,
+      "mean_score": 0.09747474747474746,
+      "prediction_accuracy": null,
+      "score_ci": [
+        0.013888888888888888,
+        0.20833333333333334
+      ],
+      "stop_reasons": {
+        "limited": 9
+      }
+    },
+    "single@10": {
+      "arm": "single",
+      "budget": 10.0,
+      "credits_per_level": null,
+      "credits_unknown_episodes": 3,
+      "episodes": 9,
+      "invalid_calls": 6,
+      "mean_calls": 46.666666666666664,
+      "mean_credits_known": 7.643492750000001,
+      "mean_levels": 1.8888888888888888,
+      "mean_score": 0.2450586758920092,
+      "prediction_accuracy": null,
+      "score_ci": [
+        0.08769230769230768,
+        0.45404897571564234
+      ],
+      "stop_reasons": {
+        "accounting-unknown": 3,
+        "limited": 4,
+        "won": 2
+      }
+    },
+    "single@4": {
+      "arm": "single",
+      "budget": 4.0,
+      "credits_per_level": null,
+      "credits_unknown_episodes": 2,
+      "episodes": 9,
+      "invalid_calls": 4,
+      "mean_calls": 28.333333333333332,
+      "mean_credits_known": 4.073406214285714,
+      "mean_levels": 1.0,
+      "mean_score": 0.08666987333654001,
+      "prediction_accuracy": null,
+      "score_ci": [
+        0.02974186307519641,
+        0.15063492063492062
+      ],
+      "stop_reasons": {
+        "accounting-unknown": 2,
+        "limited": 7
+      }
+    }
+  },
+  "chain_head": "59130637720980fdddd780836002641a4b563f5b5c19911ebc5fc7a59d97c0d0",
+  "contrasts": [
+    {
+      "budget": 1.5,
+      "ci": [
+        -0.0608309591642925,
+        0.19652173443840107
+      ],
+      "contrast": "adaptive - plan",
+      "mean_diff": 0.043320275403608735,
+      "n": 9,
+      "p": 0.8203125,
+      "p_holm": 1.0
+    },
+    {
+      "budget": 1.5,
+      "ci": [
+        0.007136443803110469,
+        0.16519579548991314
+      ],
+      "contrast": "adaptive - predict",
+      "mean_diff": 0.06932956295701394,
+      "n": 9,
+      "p": 0.0546875,
+      "p_holm": 0.4375
+    },
+    {
+      "budget": 1.5,
+      "ci": [
+        -0.0915079365079365,
+        0.04175925925925925
+      ],
+      "contrast": "predict - plan",
+      "mean_diff": -0.026009287553405203,
+      "n": 9,
+      "p": 0.4921875,
+      "p_holm": 1.0
+    },
+    {
+      "budget": 4.0,
+      "ci": [
+        -0.07117060992630254,
+        0.19556227099206225
+      ],
+      "contrast": "adaptive - plan",
+      "mean_diff": 0.05484115608546347,
+      "n": 9,
+      "p": 0.4921875,
+      "p_holm": 1.0
+    },
+    {
+      "budget": 4.0,
+      "ci": [
+        -0.21217656725990058,
+        -0.004497354497354526
+      ],
+      "contrast": "adaptive - predict",
+      "mean_diff": -0.09794339302672636,
+      "n": 9,
+      "p": 0.109375,
+      "p_holm": 0.7109375
+    },
+    {
+      "budget": 4.0,
+      "ci": [
+        0.03538630465512184,
+        0.2776921226921227
+      ],
+      "contrast": "predict - plan",
+      "mean_diff": 0.15278454911218986,
+      "n": 9,
+      "p": 0.046875,
+      "p_holm": 0.421875
+    },
+    {
+      "budget": 10.0,
+      "ci": [
+        -0.02533298105103273,
+        0.33351688354105186
+      ],
+      "contrast": "adaptive - plan",
+      "mean_diff": 0.15498425829290333,
+      "n": 9,
+      "p": 0.15625,
+      "p_holm": 0.78125
+    },
+    {
+      "budget": 10.0,
+      "ci": [
+        0.007899458737952031,
+        0.14112731260171474
+      ],
+      "contrast": "adaptive - predict",
+      "mean_diff": 0.07248377221242569,
+      "n": 9,
+      "p": 0.1015625,
+      "p_holm": 0.7109375
+    },
+    {
+      "budget": 10.0,
+      "ci": [
+        -0.07088846014128591,
+        0.21574837512185352
+      ],
+      "contrast": "predict - plan",
+      "mean_diff": 0.08250048608047764,
+      "n": 9,
+      "p": 0.3046875,
+      "p_holm": 1.0
+    }
+  ],
+  "episodes": 108,
+  "episodes_with_unknown_credits": 9,
+  "h3_single_lowest": {
+    "1.5": true,
+    "10": false,
+    "4": true
+  },
+  "provenance": {
+    "flowproof_version": "0.1.0",
+    "git_head": "f9e46d49d8678c942963ace7e98bcb25d143ec61",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "preregistration": {
+      "path": "research/preregistration/E1.md",
+      "sha256": "859397ced2c57e3ccae7d735d5716da5903fcc6b915aee61772d526575828677"
+    },
+    "python": "3.12.10"
+  },
+  "run": "research/runs/20261126T020845Z-15e91c31",
+  "sensitivity_excluding_unknown": {
+    "adaptive@1.5": 0.1730394913728247,
+    "adaptive@10": 0.44060217560217557,
+    "adaptive@4": 0.2862597495097495,
+    "plan@1.5": 0.12971921596921596,
+    "plan@10": 0.26624488502265936,
+    "plan@4": 0.2603459176023218,
+    "predict@1.5": 0.10370992841581077,
+    "predict@10": 0.31916260610061925,
+    "predict@4": 0.43222853535353534,
+    "single@1.5": 0.09747474747474746,
+    "single@10": 0.30425468050468046,
+    "single@4": 0.09714698000412285
+  },
+  "total_credits_known": 355.55607050000003,
+  "units": [
+    [
+      "glide",
+      0
+    ],
+    [
+      "glide",
+      1
+    ],
+    [
+      "glide",
+      2
+    ],
+    [
+      "relay",
+      0
+    ],
+    [
+      "relay",
+      1
+    ],
+    [
+      "relay",
+      2
+    ],
+    [
+      "twins",
+      0
+    ],
+    [
+      "twins",
+      1
+    ],
+    [
+      "twins",
+      2
+    ]
+  ]
+}

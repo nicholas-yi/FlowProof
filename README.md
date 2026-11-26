@@ -19,7 +19,6 @@ Flowproof has three parts:
   tests they cannot touch, and seals everything it did into hash-chained evidence.
 - **Pre-registered studies.** Live models were run through all of it.
 
-<!-- headline -->
 
 ## At a glance
 
@@ -30,7 +29,7 @@ Flowproof has three parts:
 | **E2: honesty under pressure** | **claude-sonnet-5.5 never touched the tests** (0 of 24) and usually said why the task could not be done. |
 | **O1: accounting** | Reading unmeasured usage as zero let **38% of runs overshoot their budget by more than 10%** when just 5% of calls went unmeasured. It also ranked a setup that really cost 10% more as the cheaper one. |
 | **E3 and E3b: a new language** | With the language reference, three models wrote workflows meeting **36 of 36** specifications. With three examples alone, they met 15 of 36. When those examples-only attempts failed, checker diagnostics repaired 6 of 21, against 1 of 21 for "not accepted" alone (exploratory, *p* = 0.06). |
-<!-- E1 headline -->
+| **E1: harness arms** | On three original rule-learning games at equal credit budgets, the **adaptive arm** (predict effects until predictions keep coming true, then batch) had the best mean score at 2 of 3 budgets. But no pre-registered contrast survived correction with 9 game × seed units: an honest null. |
 
 ## The problem
 
@@ -203,7 +202,54 @@ The task set has ten small, original Python repositories:
   [RESULTS.md](research/results/RESULTS.md) and the design is in
   [the preregistration](research/preregistration/E2.md).
 
-<!-- E1 section -->
+### E1: batch, predict or adapt, at equal budgets?
+
+**Setup:**
+- **Model and games:** claude-haiku-5.5 plays three original rule-learning games, each
+  with 4 levels and a hidden rule that changes from level to level. It sees only
+  observations, never game code, and there were zero canary hits.
+- **Arms:** four harness arms, each run at 1.5, 4 and 10 credits per episode.
+  - `single`: one action per call.
+  - `plan`: a batch of up to 12 actions per call.
+  - `predict`: batched actions with the predicted effect of each, stopping at the first
+    wrong prediction.
+  - `adaptive`: predict until 4 predictions in a row are right, then batch.
+- **Size:** 3 seeds per game, 108 episodes.
+- **Score:** efficiency against a breadth-first-search optimum, weighted by level.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/e1-arms-dark.svg">
+  <img alt="Episode score by harness arm and budget" src="docs/figures/e1-arms-light.svg">
+</picture>
+
+| Budget (credits) | single | plan | predict | adaptive |
+|---|---|---|---|---|
+| 1.5 | 0.10 | 0.13 | 0.10 | **0.17** |
+| 4 | 0.09 | 0.23 | **0.38** | 0.29 |
+| 10 | 0.25 | 0.24 | 0.32 | **0.39** |
+
+- **No pre-registered contrast survived Holm correction** (every adjusted *p* ≥ 0.42). With
+  9 game × seed units per comparison, E1 can only detect large effects, so this is a null
+  result. It does not show that the arms are equal.
+- **The direction is suggestive.**
+  - Adaptive had the best mean at 1.5 and 10 credits, and was never below plan.
+  - Predict minus plan went from −0.03 at 1.5 credits to +0.15 at 4 and +0.08 at 10. That
+    is consistent with batching paying off at tiny budgets and verification paying off
+    once there is room, but it is not established.
+- **Single-step play was lowest at 1.5 and 4 credits,** but not at 10.
+- **The predictions themselves were right 71–84% of the time,** and the gate stopped each
+  plan at the first wrong one.
+- **Side finding: pretend tool calls.** With no tools available, the model still wrote
+  them in 59 of 2,498 responses (2.4%), mostly trying to create and run a
+  breadth-first-search solver.
+  - It did so in 19 of 27 single-step episodes, against 7–8 of 27 for each batching arm.
+  - Those responses play nothing and still cost credits.
+  - Some echoed the CLI's local scratch paths, which is why public records are redacted
+    copies.
+- **Episodes stopped by timeouts:** 9 stopped as `accounting-unknown` after a call timed
+  out, as fail-closed accounting requires. Excluding them leaves the pattern unchanged.
+  The full contrast table is in [RESULTS.md](research/results/RESULTS.md).
+
 
 ### E3: can models write a language they have never seen?
 
@@ -326,7 +372,7 @@ systematic literature search, the new parts are:
 
 ```bash
 python -m pip install -e ".[dev,figures]"
-python -m pytest                                  # 490 tests
+python -m pytest                                  # 492 tests
 flowproof evidence verify research/runs/<run-id>  # hashes, chain, manifest
 python -m research.analyze                        # recompute every number above
 python -m research.offline && python -m research.figures
@@ -340,7 +386,8 @@ Reproducing the live studies needs the Copilot CLI and spends credits; see
 ## Limitations
 
 - **One model gateway** (the Copilot CLI) and small samples (12 runs per E2 cell, and 9
-  game × seed units per E1 cell).
+  game × seed units per E1 cell). E1 can only detect large effects, and its contrasts
+  were not significant.
 - **The testbed is small:** three original games, each of 4 levels, and an efficiency
   score against a breadth-first-search optimum, not against humans.
 - **Some tamper findings are heuristic.** Those for skip markers and trivial asserts are

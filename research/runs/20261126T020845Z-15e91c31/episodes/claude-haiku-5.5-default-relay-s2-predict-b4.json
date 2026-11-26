@@ -1,0 +1,1687 @@
+{
+  "arm": "predict",
+  "budget": 4.0,
+  "calls": 11,
+  "canary_hits": [],
+  "client": "copilot",
+  "credits": 2.239201,
+  "effort": null,
+  "episode": {
+    "arm": "predict",
+    "calls": 11,
+    "game": "relay",
+    "invalid_calls": 0,
+    "levels_cleared": 4,
+    "levels_total": 4,
+    "mode_switches": [],
+    "per_level": [
+      {
+        "actions": 9,
+        "cleared": true,
+        "efficiency": 0.3333333333333333,
+        "level": 1,
+        "optimal": 3
+      },
+      {
+        "actions": 7,
+        "cleared": true,
+        "efficiency": 0.42857142857142855,
+        "level": 2,
+        "optimal": 3
+      },
+      {
+        "actions": 5,
+        "cleared": true,
+        "efficiency": 0.6,
+        "level": 3,
+        "optimal": 3
+      },
+      {
+        "actions": 4,
+        "cleared": true,
+        "efficiency": 1.0,
+        "level": 4,
+        "optimal": 4
+      }
+    ],
+    "predictions": {
+      "checked": 25,
+      "correct": 21
+    },
+    "score": 0.699047619047619,
+    "seed": 2,
+    "settings": {
+      "K": 12,
+      "M": 4,
+      "invalid_streak": 3,
+      "max_calls": null,
+      "window": 6
+    },
+    "stop_reason": "won",
+    "transcript": [
+      {
+        "call": 1,
+        "changes": [
+          [
+            "0,0=*",
+            "0,1=*",
+            "1,0=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 0",
+            "expect": [
+              "0,0=*",
+              "0,1=*",
+              "1,0=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,0=*",
+              "0,1=*",
+              "1,0=*"
+            ],
+            "expected": [
+              "0,0=*",
+              "0,1=*",
+              "1,0=*"
+            ],
+            "match": true,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1419,
+        "prompt_sha256": "bebad264059781d8b78f115e0cf109a0aff18058e0530bc29e817a5b9ee7e850",
+        "response": "{\"steps\": [{\"action\": \"press 0 0\", \"expect\": [\"0,0=*\", \"0,1=*\", \"1,0=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0662785,
+            "premium_requests": 1.0,
+            "tokens": 5210.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 2,
+        "changes": [
+          [
+            "0,0=o",
+            "0,1=o",
+            "0,2=*",
+            "1,1=o"
+          ],
+          [
+            "1,2=*",
+            "2,1=*",
+            "2,2=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 1",
+            "expect": [
+              "0,0=o",
+              "0,1=o",
+              "0,2=*",
+              "1,1=o"
+            ]
+          },
+          {
+            "action": "press 2 2",
+            "expect": [
+              "1,2=*",
+              "2,1=*",
+              "2,2=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 1",
+          "press 2 2"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,0=o",
+              "0,1=o",
+              "0,2=*",
+              "1,1=o"
+            ],
+            "expected": [
+              "0,0=o",
+              "0,1=o",
+              "0,2=*",
+              "1,1=o"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "1,2=*",
+              "2,1=*",
+              "2,2=*"
+            ],
+            "expected": [
+              "1,2=*",
+              "2,1=*",
+              "2,2=*"
+            ],
+            "match": true,
+            "step": 2
+          }
+        ],
+        "prompt_length": 1456,
+        "prompt_sha256": "6ff5669bab64b5388bf4454be08097449e0758bb601171186fdff5a3279c75b4",
+        "response": "{\"steps\": [{\"action\": \"press 0 1\", \"expect\": [\"0,0=o\", \"0,1=o\", \"0,2=*\", \"1,1=o\"]}, {\"action\": \"press 2 2\", \"expect\": [\"1,2=*\", \"2,1=*\", \"2,2=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0895785,
+            "premium_requests": 1.0,
+            "tokens": 5697.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 3,
+        "changes": [
+          [
+            "0,0=*",
+            "0,1=*",
+            "1,0=o"
+          ],
+          [
+            "0,0=o",
+            "0,1=o",
+            "0,2=o",
+            "1,1=*"
+          ],
+          [
+            "0,1=*",
+            "0,2=*",
+            "1,2=o"
+          ],
+          [
+            "0,0=*",
+            "1,0=*",
+            "1,1=o",
+            "2,0=o"
+          ],
+          [
+            "1,1=*",
+            "2,0=*",
+            "2,1=o",
+            "2,2=o"
+          ],
+          [
+            "1,2=*",
+            "2,1=*",
+            "2,2=*"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "level-cleared",
+        "parsed": [
+          {
+            "action": "press 0 0",
+            "expect": [
+              "0,0=*",
+              "0,1=*",
+              "1,0=o"
+            ]
+          },
+          {
+            "action": "press 0 1",
+            "expect": [
+              "0,0=o",
+              "0,1=o",
+              "0,2=o",
+              "1,1=*"
+            ]
+          },
+          {
+            "action": "press 0 2",
+            "expect": [
+              "0,1=*",
+              "0,2=*",
+              "1,2=o"
+            ]
+          },
+          {
+            "action": "press 1 0",
+            "expect": [
+              "0,0=*",
+              "1,0=*",
+              "1,1=o",
+              "2,0=o"
+            ]
+          },
+          {
+            "action": "press 2 1",
+            "expect": [
+              "1,1=*",
+              "2,0=*",
+              "2,1=o",
+              "2,2=o"
+            ]
+          },
+          {
+            "action": "press 2 2",
+            "expect": [
+              "1,2=*",
+              "2,1=*",
+              "2,2=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 0",
+          "press 0 1",
+          "press 0 2",
+          "press 1 0",
+          "press 2 1",
+          "press 2 2"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,0=*",
+              "0,1=*",
+              "1,0=o"
+            ],
+            "expected": [
+              "0,0=*",
+              "0,1=*",
+              "1,0=o"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "0,0=o",
+              "0,1=o",
+              "0,2=o",
+              "1,1=*"
+            ],
+            "expected": [
+              "0,0=o",
+              "0,1=o",
+              "0,2=o",
+              "1,1=*"
+            ],
+            "match": true,
+            "step": 2
+          },
+          {
+            "actual": [
+              "0,1=*",
+              "0,2=*",
+              "1,2=o"
+            ],
+            "expected": [
+              "0,1=*",
+              "0,2=*",
+              "1,2=o"
+            ],
+            "match": true,
+            "step": 3
+          },
+          {
+            "actual": [
+              "0,0=*",
+              "1,0=*",
+              "1,1=o",
+              "2,0=o"
+            ],
+            "expected": [
+              "0,0=*",
+              "1,0=*",
+              "1,1=o",
+              "2,0=o"
+            ],
+            "match": true,
+            "step": 4
+          },
+          {
+            "actual": [
+              "1,1=*",
+              "2,0=*",
+              "2,1=o",
+              "2,2=o"
+            ],
+            "expected": [
+              "1,1=*",
+              "2,0=*",
+              "2,1=o",
+              "2,2=o"
+            ],
+            "match": true,
+            "step": 5
+          },
+          {
+            "actual": [
+              "1,2=*",
+              "2,1=*",
+              "2,2=*"
+            ],
+            "expected": [
+              "1,2=*",
+              "2,1=*",
+              "2,2=*"
+            ],
+            "match": true,
+            "step": 6
+          }
+        ],
+        "prompt_length": 1551,
+        "prompt_sha256": "56c23e4747f540ddda0690adee64f8f691f6eca3a32a70241c59e6fd633882d5",
+        "response": "{\"steps\": [{\"action\": \"press 0 0\", \"expect\": [\"0,0=*\", \"0,1=*\", \"1,0=o\"]}, {\"action\": \"press 0 1\", \"expect\": [\"0,1=o\", \"0,0=o\", \"0,2=o\", \"1,1=*\"]}, {\"action\": \"press 0 2\", \"expect\": [\"0,2=*\", \"0,1=*\", \"1,2=o\"]}, {\"action\": \"press 1 0\", \"expect\": [\"1,0=*\", \"0,0=*\", \"1,1=o\", \"2,0=o\"]}, {\"action\": \"press 2 1\", \"expect\": [\"2,1=o\", \"1,1=*\", \"2,0=*\", \"2,2=o\"]}, {\"action\": \"press 2 2\", \"expect\": [\"2,2=*\", \"1,2=*\", \"2,1=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.211216,
+            "premium_requests": 1.0,
+            "tokens": 8183.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 4,
+        "changes": [
+          [
+            "0,0=o",
+            "1,1=o"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "press 0 0",
+            "expect": [
+              "0,0=o",
+              "0,1=o",
+              "1,0=o"
+            ]
+          },
+          {
+            "action": "press 0 1",
+            "expect": [
+              "0,0=*",
+              "0,1=o",
+              "0,2=o",
+              "1,1=o"
+            ]
+          },
+          {
+            "action": "press 2 2",
+            "expect": [
+              "1,2=*",
+              "2,1=o",
+              "2,2=*",
+              "2,3=o",
+              "3,2=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,0=o",
+              "1,1=o"
+            ],
+            "expected": [
+              "0,0=o",
+              "0,1=o",
+              "1,0=o"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1818,
+        "prompt_sha256": "5f19201b47efc576115afde63c119c52f7f5d664aaa003187f6fa03102018c4d",
+        "response": "{\"steps\": [{\"action\": \"press 0 0\", \"expect\": [\"0,0=o\", \"0,1=o\", \"1,0=o\"]}, {\"action\": \"press 0 1\", \"expect\": [\"0,0=*\", \"0,1=o\", \"0,2=o\", \"1,1=o\"]}, {\"action\": \"press 2 2\", \"expect\": [\"1,2=*\", \"2,1=o\", \"2,2=*\", \"2,3=o\", \"3,2=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.374541,
+            "premium_requests": 1.0,
+            "tokens": 11586.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 5,
+        "changes": [
+          [
+            "0,1=*",
+            "1,0=o",
+            "1,2=*"
+          ],
+          [
+            "0,0=*",
+            "1,1=*"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "press 0 1",
+            "expect": [
+              "0,1=*",
+              "1,0=o",
+              "1,2=*"
+            ]
+          },
+          {
+            "action": "press 0 0",
+            "expect": [
+              "0,0=*",
+              "1,1=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 1",
+          "press 0 0"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,1=*",
+              "1,0=o",
+              "1,2=*"
+            ],
+            "expected": [
+              "0,1=*",
+              "1,0=o",
+              "1,2=*"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "0,0=*",
+              "1,1=*"
+            ],
+            "expected": [
+              "0,0=*",
+              "1,1=*"
+            ],
+            "match": true,
+            "step": 2
+          }
+        ],
+        "prompt_length": 1970,
+        "prompt_sha256": "1f4aeb6f7f7b9bff156ba8e9b31806a5a9ce03488a84f63ded98a02e27b3e03c",
+        "response": "{\"steps\": [{\"action\": \"press 0 1\", \"expect\": [\"0,1=*\", \"1,0=o\", \"1,2=*\"]}, {\"action\": \"press 0 0\", \"expect\": [\"0,0=*\", \"1,1=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.159416,
+            "premium_requests": 1.0,
+            "tokens": 7342.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 6,
+        "changes": [
+          [
+            "2,0=*",
+            "2,2=*",
+            "3,1=*"
+          ],
+          [
+            "0,1=o",
+            "0,3=*",
+            "1,2=o",
+            "2,1=o",
+            "2,3=o"
+          ],
+          [
+            "0,1=*",
+            "1,0=*",
+            "2,1=*"
+          ],
+          [
+            "1,2=*",
+            "2,3=*",
+            "3,2=*"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "level-cleared",
+        "parsed": [
+          {
+            "action": "press 3 1",
+            "expect": [
+              "2,0=*",
+              "2,2=*",
+              "3,1=*"
+            ]
+          },
+          {
+            "action": "press 1 2",
+            "expect": [
+              "0,1=o",
+              "0,3=*",
+              "1,2=o",
+              "2,1=o",
+              "2,3=o"
+            ]
+          },
+          {
+            "action": "press 1 0",
+            "expect": [
+              "0,1=*",
+              "1,0=*",
+              "2,1=*"
+            ]
+          },
+          {
+            "action": "press 2 3",
+            "expect": [
+              "1,2=*",
+              "2,3=*",
+              "3,2=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 3 1",
+          "press 1 2",
+          "press 1 0",
+          "press 2 3"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "2,0=*",
+              "2,2=*",
+              "3,1=*"
+            ],
+            "expected": [
+              "2,0=*",
+              "2,2=*",
+              "3,1=*"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "0,1=o",
+              "0,3=*",
+              "1,2=o",
+              "2,1=o",
+              "2,3=o"
+            ],
+            "expected": [
+              "0,1=o",
+              "0,3=*",
+              "1,2=o",
+              "2,1=o",
+              "2,3=o"
+            ],
+            "match": true,
+            "step": 2
+          },
+          {
+            "actual": [
+              "0,1=*",
+              "1,0=*",
+              "2,1=*"
+            ],
+            "expected": [
+              "0,1=*",
+              "1,0=*",
+              "2,1=*"
+            ],
+            "match": true,
+            "step": 3
+          },
+          {
+            "actual": [
+              "1,2=*",
+              "2,3=*",
+              "3,2=*"
+            ],
+            "expected": [
+              "1,2=*",
+              "2,3=*",
+              "3,2=*"
+            ],
+            "match": true,
+            "step": 4
+          }
+        ],
+        "prompt_length": 1797,
+        "prompt_sha256": "e57c84353f1ad57a55738deca25d2468909a780b55d4a41bc16430c9864e9a86",
+        "response": "{\"steps\": [{\"action\": \"press 3 1\", \"expect\": [\"3,1=*\", \"2,0=*\", \"2,2=*\"]}, {\"action\": \"press 1 2\", \"expect\": [\"1,2=o\", \"0,1=o\", \"0,3=*\", \"2,1=o\", \"2,3=o\"]}, {\"action\": \"press 1 0\", \"expect\": [\"1,0=*\", \"0,1=*\", \"2,1=*\"]}, {\"action\": \"press 2 3\", \"expect\": [\"2,3=*\", \"1,2=*\", \"3,2=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.258991,
+            "premium_requests": 1.0,
+            "tokens": 9260.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 7,
+        "changes": [
+          [
+            "0,0=*",
+            "1,2=o",
+            "2,1=o"
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "press 0 0",
+            "expect": [
+              "0,0=*",
+              "1,1=*"
+            ]
+          },
+          {
+            "action": "press 1 1",
+            "expect": [
+              "0,0=o",
+              "0,2=o",
+              "1,1=o",
+              "2,0=*",
+              "2,2=*"
+            ]
+          },
+          {
+            "action": "press 3 3",
+            "expect": [
+              "2,2=o",
+              "3,3=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 0"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,0=*",
+              "1,2=o",
+              "2,1=o"
+            ],
+            "expected": [
+              "0,0=*",
+              "1,1=*"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1837,
+        "prompt_sha256": "ca8a1834d9f5f5944198468b3a9d01d30f7f614f2172d09aeb6349abe97c8b65",
+        "response": "{\"steps\": [{\"action\": \"press 0 0\", \"expect\": [\"0,0=*\", \"1,1=*\"]}, {\"action\": \"press 1 1\", \"expect\": [\"1,1=o\", \"0,0=o\", \"0,2=o\", \"2,0=*\", \"2,2=*\"]}, {\"action\": \"press 3 3\", \"expect\": [\"3,3=*\", \"2,2=o\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.245641,
+            "premium_requests": 1.0,
+            "tokens": 9011.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 8,
+        "changes": [
+          [
+            "0,0=o",
+            "1,2=*",
+            "2,1=*"
+          ],
+          [
+            "0,0=*",
+            "1,2=o",
+            "2,0=*",
+            "3,1=o",
+            "3,3=*"
+          ],
+          [
+            "1,1=*",
+            "2,2=*",
+            "3,0=*"
+          ],
+          [
+            "1,0=*",
+            "1,2=*",
+            "2,3=*",
+            "3,1=*"
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "level-cleared",
+        "parsed": [
+          {
+            "action": "press 0 0",
+            "expect": [
+              "0,0=o",
+              "1,2=*",
+              "2,1=*"
+            ]
+          },
+          {
+            "action": "press 1 2",
+            "expect": [
+              "0,0=*",
+              "1,2=o",
+              "2,0=*",
+              "3,1=o",
+              "3,3=*"
+            ]
+          },
+          {
+            "action": "press 3 0",
+            "expect": [
+              "1,1=*",
+              "2,2=*",
+              "3,0=*"
+            ]
+          },
+          {
+            "action": "press 3 1",
+            "expect": [
+              "1,0=*",
+              "1,2=*",
+              "2,3=*",
+              "3,1=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 0",
+          "press 1 2",
+          "press 3 0",
+          "press 3 1"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,0=o",
+              "1,2=*",
+              "2,1=*"
+            ],
+            "expected": [
+              "0,0=o",
+              "1,2=*",
+              "2,1=*"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "0,0=*",
+              "1,2=o",
+              "2,0=*",
+              "3,1=o",
+              "3,3=*"
+            ],
+            "expected": [
+              "0,0=*",
+              "1,2=o",
+              "2,0=*",
+              "3,1=o",
+              "3,3=*"
+            ],
+            "match": true,
+            "step": 2
+          },
+          {
+            "actual": [
+              "1,1=*",
+              "2,2=*",
+              "3,0=*"
+            ],
+            "expected": [
+              "1,1=*",
+              "2,2=*",
+              "3,0=*"
+            ],
+            "match": true,
+            "step": 3
+          },
+          {
+            "actual": [
+              "1,0=*",
+              "1,2=*",
+              "2,3=*",
+              "3,1=*"
+            ],
+            "expected": [
+              "1,0=*",
+              "1,2=*",
+              "2,3=*",
+              "3,1=*"
+            ],
+            "match": true,
+            "step": 4
+          }
+        ],
+        "prompt_length": 1996,
+        "prompt_sha256": "59487cf0c449fba7c64cf2298fce99be8079734d011adf88f7c0d0bfb7888e2a",
+        "response": "{\"steps\": [{\"action\": \"press 0 0\", \"expect\": [\"0,0=o\", \"1,2=*\", \"2,1=*\"]}, {\"action\": \"press 1 2\", \"expect\": [\"1,2=o\", \"0,0=*\", \"2,0=*\", \"3,1=o\", \"3,3=*\"]}, {\"action\": \"press 3 0\", \"expect\": [\"3,0=*\", \"1,1=*\", \"2,2=*\"]}, {\"action\": \"press 3 1\", \"expect\": [\"3,1=*\", \"1,0=*\", \"1,2=*\", \"2,3=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.415291,
+            "premium_requests": 1.0,
+            "tokens": 12467.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 9,
+        "changes": [
+          [
+            "0,0=*",
+            "0,1=*",
+            "0,2=*"
+          ]
+        ],
+        "error": null,
+        "level": 4,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "press 0 3",
+            "expect": [
+              "0,3=o",
+              "1,1=*",
+              "2,2=*"
+            ]
+          },
+          {
+            "action": "press 3 3",
+            "expect": [
+              "1,2=*",
+              "2,1=o",
+              "3,3=o"
+            ]
+          },
+          {
+            "action": "press 1 3",
+            "expect": [
+              "0,1=*",
+              "1,3=o",
+              "2,1=*",
+              "3,2=o"
+            ]
+          }
+        ],
+        "played": [
+          "press 0 3"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "0,0=*",
+              "0,1=*",
+              "0,2=*"
+            ],
+            "expected": [
+              "0,3=o",
+              "1,1=*",
+              "2,2=*"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1884,
+        "prompt_sha256": "6a64f9be27d7416c8adc9bc56443f06f89c7d49d730d420c94ebd16ab8261316",
+        "response": "{\"steps\": [{\"action\": \"press 0 3\", \"expect\": [\"0,3=o\", \"1,1=*\", \"2,2=*\"]}, {\"action\": \"press 3 3\", \"expect\": [\"3,3=o\", \"1,2=*\", \"2,1=o\"]}, {\"action\": \"press 1 3\", \"expect\": [\"1,3=o\", \"0,1=*\", \"2,1=*\", \"3,2=o\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1815285,
+            "premium_requests": 1.0,
+            "tokens": 7755.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 10,
+        "changes": [
+          [
+            "2,1=o",
+            "2,2=*",
+            "2,3=o"
+          ]
+        ],
+        "error": null,
+        "level": 4,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "press 2 0",
+            "expect": [
+              "2,0=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 2 0"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "2,1=o",
+              "2,2=*",
+              "2,3=o"
+            ],
+            "expected": [
+              "2,0=*"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 2050,
+        "prompt_sha256": "fc5ee944dd611ff9cb2023d2ae5dc5478341614fff8e94b5782ec79aa3b24ea1",
+        "response": "{\"steps\": [{\"action\": \"press 2 0\", \"expect\": [\"2,0=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.110666,
+            "premium_requests": 1.0,
+            "tokens": 6409.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 11,
+        "changes": [
+          [
+            "1,0=*",
+            "1,1=*",
+            "1,2=*"
+          ],
+          [
+            "2,0=*",
+            "2,1=*",
+            "2,3=*"
+          ]
+        ],
+        "error": null,
+        "level": 4,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "won",
+        "parsed": [
+          {
+            "action": "press 1 3",
+            "expect": [
+              "1,0=*",
+              "1,1=*",
+              "1,2=*"
+            ]
+          },
+          {
+            "action": "press 2 2",
+            "expect": [
+              "2,0=*",
+              "2,1=*",
+              "2,3=*"
+            ]
+          }
+        ],
+        "played": [
+          "press 1 3",
+          "press 2 2"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "1,0=*",
+              "1,1=*",
+              "1,2=*"
+            ],
+            "expected": [
+              "1,0=*",
+              "1,1=*",
+              "1,2=*"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "2,0=*",
+              "2,1=*",
+              "2,3=*"
+            ],
+            "expected": [
+              "2,0=*",
+              "2,1=*",
+              "2,3=*"
+            ],
+            "match": true,
+            "step": 2
+          }
+        ],
+        "prompt_length": 2036,
+        "prompt_sha256": "28d9dfa244bbbef410c5d929cd601e585f833e96c37a030747df8e8565218d55",
+        "response": "{\"steps\": [{\"action\": \"press 1 3\", \"expect\": [\"1,0=*\", \"1,1=*\", \"1,2=*\"]}, {\"action\": \"press 2 2\", \"expect\": [\"2,0=*\", \"2,1=*\", \"2,3=*\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1260535,
+            "premium_requests": 1.0,
+            "tokens": 6704.0
+          },
+          "calls": 1
+        }
+      }
+    ],
+    "usage": {
+      "amounts": {
+        "credits": 2.239201,
+        "premium_requests": 11.0,
+        "tokens": 89624.0
+      },
+      "calls": 11
+    }
+  },
+  "game": "relay",
+  "harness": [
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 9.35899999999674,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 11.15600000001723,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 19.89100000000326,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 34.76500000001397,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 15.952999999979511,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 22.90600000001723,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 24.20299999997951,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 37.04700000002049,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 19.155999999959022,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 13.187000000034459,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 13.98499999998603,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    }
+  ],
+  "invalid_calls": 0,
+  "job": "claude-haiku-5.5-default-relay-s2-predict-b4",
+  "levels_cleared": 4,
+  "mode_switches": 0,
+  "model": "claude-haiku-5.5",
+  "predictions_checked": 25,
+  "predictions_correct": 21,
+  "score": 0.699047619047619,
+  "seed": 2,
+  "stop_reason": "won"
+}

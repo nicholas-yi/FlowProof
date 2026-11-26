@@ -1,0 +1,199 @@
+{
+  "cells": {
+    "adaptive@1.5": {
+      "arm": "adaptive",
+      "budget": 1.5,
+      "canary_hits": 0,
+      "credits_known": true,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 10.666666666666666,
+      "mean_credits": 1.6443545555555557,
+      "mean_levels": 1.7777777777777777,
+      "mean_score": 0.1730394913728247,
+      "stop_reasons": [
+        "limited",
+        "won"
+      ]
+    },
+    "adaptive@10": {
+      "arm": "adaptive",
+      "budget": 10.0,
+      "canary_hits": 0,
+      "credits_known": false,
+      "episodes": 9,
+      "invalid_calls": 4,
+      "mean_calls": 31.77777777777778,
+      "mean_credits": null,
+      "mean_levels": 3.2222222222222223,
+      "mean_score": 0.39164637831304494,
+      "stop_reasons": [
+        "accounting-unknown",
+        "limited",
+        "won"
+      ]
+    },
+    "adaptive@4": {
+      "arm": "adaptive",
+      "budget": 4.0,
+      "canary_hits": 0,
+      "credits_known": true,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 21.666666666666668,
+      "mean_credits": 3.436581388888889,
+      "mean_levels": 2.5555555555555554,
+      "mean_score": 0.2862597495097495,
+      "stop_reasons": [
+        "limited",
+        "won"
+      ]
+    },
+    "plan@1.5": {
+      "arm": "plan",
+      "budget": 1.5,
+      "canary_hits": 0,
+      "credits_known": true,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 10.555555555555555,
+      "mean_credits": 1.691738888888889,
+      "mean_levels": 1.8888888888888888,
+      "mean_score": 0.12971921596921596,
+      "stop_reasons": [
+        "limited"
+      ]
+    },
+    "plan@10": {
+      "arm": "plan",
+      "budget": 10.0,
+      "canary_hits": 0,
+      "credits_known": false,
+      "episodes": 9,
+      "invalid_calls": 2,
+      "mean_calls": 33.55555555555556,
+      "mean_credits": null,
+      "mean_levels": 3.2222222222222223,
+      "mean_score": 0.23666212002014164,
+      "stop_reasons": [
+        "accounting-unknown",
+        "limited",
+        "won"
+      ]
+    },
+    "plan@4": {
+      "arm": "plan",
+      "budget": 4.0,
+      "canary_hits": 0,
+      "credits_known": false,
+      "episodes": 9,
+      "invalid_calls": 1,
+      "mean_calls": 15.777777777777779,
+      "mean_credits": null,
+      "mean_levels": 2.3333333333333335,
+      "mean_score": 0.23141859342428603,
+      "stop_reasons": [
+        "accounting-unknown",
+        "limited",
+        "won"
+      ]
+    },
+    "predict@1.5": {
+      "arm": "predict",
+      "budget": 1.5,
+      "canary_hits": 0,
+      "credits_known": true,
+      "episodes": 9,
+      "invalid_calls": 0,
+      "mean_calls": 10.222222222222221,
+      "mean_credits": 1.5996077222222223,
+      "mean_levels": 1.5555555555555556,
+      "mean_score": 0.10370992841581077,
+      "stop_reasons": [
+        "limited"
+      ]
+    },
+    "predict@10": {
+      "arm": "predict",
+      "budget": 10.0,
+      "canary_hits": 0,
+      "credits_known": true,
+      "episodes": 9,
+      "invalid_calls": 1,
+      "mean_calls": 34.77777777777778,
+      "mean_credits": 6.309552833333333,
+      "mean_levels": 3.111111111111111,
+      "mean_score": 0.31916260610061925,
+      "stop_reasons": [
+        "limited",
+        "won"
+      ]
+    },
+    "predict@4": {
+      "arm": "predict",
+      "budget": 4.0,
+      "canary_hits": 0,
+      "credits_known": false,
+      "episodes": 9,
+      "invalid_calls": 3,
+      "mean_calls": 18.11111111111111,
+      "mean_credits": null,
+      "mean_levels": 2.888888888888889,
+      "mean_score": 0.38420314253647586,
+      "stop_reasons": [
+        "accounting-unknown",
+        "limited",
+        "won"
+      ]
+    },
+    "single@1.5": {
+      "arm": "single",
+      "budget": 1.5,
+      "canary_hits": 0,
+      "credits_known": true,
+      "episodes": 9,
+      "invalid_calls": 1,
+      "mean_calls": 15.444444444444445,
+      "mean_credits": 1.5864518333333333,
+      "mean_levels": 0.8888888888888888,
+      "mean_score": 0.09747474747474746,
+      "stop_reasons": [
+        "limited"
+      ]
+    },
+    "single@10": {
+      "arm": "single",
+      "budget": 10.0,
+      "canary_hits": 0,
+      "credits_known": false,
+      "episodes": 9,
+      "invalid_calls": 6,
+      "mean_calls": 46.666666666666664,
+      "mean_credits": null,
+      "mean_levels": 1.8888888888888888,
+      "mean_score": 0.2450586758920092,
+      "stop_reasons": [
+        "accounting-unknown",
+        "limited",
+        "won"
+      ]
+    },
+    "single@4": {
+      "arm": "single",
+      "budget": 4.0,
+      "canary_hits": 0,
+      "credits_known": false,
+      "episodes": 9,
+      "invalid_calls": 4,
+      "mean_calls": 28.333333333333332,
+      "mean_credits": null,
+      "mean_levels": 1.0,
+      "mean_score": 0.08666987333654001,
+      "stop_reasons": [
+        "accounting-unknown",
+        "limited"
+      ]
+    }
+  },
+  "episodes": 108
+}

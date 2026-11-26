@@ -1,0 +1,5079 @@
+{
+  "arm": "adaptive",
+  "budget": 4.0,
+  "calls": 43,
+  "canary_hits": [],
+  "client": "copilot",
+  "credits": 4.0865029999999996,
+  "effort": null,
+  "episode": {
+    "arm": "adaptive",
+    "calls": 43,
+    "game": "glide",
+    "invalid_calls": 0,
+    "levels_cleared": 2,
+    "levels_total": 4,
+    "mode_switches": [
+      {
+        "after_step": 4,
+        "call": 6,
+        "from": "predict",
+        "level": 2,
+        "reason": "verified-streak",
+        "to": "plan"
+      },
+      {
+        "after_step": 2,
+        "call": 8,
+        "from": "plan",
+        "level": 3,
+        "reason": "new-level",
+        "to": "predict"
+      },
+      {
+        "after_step": 2,
+        "call": 14,
+        "from": "predict",
+        "level": 3,
+        "reason": "verified-streak",
+        "to": "plan"
+      }
+    ],
+    "per_level": [
+      {
+        "actions": 4,
+        "cleared": true,
+        "efficiency": 1.0,
+        "level": 1,
+        "optimal": 4
+      },
+      {
+        "actions": 12,
+        "cleared": true,
+        "efficiency": 0.25,
+        "level": 2,
+        "optimal": 3
+      },
+      {
+        "actions": 220,
+        "cleared": false,
+        "efficiency": 0.0,
+        "level": 3,
+        "optimal": 3
+      },
+      {
+        "actions": 0,
+        "cleared": false,
+        "efficiency": 0.0,
+        "level": 4,
+        "optimal": 5
+      }
+    ],
+    "predictions": {
+      "checked": 23,
+      "correct": 16
+    },
+    "score": 0.15,
+    "seed": 1,
+    "settings": {
+      "K": 12,
+      "M": 4,
+      "invalid_streak": 3,
+      "max_calls": null,
+      "window": 6
+    },
+    "stop_reason": "limited",
+    "transcript": [
+      {
+        "call": 1,
+        "changes": [
+          [
+            "4,1=.",
+            "4,5=@"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "right",
+            "expect": [
+              "4,1=.",
+              "4,2=@"
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "4,2=.",
+              "4,3=@"
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "4,3=.",
+              "4,4=@"
+            ]
+          },
+          {
+            "action": "up",
+            "expect": [
+              "3,4=@",
+              "4,4=."
+            ]
+          },
+          {
+            "action": "up",
+            "expect": [
+              "2,4=@",
+              "3,4=."
+            ]
+          },
+          {
+            "action": "up",
+            "expect": [
+              "1,4=@",
+              "2,4=."
+            ]
+          },
+          {
+            "action": "left",
+            "expect": [
+              "1,3=@",
+              "1,4=."
+            ]
+          },
+          {
+            "action": "left",
+            "expect": [
+              "1,2=@",
+              "1,3=."
+            ]
+          },
+          {
+            "action": "left",
+            "expect": [
+              "1,1=@",
+              "1,2=."
+            ]
+          },
+          {
+            "action": "down",
+            "expect": [
+              "1,1=.",
+              "2,1=@"
+            ]
+          }
+        ],
+        "played": [
+          "right"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "4,1=.",
+              "4,5=@"
+            ],
+            "expected": [
+              "4,1=.",
+              "4,2=@"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1439,
+        "prompt_sha256": "b9449ee5ccc1a4ab563b7b4351e5896957dd0f62e1b363ac153f8c476a0d9969",
+        "response": "{\"steps\": [{\"action\": \"right\", \"expect\": [\"4,1=.\", \"4,2=@\"]}, {\"action\": \"right\", \"expect\": [\"4,2=.\", \"4,3=@\"]}, {\"action\": \"right\", \"expect\": [\"4,3=.\", \"4,4=@\"]}, {\"action\": \"up\", \"expect\": [\"4,4=.\", \"3,4=@\"]}, {\"action\": \"up\", \"expect\": [\"3,4=.\", \"2,4=@\"]}, {\"action\": \"up\", \"expect\": [\"2,4=.\", \"1,4=@\"]}, {\"action\": \"left\", \"expect\": [\"1,4=.\", \"1,3=@\"]}, {\"action\": \"left\", \"expect\": [\"1,3=.\", \"1,2=@\"]}, {\"action\": \"left\", \"expect\": [\"1,2=.\", \"1,1=@\"]}, {\"action\": \"down\", \"expect\": [\"1,1=.\", \"2,1=@\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1001785,
+            "premium_requests": 1.0,
+            "tokens": 5897.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 2,
+        "changes": [
+          [
+            "1,5=@",
+            "4,5=."
+          ],
+          [
+            "1,1=@",
+            "1,5=."
+          ],
+          [
+            "1,1=.",
+            "2,1=@"
+          ]
+        ],
+        "error": null,
+        "level": 1,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "level-cleared",
+        "parsed": [
+          {
+            "action": "up",
+            "expect": [
+              "1,5=@",
+              "4,5=."
+            ]
+          },
+          {
+            "action": "left",
+            "expect": [
+              "1,1=@",
+              "1,5=."
+            ]
+          },
+          {
+            "action": "down",
+            "expect": [
+              "1,1=.",
+              "2,1=@"
+            ]
+          }
+        ],
+        "played": [
+          "up",
+          "left",
+          "down"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "1,5=@",
+              "4,5=."
+            ],
+            "expected": [
+              "1,5=@",
+              "4,5=."
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "1,1=@",
+              "1,5=."
+            ],
+            "expected": [
+              "1,1=@",
+              "1,5=."
+            ],
+            "match": true,
+            "step": 2
+          },
+          {
+            "actual": [
+              "1,1=.",
+              "2,1=@"
+            ],
+            "expected": [
+              "1,1=.",
+              "2,1=@"
+            ],
+            "match": true,
+            "step": 3
+          }
+        ],
+        "prompt_length": 1613,
+        "prompt_sha256": "e2eb84d4b16d189d892e167ba46b18c62527834415ed55cb2a9ec66abab2a08d",
+        "response": "{\"steps\": [{\"action\": \"up\", \"expect\": [\"4,5=.\", \"1,5=@\"]}, {\"action\": \"left\", \"expect\": [\"1,5=.\", \"1,1=@\"]}, {\"action\": \"down\", \"expect\": [\"1,1=.\", \"2,1=@\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0977035,
+            "premium_requests": 1.0,
+            "tokens": 5915.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 3,
+        "changes": [
+          [
+            "1,3=@",
+            "1,4=."
+          ],
+          [
+            "1,1=@",
+            "1,3=+"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "left",
+            "expect": [
+              "1,3=@",
+              "1,4=."
+            ]
+          },
+          {
+            "action": "left",
+            "expect": [
+              "1,2=@",
+              "1,3=."
+            ]
+          },
+          {
+            "action": "down",
+            "expect": [
+              "1,2=.",
+              "2,2=@"
+            ]
+          }
+        ],
+        "played": [
+          "left",
+          "left"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "1,3=@",
+              "1,4=."
+            ],
+            "expected": [
+              "1,3=@",
+              "1,4=."
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "1,1=@",
+              "1,3=+"
+            ],
+            "expected": [
+              "1,2=@",
+              "1,3=."
+            ],
+            "match": false,
+            "step": 2
+          }
+        ],
+        "prompt_length": 1619,
+        "prompt_sha256": "9febc15dca0deeb8668c9a0b197e5d675b6e3dbfe546b84bfc3d918b67fe28eb",
+        "response": "{\"steps\": [{\"action\": \"left\", \"expect\": [\"1,3=@\", \"1,4=.\"]}, {\"action\": \"left\", \"expect\": [\"1,2=@\", \"1,3=.\"]}, {\"action\": \"down\", \"expect\": [\"2,2=@\", \"1,2=.\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0720185,
+            "premium_requests": 1.0,
+            "tokens": 5513.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 4,
+        "changes": [
+          [
+            "1,1=.",
+            "3,1=@"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "down",
+            "expect": [
+              "1,1=.",
+              "2,1=.",
+              "3,1=@"
+            ]
+          }
+        ],
+        "played": [
+          "down"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "1,1=.",
+              "3,1=@"
+            ],
+            "expected": [
+              "1,1=.",
+              "2,1=.",
+              "3,1=@"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1830,
+        "prompt_sha256": "15023af2d88c4aba78c937691bb88d69829656bb81a8c36de11a37da8156f221",
+        "response": "<parameter_format>\n{\"steps\": [{\"action\": \"down\", \"expect\": [\"1,1=.\", \"2,1=.\", \"3,1=@\"]}]}\n</parameter_format>",
+        "usage": {
+          "amounts": {
+            "credits": 0.1194185,
+            "premium_requests": 1.0,
+            "tokens": 6707.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 5,
+        "changes": [
+          [
+            "3,1=+",
+            "3,2=@"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "right",
+            "expect": [
+              "3,1=.",
+              "3,2=@"
+            ]
+          }
+        ],
+        "played": [
+          "right"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "3,1=+",
+              "3,2=@"
+            ],
+            "expected": [
+              "3,1=.",
+              "3,2=@"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1836,
+        "prompt_sha256": "afd58a509a06fe4c3b3382ae9c7a2ffce5644931e7f7cee959a9468cf90d8353",
+        "response": "{\"steps\": [{\"action\": \"right\", \"expect\": [\"3,1=.\", \"3,2=@\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1075685,
+            "premium_requests": 1.0,
+            "tokens": 6389.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 6,
+        "changes": [
+          [
+            "1,2=@",
+            "3,2=."
+          ],
+          [
+            "1,2=.",
+            "1,3=@"
+          ],
+          [
+            "1,3=+",
+            "1,6=@"
+          ],
+          [
+            "1,6=.",
+            "3,6=@"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "predict",
+        "mode_switches": [
+          {
+            "after_step": 4,
+            "call": 6,
+            "from": "predict",
+            "level": 2,
+            "reason": "verified-streak",
+            "to": "plan"
+          }
+        ],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "up",
+            "expect": [
+              "1,2=@",
+              "3,2=."
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "1,2=.",
+              "1,3=@"
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "1,3=+",
+              "1,6=@"
+            ]
+          },
+          {
+            "action": "down",
+            "expect": [
+              "1,6=.",
+              "3,6=@"
+            ]
+          }
+        ],
+        "played": [
+          "up",
+          "right",
+          "right",
+          "down"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "1,2=@",
+              "3,2=."
+            ],
+            "expected": [
+              "1,2=@",
+              "3,2=."
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "1,2=.",
+              "1,3=@"
+            ],
+            "expected": [
+              "1,2=.",
+              "1,3=@"
+            ],
+            "match": true,
+            "step": 2
+          },
+          {
+            "actual": [
+              "1,3=+",
+              "1,6=@"
+            ],
+            "expected": [
+              "1,3=+",
+              "1,6=@"
+            ],
+            "match": true,
+            "step": 3
+          },
+          {
+            "actual": [
+              "1,6=.",
+              "3,6=@"
+            ],
+            "expected": [
+              "1,6=.",
+              "3,6=@"
+            ],
+            "match": true,
+            "step": 4
+          }
+        ],
+        "prompt_length": 1833,
+        "prompt_sha256": "1e013882b9ccb1f9c94d7609a3981d264fa567910a71a82728cc8b0e9e712441",
+        "response": "```json\n{\"steps\": [{\"action\": \"up\", \"expect\": [\"3,2=.\", \"1,2=@\"]}, {\"action\": \"right\", \"expect\": [\"1,2=.\", \"1,3=@\"]}, {\"action\": \"right\", \"expect\": [\"1,3=+\", \"1,6=@\"]}, {\"action\": \"down\", \"expect\": [\"1,6=.\", \"3,6=@\"]}]}\n```",
+        "usage": {
+          "amounts": {
+            "credits": 0.150056,
+            "premium_requests": 1.0,
+            "tokens": 7199.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 7,
+        "changes": [
+          [
+            "1,6=@",
+            "3,6=."
+          ],
+          [
+            "1,3=@",
+            "1,6=."
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "up"
+          },
+          {
+            "action": "left"
+          }
+        ],
+        "played": [
+          "up",
+          "left"
+        ],
+        "predictions": [],
+        "prompt_length": 1464,
+        "prompt_sha256": "1ad3bd5a7fabc29d2d09bbc9ae447621db4e8af631eba306738ec4367d55bfac",
+        "response": "{\"actions\": [\"up\", \"left\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.117081,
+            "premium_requests": 1.0,
+            "tokens": 6352.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 8,
+        "changes": [
+          [
+            "1,3=+",
+            "2,3=@"
+          ],
+          [
+            "2,3=.",
+            "2,6=@"
+          ]
+        ],
+        "error": null,
+        "level": 2,
+        "mode": "plan",
+        "mode_switches": [
+          {
+            "after_step": 2,
+            "call": 8,
+            "from": "plan",
+            "level": 3,
+            "reason": "new-level",
+            "to": "predict"
+          }
+        ],
+        "outcome": "level-cleared",
+        "parsed": [
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "down",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1462,
+        "prompt_sha256": "0645b94f925916840e89bd106cbb14030fc2de7cee593d141e39dc30464f0872",
+        "response": "{\"actions\": [\"down\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.142831,
+            "premium_requests": 1.0,
+            "tokens": 6942.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 9,
+        "changes": [
+          [
+            "3,1=.",
+            "7,1=@"
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "down",
+            "expect": [
+              "3,1=.",
+              "4,1=@"
+            ]
+          },
+          {
+            "action": "down",
+            "expect": [
+              "4,1=.",
+              "5,1=@"
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "5,1=.",
+              "5,2=@"
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "5,2=.",
+              "5,3=@"
+            ]
+          }
+        ],
+        "played": [
+          "down"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "3,1=.",
+              "7,1=@"
+            ],
+            "expected": [
+              "3,1=.",
+              "4,1=@"
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1756,
+        "prompt_sha256": "0437dbd197932515eb4b2f3adafd8579433048ffc5fa65ed537093896fc80d5c",
+        "response": "{\"steps\": [{\"action\": \"down\", \"expect\": [\"3,1=.\", \"4,1=@\"]}, {\"action\": \"down\", \"expect\": [\"4,1=.\", \"5,1=@\"]}, {\"action\": \"right\", \"expect\": [\"5,1=.\", \"5,2=@\"]}, {\"action\": \"right\", \"expect\": [\"5,2=.\", \"5,3=@\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.091006,
+            "premium_requests": 1.0,
+            "tokens": 5955.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 10,
+        "changes": [
+          [
+            "3,1=@",
+            "7,1=."
+          ],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "up",
+            "expect": [
+              "3,1=@",
+              "7,1=."
+            ]
+          },
+          {
+            "action": "right",
+            "expect": []
+          }
+        ],
+        "played": [
+          "up",
+          "right"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "3,1=@",
+              "7,1=."
+            ],
+            "expected": [
+              "3,1=@",
+              "7,1=."
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [],
+            "expected": [],
+            "match": true,
+            "step": 2
+          }
+        ],
+        "prompt_length": 1902,
+        "prompt_sha256": "f6815f74d6bf3d0c0acd1a22ddaad994c049a041a7d5c5a5f8aa7c2c2ba6789f",
+        "response": "{\"steps\": [{\"action\": \"up\", \"expect\": [\"7,1=.\", \"3,1=@\"]}, {\"action\": \"right\", \"expect\": []}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1031685,
+            "premium_requests": 1.0,
+            "tokens": 6247.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 11,
+        "changes": [
+          [
+            "3,1=.",
+            "7,1=@"
+          ],
+          [
+            "7,1=.",
+            "7,2=@"
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "down",
+            "expect": [
+              "3,1=.",
+              "7,1=@"
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "7,1=.",
+              "7,3=@"
+            ]
+          },
+          {
+            "action": "up",
+            "expect": [
+              "5,3=@",
+              "7,3=."
+            ]
+          },
+          {
+            "action": "left",
+            "expect": [
+              "5,1=@",
+              "5,3=."
+            ]
+          }
+        ],
+        "played": [
+          "down",
+          "right"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "3,1=.",
+              "7,1=@"
+            ],
+            "expected": [
+              "3,1=.",
+              "7,1=@"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "7,1=.",
+              "7,2=@"
+            ],
+            "expected": [
+              "7,1=.",
+              "7,3=@"
+            ],
+            "match": false,
+            "step": 2
+          }
+        ],
+        "prompt_length": 1759,
+        "prompt_sha256": "149042aab7d77e788ff1bda7c888a9b70d019eb72b70db0f066c9f4eeb33a99f",
+        "response": "{\"steps\": [{\"action\": \"down\", \"expect\": [\"3,1=.\", \"7,1=@\"]}, {\"action\": \"right\", \"expect\": [\"7,1=.\", \"7,3=@\"]}, {\"action\": \"up\", \"expect\": [\"7,3=.\", \"5,3=@\"]}, {\"action\": \"left\", \"expect\": [\"5,3=.\", \"5,1=@\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.113231,
+            "premium_requests": 1.0,
+            "tokens": 6395.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 12,
+        "changes": [
+          [
+            "7,1=@",
+            "7,2=v"
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "mismatch",
+        "parsed": [
+          {
+            "action": "left",
+            "expect": [
+              "7,1=@",
+              "7,2=."
+            ]
+          }
+        ],
+        "played": [
+          "left"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "7,1=@",
+              "7,2=v"
+            ],
+            "expected": [
+              "7,1=@",
+              "7,2=."
+            ],
+            "match": false,
+            "step": 1
+          }
+        ],
+        "prompt_length": 1908,
+        "prompt_sha256": "b485c941f47cda05465b3651b9259c39b6e9e4ae27e3e4fbf3ed97f6f1b15075",
+        "response": "{\"steps\": [{\"action\": \"left\", \"expect\": [\"7,1=@\", \"7,2=.\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1102935,
+            "premium_requests": 1.0,
+            "tokens": 6340.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 13,
+        "changes": [
+          [
+            "7,1=.",
+            "7,2=@"
+          ],
+          [
+            "7,2=v",
+            "7,3=@"
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right",
+            "expect": [
+              "7,1=.",
+              "7,2=@"
+            ]
+          },
+          {
+            "action": "right",
+            "expect": [
+              "7,2=v",
+              "7,3=@"
+            ]
+          }
+        ],
+        "played": [
+          "right",
+          "right"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "7,1=.",
+              "7,2=@"
+            ],
+            "expected": [
+              "7,1=.",
+              "7,2=@"
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "7,2=v",
+              "7,3=@"
+            ],
+            "expected": [
+              "7,2=v",
+              "7,3=@"
+            ],
+            "match": true,
+            "step": 2
+          }
+        ],
+        "prompt_length": 1906,
+        "prompt_sha256": "562306d877f8c9b1cbcd2b08b31c701e26ddfc70c0975853921efb74c355e3d0",
+        "response": "{\"steps\": [{\"action\": \"right\", \"expect\": [\"7,1=.\", \"7,2=@\"]}, {\"action\": \"right\", \"expect\": [\"7,2=v\", \"7,3=@\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.119006,
+            "premium_requests": 1.0,
+            "tokens": 6638.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 14,
+        "changes": [
+          [
+            "5,3=@",
+            "7,3=."
+          ],
+          [
+            "5,1=@",
+            "5,3=."
+          ],
+          [
+            "3,1=@",
+            "5,1=."
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "predict",
+        "mode_switches": [
+          {
+            "after_step": 2,
+            "call": 14,
+            "from": "predict",
+            "level": 3,
+            "reason": "verified-streak",
+            "to": "plan"
+          }
+        ],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "up",
+            "expect": [
+              "5,3=@",
+              "7,3=."
+            ]
+          },
+          {
+            "action": "left",
+            "expect": [
+              "5,1=@",
+              "5,3=."
+            ]
+          },
+          {
+            "action": "up",
+            "expect": [
+              "3,1=@",
+              "5,1=."
+            ]
+          }
+        ],
+        "played": [
+          "up",
+          "left",
+          "up"
+        ],
+        "predictions": [
+          {
+            "actual": [
+              "5,3=@",
+              "7,3=."
+            ],
+            "expected": [
+              "5,3=@",
+              "7,3=."
+            ],
+            "match": true,
+            "step": 1
+          },
+          {
+            "actual": [
+              "5,1=@",
+              "5,3=."
+            ],
+            "expected": [
+              "5,1=@",
+              "5,3=."
+            ],
+            "match": true,
+            "step": 2
+          },
+          {
+            "actual": [
+              "3,1=@",
+              "5,1=."
+            ],
+            "expected": [
+              "3,1=@",
+              "5,1=."
+            ],
+            "match": true,
+            "step": 3
+          }
+        ],
+        "prompt_length": 1763,
+        "prompt_sha256": "31f42ac3665eb11e284a2430ae54db4f893f09ec825da003ded15ef778916f30",
+        "response": "{\"steps\": [{\"action\": \"up\", \"expect\": [\"5,3=@\", \"7,3=.\"]}, {\"action\": \"left\", \"expect\": [\"5,1=@\", \"5,3=.\"]}, {\"action\": \"up\", \"expect\": [\"3,1=@\", \"5,1=.\"]}]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.214781,
+            "premium_requests": 1.0,
+            "tokens": 8378.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 15,
+        "changes": [
+          [
+            "3,1=.",
+            "7,1=@"
+          ],
+          [
+            "7,1=.",
+            "7,2=@"
+          ],
+          [
+            "7,2=v",
+            "7,3=@"
+          ],
+          [
+            "5,3=@",
+            "7,3=."
+          ],
+          [
+            "5,3=.",
+            "5,7=@"
+          ],
+          [
+            "1,7=@",
+            "5,7=."
+          ],
+          [
+            "1,5=@",
+            "1,7=."
+          ]
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "left"
+          }
+        ],
+        "played": [
+          "down",
+          "right",
+          "right",
+          "up",
+          "right",
+          "up",
+          "left"
+        ],
+        "predictions": [],
+        "prompt_length": 1534,
+        "prompt_sha256": "7b6f332c4f49c517372968ecf97a28de24ad848828e4e3248077c20292bce705",
+        "response": "{\"actions\": [\"down\", \"right\", \"right\", \"up\", \"right\", \"up\", \"left\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.1828435,
+            "premium_requests": 1.0,
+            "tokens": 7806.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 16,
+        "changes": [
+          [
+            "1,1=@",
+            "1,5=^"
+          ],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          }
+        ],
+        "played": [
+          "left",
+          "left",
+          "left",
+          "left"
+        ],
+        "predictions": [],
+        "prompt_length": 1535,
+        "prompt_sha256": "22e7842e76d05c3a5b699ed743d7a0146e68307d1f8a5d2b6c3182ed511f7909",
+        "response": "{\"actions\": [\"left\", \"left\", \"left\", \"left\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.144081,
+            "premium_requests": 1.0,
+            "tokens": 6994.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 17,
+        "changes": [
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1543,
+        "prompt_sha256": "9244e3adf7fe49ab7f8a5ef0bca39fdce6e084ea6a5c6dac233e37e12d95d5e1",
+        "response": "{\"actions\": [\"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0805685,
+            "premium_requests": 1.0,
+            "tokens": 5708.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 18,
+        "changes": [
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1553,
+        "prompt_sha256": "18f82e77264cbe5b43ac4da9f8fcb4ab4aae0c0f4fc513cca0e2bac57c953073",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.084556,
+            "premium_requests": 1.0,
+            "tokens": 5700.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 19,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "up"
+          }
+        ],
+        "played": [
+          "right",
+          "down",
+          "right",
+          "right",
+          "up",
+          "right",
+          "down",
+          "down",
+          "left",
+          "left",
+          "up",
+          "up"
+        ],
+        "predictions": [],
+        "prompt_length": 1559,
+        "prompt_sha256": "6f26656072e56d65f0e2c672576a3654ac9bbc6283c5648f8cb4311bc97d0939",
+        "response": "{\"actions\": [\"right\", \"down\", \"right\", \"right\", \"up\", \"right\", \"down\", \"down\", \"left\", \"left\", \"up\", \"up\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0895035,
+            "premium_requests": 1.0,
+            "tokens": 5742.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 20,
+        "changes": [
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1550,
+        "prompt_sha256": "82d0ee0c65b56bce960446b800ad9fcd79345e45a8a0f99e0fd206bc21832362",
+        "response": "{\"actions\": [\"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0751535,
+            "premium_requests": 1.0,
+            "tokens": 5458.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 21,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "up"
+          }
+        ],
+        "played": [
+          "down",
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "left",
+          "up"
+        ],
+        "predictions": [],
+        "prompt_length": 1552,
+        "prompt_sha256": "2f607186db8b4688676159aed7ae3959f321d62e6426fa48bed7ac7002ebbb57",
+        "response": "{\"actions\": [\"down\", \"right\", \"right\", \"right\", \"down\", \"down\", \"left\", \"up\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.086416,
+            "premium_requests": 1.0,
+            "tokens": 5687.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 22,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "down",
+          "down",
+          "left",
+          "left",
+          "down",
+          "right",
+          "right",
+          "up",
+          "up",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1554,
+        "prompt_sha256": "0edfa4b27a6f1dccc675ee66dee0f37b2c35cb8dda49e613d0ae7d24fc048944",
+        "response": "{\"actions\": [\"right\", \"right\", \"down\", \"down\", \"left\", \"left\", \"down\", \"right\", \"right\", \"up\", \"up\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0809785,
+            "premium_requests": 1.0,
+            "tokens": 5573.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 23,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "left",
+          "down",
+          "down",
+          "right",
+          "right",
+          "right",
+          "up"
+        ],
+        "predictions": [],
+        "prompt_length": 1553,
+        "prompt_sha256": "2eff99d2b0c868f3e6335feb77786b064220b43db226553c76882571e1354ee3",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"down\", \"down\", \"left\", \"down\", \"down\", \"right\", \"right\", \"right\", \"up\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.064441,
+            "premium_requests": 1.0,
+            "tokens": 5246.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 24,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "up"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "down",
+          "right",
+          "right",
+          "down",
+          "left",
+          "up"
+        ],
+        "predictions": [],
+        "prompt_length": 1555,
+        "prompt_sha256": "106a37a8d30b76fb9c4f667498a925c9f61480e468e13ebd7c7d81b1c9608bd7",
+        "response": "{\"actions\": [\"right\", \"right\", \"down\", \"right\", \"right\", \"down\", \"left\", \"up\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.074991,
+            "premium_requests": 1.0,
+            "tokens": 5457.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 25,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "down",
+          "left",
+          "up",
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1554,
+        "prompt_sha256": "2df77f173b6f4a19264ef47630d1010ddfca2777eeb1258b3d8088a61fbae093",
+        "response": "{\"actions\": [\"right\", \"right\", \"down\", \"left\", \"up\", \"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.068641,
+            "premium_requests": 1.0,
+            "tokens": 5333.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 26,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "down",
+          "down",
+          "right",
+          "right",
+          "right",
+          "up",
+          "up",
+          "right",
+          "right",
+          "down"
+        ],
+        "predictions": [],
+        "prompt_length": 1555,
+        "prompt_sha256": "da970637d7a8502f412a8c79cbcd9df9de0c34320b7c60b2b3e136035626cf92",
+        "response": "{\"actions\": [\"right\", \"right\", \"down\", \"down\", \"right\", \"right\", \"right\", \"up\", \"up\", \"right\", \"right\", \"down\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0750785,
+            "premium_requests": 1.0,
+            "tokens": 5455.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 27,
+        "changes": [
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1554,
+        "prompt_sha256": "3ca7c0eaa11862e06faa44f1fee5dfefdf99588b603499c0281764f2645107bb",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0773785,
+            "premium_requests": 1.0,
+            "tokens": 5501.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 28,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "right",
+          "down",
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1560,
+        "prompt_sha256": "1feb98384b03574f3331a4277e3c8b2b52e7bb60a59dd9dfaf90496d83b03866",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"right\", \"down\", \"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0927285,
+            "premium_requests": 1.0,
+            "tokens": 5802.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 29,
+        "changes": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1560,
+        "prompt_sha256": "e0b9d160f19ba4e1d7d3e5ac7405205e0845a748f85ac475c70eb66071ff83e3",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0688285,
+            "premium_requests": 1.0,
+            "tokens": 5330.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 30,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "down",
+          "left",
+          "down",
+          "left",
+          "left",
+          "left"
+        ],
+        "predictions": [],
+        "prompt_length": 1561,
+        "prompt_sha256": "2df99c5c22ea2b0abab92119f70b5f767e5ea9e260b4bee2a857da370899acb2",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"right\", \"down\", \"down\", \"down\", \"left\", \"down\", \"left\", \"left\", \"left\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.107466,
+            "premium_requests": 1.0,
+            "tokens": 6105.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 31,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "down",
+          "down",
+          "down",
+          "down"
+        ],
+        "predictions": [],
+        "prompt_length": 1555,
+        "prompt_sha256": "2d430435cd30597ac3aa9ce0f71fc7f5fef63887285679fd8214e1b12ad5873e",
+        "response": "{\"actions\": [\"right\", \"right\", \"down\", \"down\", \"down\", \"down\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.069766,
+            "premium_requests": 1.0,
+            "tokens": 5351.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 32,
+        "changes": [
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1557,
+        "prompt_sha256": "59eeb0646d2ce59638187c5647b74446c1e3b94b417b46c69c8f6285bf9b49cf",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.095541,
+            "premium_requests": 1.0,
+            "tokens": 5868.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 33,
+        "changes": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "down",
+          "down"
+        ],
+        "predictions": [],
+        "prompt_length": 1558,
+        "prompt_sha256": "e63054cba714b632ef02edd601dd82b1a0fef3b18abeb14c326333420a068c72",
+        "response": "{\"actions\": [\"right\", \"right\", \"down\", \"down\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0631035,
+            "premium_requests": 1.0,
+            "tokens": 5214.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 34,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "down",
+          "left",
+          "left",
+          "down",
+          "right",
+          "right",
+          "up"
+        ],
+        "predictions": [],
+        "prompt_length": 1559,
+        "prompt_sha256": "c2f506455d64285b1dacbd6f681a9ff209a4fc7e3ddcab28fb5c96dd54f6b00e",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"down\", \"down\", \"down\", \"left\", \"left\", \"down\", \"right\", \"right\", \"up\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0704035,
+            "premium_requests": 1.0,
+            "tokens": 5360.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 35,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "down",
+          "down",
+          "down",
+          "down",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1555,
+        "prompt_sha256": "f74664a70ef989185974d5776d54cf9e4f4b398128e9431854295af9f1113943",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"right\", \"down\", \"down\", \"down\", \"down\", \"down\", \"down\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.084066,
+            "premium_requests": 1.0,
+            "tokens": 5637.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 36,
+        "changes": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1557,
+        "prompt_sha256": "f4c37ff1794ddd58fe5dd4bbc6b1dbc8c37775ecdc8ec2cd457c4cee2bcd62a7",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.063791,
+            "premium_requests": 1.0,
+            "tokens": 5230.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 37,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "right",
+          "right",
+          "up",
+          "left",
+          "down",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1561,
+        "prompt_sha256": "1788d0eeddce0305dc25d6b5a1671a6a4f0f8bcdbf3fccb4178373096852046e",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"down\", \"down\", \"right\", \"right\", \"up\", \"left\", \"down\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.066666,
+            "premium_requests": 1.0,
+            "tokens": 5289.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 38,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "down"
+        ],
+        "predictions": [],
+        "prompt_length": 1556,
+        "prompt_sha256": "17812c305f97ae568e3cc5dee2d2d2dac6d98882160df420759e4a2377351b5b",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"right\", \"down\", \"down\", \"down\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.069091,
+            "premium_requests": 1.0,
+            "tokens": 5336.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 39,
+        "changes": [
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1558,
+        "prompt_sha256": "64ef2eafec38e17d38845fe299267ca67a79d2aa02a32c08e38f868638ada38b",
+        "response": "{\"actions\": [\"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0835285,
+            "premium_requests": 1.0,
+            "tokens": 5621.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 40,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "left"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right",
+          "down",
+          "left",
+          "up",
+          "up",
+          "right",
+          "down",
+          "down",
+          "left",
+          "left"
+        ],
+        "predictions": [],
+        "prompt_length": 1558,
+        "prompt_sha256": "330af8e5b0288e192c589ebfcfac8d670fc6aafcde1e05e6a9b937ddbb5d1afc",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\", \"down\", \"left\", \"up\", \"up\", \"right\", \"down\", \"down\", \"left\", \"left\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0631785,
+            "premium_requests": 1.0,
+            "tokens": 5217.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 41,
+        "changes": [
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1554,
+        "prompt_sha256": "87a638bbf184f917eb31ee6d55bba7ca84b5e782d839fcc7b3433db5bdb4459d",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0683535,
+            "premium_requests": 1.0,
+            "tokens": 5319.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 42,
+        "changes": [
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "right",
+          "right",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1558,
+        "prompt_sha256": "70d86004289519aac229c72a4ddcc69bfb41e75363eb7dae5c59565c9121a729",
+        "response": "{\"actions\": [\"right\", \"right\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.0816285,
+            "premium_requests": 1.0,
+            "tokens": 5583.0
+          },
+          "calls": 1
+        }
+      },
+      {
+        "call": 43,
+        "changes": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "error": null,
+        "level": 3,
+        "mode": "plan",
+        "mode_switches": [],
+        "outcome": "played",
+        "parsed": [
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "up"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "right"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "left"
+          },
+          {
+            "action": "down"
+          },
+          {
+            "action": "right"
+          }
+        ],
+        "played": [
+          "down",
+          "right",
+          "up",
+          "right",
+          "right",
+          "right",
+          "down",
+          "down",
+          "down",
+          "left",
+          "down",
+          "right"
+        ],
+        "predictions": [],
+        "prompt_length": 1561,
+        "prompt_sha256": "781670b71902022e2bae360614ae73ed3998363f9c5b285df85294d150c1b6a5",
+        "response": "{\"actions\": [\"down\", \"right\", \"up\", \"right\", \"right\", \"right\", \"down\", \"down\", \"down\", \"left\", \"down\", \"right\"]}",
+        "usage": {
+          "amounts": {
+            "credits": 0.095391,
+            "premium_requests": 1.0,
+            "tokens": 5859.0
+          },
+          "calls": 1
+        }
+      }
+    ],
+    "usage": {
+      "amounts": {
+        "credits": 4.0865029999999996,
+        "premium_requests": 43.0,
+        "tokens": 254648.0
+      },
+      "calls": 43
+    }
+  },
+  "game": "glide",
+  "harness": [
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 15.094000000040978,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 12.78200000000652,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 12.953000000037719,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 16.264999999955762,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 15.188000000023749,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 16.70299999997951,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 15.71799999999348,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 17.60899999999674,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 8.719000000040978,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 11.75,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 11.25,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 11.01600000000326,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 12.594000000040978,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 20.78200000000652,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 20.95300000003772,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 17.68800000002375,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 10.34399999998277,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 10.15700000000652,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 12.187999999965541,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 11.078000000037719,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 10.625,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 12.577999999979511,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 9.686999999976251,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 10.688000000023749,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 9.702999999979511,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 8.14100000000326,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 9.76500000001397,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 10.311999999976251,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 7.952999999979511,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 12.297000000020489,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 8.375,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 11.14100000000326,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 8.125,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 7.8439999999827705,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 9.452999999979511,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 7.375,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 8.688000000023749,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 8.188000000023749,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 10.25,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 7.5,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 8.030999999959022,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 9.64100000000326,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    },
+    {
+      "outcome": {
+        "detail": {},
+        "reason": "",
+        "status": "ok"
+      },
+      "raw": {
+        "args": [
+          "-s",
+          "--no-auto-update",
+          "--no-custom-instructions",
+          "--disable-builtin-mcps",
+          "--no-ask-user",
+          "--sync-session=off",
+          "--disallow-temp-dir",
+          "--usage-output-file",
+          "--log-dir",
+          "--disable-mcp-server",
+          "chrome-devtools",
+          "--disable-mcp-server",
+          "computer-use",
+          "--disable-mcp-server",
+          "github-mcp-server",
+          "--model",
+          "claude-haiku-5.5",
+          "--max-ai-credits",
+          "30",
+          "--available-tools",
+          "flowproof_no_tools",
+          "-C",
+          "--deny-tool",
+          "shell(git push)",
+          "--deny-tool",
+          "shell(git remote)",
+          "--deny-tool",
+          "shell(gh)",
+          "--deny-tool",
+          "url",
+          "--deny-tool",
+          "memory"
+        ],
+        "credit_cap": 30,
+        "duration_s": 10.01500000001397,
+        "exit_code": 0,
+        "stderr_tail": "",
+        "transcript": null
+      }
+    }
+  ],
+  "invalid_calls": 0,
+  "job": "claude-haiku-5.5-default-glide-s1-adaptive-b4",
+  "levels_cleared": 2,
+  "mode_switches": 3,
+  "model": "claude-haiku-5.5",
+  "predictions_checked": 23,
+  "predictions_correct": 16,
+  "score": 0.15,
+  "seed": 1,
+  "stop_reason": "limited"
+}

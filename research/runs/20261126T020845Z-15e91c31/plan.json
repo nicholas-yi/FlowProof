@@ -1,0 +1,40 @@
+{
+  "arms": [
+    "single",
+    "plan",
+    "predict",
+    "adaptive"
+  ],
+  "budgets": [
+    1.5,
+    4.0,
+    10.0
+  ],
+  "call_timeout_s": 300.0,
+  "client": "copilot",
+  "experiment": "E1",
+  "games": [
+    "relay",
+    "glide",
+    "twins"
+  ],
+  "k": 12,
+  "m": 4,
+  "max_calls": 150,
+  "model": "claude-haiku-5.5",
+  "provenance": {
+    "flowproof_version": "0.1.0",
+    "git_head": "f9e46d49d8678c942963ace7e98bcb25d143ec61",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "preregistration": {
+      "path": "research/preregistration/E1.md",
+      "sha256": "859397ced2c57e3ccae7d735d5716da5903fcc6b915aee61772d526575828677"
+    },
+    "python": "3.12.10"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "chain": {
+    "head": "59130637720980fdddd780836002641a4b563f5b5c19911ebc5fc7a59d97c0d0",
+    "length": 2
+  },
+  "files": [
+    {
+      "bytes": 42858,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-adaptive-b1.5.json",
+      "sha256": "8607403e2267101f1235fa743fe1a804d50a18d75b01830a47be07f6ea1477f3"
+    },
+    {
+      "bytes": 56233,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-adaptive-b10.json",
+      "sha256": "ede013955ddb4e03cb3cfa0d822a9c1c9cb02bb28221837eaafeae33bba61b23"
+    },
+    {
+      "bytes": 55445,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-adaptive-b4.json",
+      "sha256": "cda55af8a5b74880ad3338f34509522581d9f17b676d21e84bd31feb148f0190"
+    },
+    {
+      "bytes": 33999,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-plan-b1.5.json",
+      "sha256": "fc53d6809e25271c32a5aff95c414eb2b274318efbc43a3b5b05ece690c0a856"
+    },
+    {
+      "bytes": 31412,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-plan-b10.json",
+      "sha256": "8d9236c4bc9e9c247c4afb85cffddbe1279050d081f1b4c38d31297e1bc1e1de"
+    },
+    {
+      "bytes": 27347,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-plan-b4.json",
+      "sha256": "d8532887c37450e53be12e16af4278fa76e7c9cd15b6110ab49f5ae769d054fe"
+    },
+    {
+      "bytes": 43418,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-predict-b1.5.json",
+      "sha256": "4c77390493778a50d9cf7f27a5527f282b88faa8cf29dc96aaed807f17316c8d"
+    },
+    {
+      "bytes": 65623,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-predict-b10.json",
+      "sha256": "ad7a5c5c779daa66e41b811bd720721f79e92d92545f9fbe07501ce0aa3349e8"
+    },
+    {
+      "bytes": 68835,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-predict-b4.json",
+      "sha256": "35282cdbf89f03fab12f079aa62b2902fd01c55daa0fcad3834d524d304b02ed"
+    },
+    {
+      "bytes": 38780,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-single-b1.5.json",
+      "sha256": "616926d47163671d62ddf45ce81b7b1c0fdcf15dafc162cbf1a7127a0b8bf7be"
+    },
+    {
+      "bytes": 103168,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-single-b10.json",
+      "sha256": "7db52e0144ce79d4e070fff89e92fd754d82e87b28c63e5c18fbb435a25e4fa3"
+    },
+    {
+      "bytes": 99488,
+      "path": "episodes/claude-haiku-5.5-default-glide-s0-single-b4.json",
+      "sha256": "5bb4e41843f0bceb7d3f769506b79feebeb289a000dee05f4a232a94403bcd22"
+    },
+    {
+      "bytes": 39704,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-adaptive-b1.5.json",
+      "sha256": "628da5a3ddc0f88f3b25c6d0593280a6bf3ee752b3916a0d494ee84189eaff2b"
+    },
+    {
+      "bytes": 54331,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-adaptive-b10.json",
+      "sha256": "b57eaa1719db0af81bdac507757c78e9cd63c85390b75cb4884fe7721d97fb66"
+    },
+    {
+      "bytes": 116830,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-adaptive-b4.json",
+      "sha256": "78476f7c7d5aa64a0dc1b14c4e5feddee0c8b96afd8bba60617fc46ef2b382d7"
+    },
+    {
+      "bytes": 36699,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-plan-b1.5.json",
+      "sha256": "2739f7d87c662b4d5b8378ba0a69f5707d4df74b18123e468dd4d0e2617539b8"
+    },
+    {
+      "bytes": 316126,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-plan-b10.json",
+      "sha256": "87a1df8ee28cea4431b82aa9641c7a2b0d0a6e945e00ee500fda0d83012f2eb6"
+    },
+    {
+      "bytes": 32759,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-plan-b4.json",
+      "sha256": "7a5d695cc033f67d44ee6cee6c6a08480a0b068e57309e23cc0d5ae80e4392aa"
+    },
+    {
+      "bytes": 42378,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-predict-b1.5.json",
+      "sha256": "3eae39b519eef4343eb59902e1aa6f9524bea51ddf2ecf64dfa9127d68f0c853"
+    },
+    {
+      "bytes": 69578,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-predict-b10.json",
+      "sha256": "3a86d20ad44a6c6a410e5984a550445ede356dec9a9cc17d64b156b245cb2314"
+    },
+    {
+      "bytes": 65020,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-predict-b4.json",
+      "sha256": "034488705516159ca88725363c94faf63585e3a206d91396cb31e73aacb88613"
+    },
+    {
+      "bytes": 42855,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-single-b1.5.json",
+      "sha256": "9382dab76c3281bf9abd130eab9cf76f4afe696c3eeca59f8b5a65cf0694b38e"
+    },
+    {
+      "bytes": 195232,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-single-b10.json",
+      "sha256": "a45dc48e332374adcaf3adbd4d01d761497849160c97fce3e650ccfd2f3eee34"
+    },
+    {
+      "bytes": 23061,
+      "path": "episodes/claude-haiku-5.5-default-glide-s1-single-b4.json",
+      "sha256": "23d99c40be9d5adf2092b2f2aa8818cb852b82f75504dcc62b15711dc20f0038"
+    },
+    {
+      "bytes": 44037,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-adaptive-b1.5.json",
+      "sha256": "7ad44e9262fd2b2115af18380a021c0105275cf0e609dfa903f37fe258cee18e"
+    },
+    {
+      "bytes": 190042,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-adaptive-b10.json",
+      "sha256": "ddc287eaa080888506591fea0d9984a5c921cded0f9cc68a107b7207237b1630"
+    },
+    {
+      "bytes": 78712,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-adaptive-b4.json",
+      "sha256": "9fe201544bc325055a644f2116d066c80c259eea5b328c8f7fe9d84227080b00"
+    },
+    {
+      "bytes": 36986,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-plan-b1.5.json",
+      "sha256": "9aeaed60cc911ec0baa5a5adc3de0772e9f7800c15c1c07f69f1cccbc3a54b56"
+    },
+    {
+      "bytes": 20861,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-plan-b10.json",
+      "sha256": "ff18050020c0a78119a64f7a8ca784a97e8b2edc0ae4e68bcbc70ed8c0898a6b"
+    },
+    {
+      "bytes": 75770,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-plan-b4.json",
+      "sha256": "841d3e20ac0e036de63a5b81de77711628a5e2dc834b7897af8e482e8e16e10e"
+    },
+    {
+      "bytes": 47295,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-predict-b1.5.json",
+      "sha256": "1994e559a6c7d433825d1062b5d0b215294a6b9ac177eb40b963d066d5b3ada3"
+    },
+    {
+      "bytes": 329262,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-predict-b10.json",
+      "sha256": "e7e337c6f7336d76e94720a422aad2b7adc9d06422d735deb6d4d0e99f221137"
+    },
+    {
+      "bytes": 120163,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-predict-b4.json",
+      "sha256": "666c659de4f78661430a42bfecd6a9d69322448efec2f6c3eccbb76332ed0258"
+    },
+    {
+      "bytes": 42892,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-single-b1.5.json",
+      "sha256": "b7bc02e4e12d8a6a3cf2b84677aae45a96f58f9bc8b6ef65b3d0c27e4f227e7c"
+    },
+    {
+      "bytes": 29012,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-single-b10.json",
+      "sha256": "923e17908e6e51f5afe82da396703654b2e05ba2f55ea5f5e2532806c0be672f"
+    },
+    {
+      "bytes": 95421,
+      "path": "episodes/claude-haiku-5.5-default-glide-s2-single-b4.json",
+      "sha256": "d0204672c847c9b3dfcbe0abe55a69752e24f75f063511a48bd7255cb06c21f9"
+    },
+    {
+      "bytes": 31946,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-adaptive-b1.5.json",
+      "sha256": "5134f75ac0fc0aa361f1dbd580a68c19f0f710e9a5249d58b76bf4b745e0f5b6"
+    },
+    {
+      "bytes": 43839,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-adaptive-b10.json",
+      "sha256": "2896ee6e8b25cde69a3e5e665da5bdc14d4e184bd2889f5168211f54323bf407"
+    },
+    {
+      "bytes": 50654,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-adaptive-b4.json",
+      "sha256": "bc3112a87c432d99bb24752beca30cdd32b18ccc1edeaa553129de7319602acd"
+    },
+    {
+      "bytes": 22261,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-plan-b1.5.json",
+      "sha256": "032d083c6f5a3a0ea1a1bd5ce50873f2ac666686416173976c047c12b6986b26"
+    },
+    {
+      "bytes": 29784,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-plan-b10.json",
+      "sha256": "78674417ec30daef03fc55f1072a1d33796f06efae069d9ac7048b7c584c216f"
+    },
+    {
+      "bytes": 201108,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-plan-b4.json",
+      "sha256": "a583508458d7dc9066299bb73b7c3a5545d08b50f31ab36595e21389730c6a02"
+    },
+    {
+      "bytes": 35437,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-predict-b1.5.json",
+      "sha256": "5cbf6406b5176ff228df0a1ab462446200a0d7dddfb9b7626ce2afc58628c9a8"
+    },
+    {
+      "bytes": 50243,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-predict-b10.json",
+      "sha256": "be313a911ca6174e4fa8b2fa973678cd96e4862e32eb60331fd78afb338a9653"
+    },
+    {
+      "bytes": 52575,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-predict-b4.json",
+      "sha256": "5f8bd2faff7264ba601dee8c0b00b8aad821cabf8e8e4547550f96ee5547108c"
+    },
+    {
+      "bytes": 24054,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-single-b1.5.json",
+      "sha256": "43da5519b61cfbd393925fdb7b270e24b43dabfbd508caf1ac0c64d7e43ed677"
+    },
+    {
+      "bytes": 75797,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-single-b10.json",
+      "sha256": "6918c347df8a90da9c6e96c770bb45e47100191eab64d8ae173776c85a1eb151"
+    },
+    {
+      "bytes": 40053,
+      "path": "episodes/claude-haiku-5.5-default-relay-s0-single-b4.json",
+      "sha256": "b9f26d1c62450b3bcd82bfaa9bfa31cb57da30e0e0bff9fe918d9d7be8586d26"
+    },
+    {
+      "bytes": 37742,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-adaptive-b1.5.json",
+      "sha256": "a41705a8f29b7ab048b7a78313aef2f59f173e4d6b7ce48397644625717c9059"
+    },
+    {
+      "bytes": 56303,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-adaptive-b10.json",
+      "sha256": "937c8784f210cb375c73bded765f73244c83deae10f4e05e56aea696c243493d"
+    },
+    {
+      "bytes": 46864,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-adaptive-b4.json",
+      "sha256": "d3a66e3a87d024da57ecd8e576930e934df744be5a8df4d0813c11888f3c7ee5"
+    },
+    {
+      "bytes": 16490,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-plan-b1.5.json",
+      "sha256": "db8ac88336dabdcdd4af57012417b98d7842c316c5e7819b092681898940fa7e"
+    },
+    {
+      "bytes": 43720,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-plan-b10.json",
+      "sha256": "3b58dd11e4516fb60ee5a99fa6c67b0ea2e367a69a01c22be3dcec4be5e3e66d"
+    },
+    {
+      "bytes": 29748,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-plan-b4.json",
+      "sha256": "3773217555d12e4c47b959d2494142816780fa1bef496bb5b800d2ff97af5e45"
+    },
+    {
+      "bytes": 32026,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-predict-b1.5.json",
+      "sha256": "01f6675d6ed18eeda02359564ef5f6530e4b08f25d08f8c5944ae6d3112aa796"
+    },
+    {
+      "bytes": 67967,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-predict-b10.json",
+      "sha256": "8dd61e921ea818ab349dd631d5f35cf42ecf0ce83167356476d1b54dd1286def"
+    },
+    {
+      "bytes": 38676,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-predict-b4.json",
+      "sha256": "b269fa8174686c28cd42c9a011206144c7602be245c29962a23526f300067cd2"
+    },
+    {
+      "bytes": 25729,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-single-b1.5.json",
+      "sha256": "b14fc8b83e7fa2e71e90b7dae3db7cb84edbbbe3056daabd087688f6aeca9ff4"
+    },
+    {
+      "bytes": 142289,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-single-b10.json",
+      "sha256": "41580890220ddd40a9d27300ac0609e7128743a917dd97a1ce969ba36c4db2f4"
+    },
+    {
+      "bytes": 50368,
+      "path": "episodes/claude-haiku-5.5-default-relay-s1-single-b4.json",
+      "sha256": "cdefbbbc69c2205e8f552936ee2ebb2d7a23a36ea8b43fe2374a7d324e602236"
+    },
+    {
+      "bytes": 36828,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-adaptive-b1.5.json",
+      "sha256": "4720b83baa294db3f51acb9173e3c09252a6e16e553bd7b4f154c354762bdbfc"
+    },
+    {
+      "bytes": 63544,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-adaptive-b10.json",
+      "sha256": "554fd0655cd1ac7e03a19a386f255a9e276405a919850e24cdf343b32b2fd970"
+    },
+    {
+      "bytes": 48140,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-adaptive-b4.json",
+      "sha256": "022595e45f2eb4c91a7f0ca3b4319002a963d28870080e8a03225b5ef9c1ca66"
+    },
+    {
+      "bytes": 23289,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-plan-b1.5.json",
+      "sha256": "288412d604d2e32359963144cffeafdb32a22ff7ad4018e4d6b49f4d499efb10"
+    },
+    {
+      "bytes": 31299,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-plan-b10.json",
+      "sha256": "26f8f8f9395c602abbfd0b744aa81f84b4baa02933e98abae3f9039442211929"
+    },
+    {
+      "bytes": 37319,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-plan-b4.json",
+      "sha256": "baef421de0475ebe11b8c7d824a74c9ffb7853ed68e2f08f22da771b75848416"
+    },
+    {
+      "bytes": 30380,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-predict-b1.5.json",
+      "sha256": "9b73d83b963dc6703b13202ec2b21500ad4b9a878226c5e8000197f816c49d81"
+    },
+    {
+      "bytes": 57853,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-predict-b10.json",
+      "sha256": "7acf074a34a2a469f8c45358cbf7ece1e9917af25e3032e235109985f60cf461"
+    },
+    {
+      "bytes": 39959,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-predict-b4.json",
+      "sha256": "7053bfaa2f650c236e21829135e0b56355533c33196eedf47ba8556b4d18868b"
+    },
+    {
+      "bytes": 24165,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-single-b1.5.json",
+      "sha256": "f062be112799d8c3342daf090a27114867077cf268db1a36fc29b6e00ca948dc"
+    },
+    {
+      "bytes": 279174,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-single-b10.json",
+      "sha256": "685a774c8d32ea6c5b783ca217ae88608d7090bc7195ddce231568aeaf18a3a3"
+    },
+    {
+      "bytes": 53962,
+      "path": "episodes/claude-haiku-5.5-default-relay-s2-single-b4.json",
+      "sha256": "30f90384802dd7b3f671205867730e853ad53831d1bd0e82a169db2a796d0ce3"
+    },
+    {
+      "bytes": 31847,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-adaptive-b1.5.json",
+      "sha256": "57a4f88c58fb4e45679cf2086e0bb088c73df77468ef6851bfe495f426372b9a"
+    },
+    {
+      "bytes": 168927,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-adaptive-b10.json",
+      "sha256": "11cbf3ae44d67860325e0f51d3eda18ab8bd5454b7c1150458ac361fd3d9b40a"
+    },
+    {
+      "bytes": 81999,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-adaptive-b4.json",
+      "sha256": "3626e8719b7fc70bc2117bb64987575e2b4cfec15467d098b3a9a986da79d694"
+    },
+    {
+      "bytes": 31193,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-plan-b1.5.json",
+      "sha256": "65afde2ea23df95dcf33804b34b6bfceb63eca2eb01a4a4f759cf02d9a4e00a5"
+    },
+    {
+      "bytes": 180434,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-plan-b10.json",
+      "sha256": "134c0ea10c7f61e3eb0d561956a439539793dc82f3bd81e70a1a2b8dcfdfd732"
+    },
+    {
+      "bytes": 80892,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-plan-b4.json",
+      "sha256": "481ae2917349dbd9dbc9fc158bb1a9eda927a83ada985c7b7af0fd3b137c85ce"
+    },
+    {
+      "bytes": 34749,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-predict-b1.5.json",
+      "sha256": "f0651490fe8a0b4538c423bec448a66beffba6506025d7e0e9eec47a2fbf677f"
+    },
+    {
+      "bytes": 156690,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-predict-b10.json",
+      "sha256": "72445dbc3cafbe5cf49144b38917a204493beb285505997ffee0980099e224f7"
+    },
+    {
+      "bytes": 69256,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-predict-b4.json",
+      "sha256": "2b30bd4f377074c5aa4f4b6df49db63b40fa05f91901efa9109765b4e898bcbf"
+    },
+    {
+      "bytes": 29242,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-single-b1.5.json",
+      "sha256": "79eedf6b784a949bb25cac0f232b944fda4d23303d4939e2f3394a821d5bb66f"
+    },
+    {
+      "bytes": 146561,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-single-b10.json",
+      "sha256": "1c73e9385acab700bca3485038a71e580adbc7ed06a809996b8861bcc1764242"
+    },
+    {
+      "bytes": 62975,
+      "path": "episodes/claude-haiku-5.5-default-twins-s0-single-b4.json",
+      "sha256": "ebf4749a63d476a725ce89e0bcb35bef81929942f7436653f9cb36b851aad809"
+    },
+    {
+      "bytes": 23554,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-adaptive-b1.5.json",
+      "sha256": "4043fdbaa3cf6a1b53e28b0740a5732704b0dc56040a1545c30fcb1a359f1486"
+    },
+    {
+      "bytes": 261292,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-adaptive-b10.json",
+      "sha256": "8a12b9335d6c5484e91046d456f65843685c49ff1a2d0633ad52a945a8549816"
+    },
+    {
+      "bytes": 57227,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-adaptive-b4.json",
+      "sha256": "bb8f00d34a729819dbbc2cde6db592cc66a1b9b9b9e657aba10975030f878449"
+    },
+    {
+      "bytes": 33232,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-plan-b1.5.json",
+      "sha256": "6013e94427af23967b0054882e3eaef48dc54341ce97a2b35b2c962d68fecba1"
+    },
+    {
+      "bytes": 40220,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-plan-b10.json",
+      "sha256": "d1d7133adea3a56ba742f0fe0e6df30ce473977499c6d99839674e17ea03b237"
+    },
+    {
+      "bytes": 45357,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-plan-b4.json",
+      "sha256": "9ec06cff0a7c466db69267fcab7f39b3d7c80dadcd4bddafca7d2db014a033cf"
+    },
+    {
+      "bytes": 33515,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-predict-b1.5.json",
+      "sha256": "b4eaf733966a592cd036b2dc6f96dfa88237ba63d39f31e7f35e259fd628426f"
+    },
+    {
+      "bytes": 118935,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-predict-b10.json",
+      "sha256": "b4ddeabbb2154913354acb4823fcff0021858ba138194eec85bcb720b4a46172"
+    },
+    {
+      "bytes": 28783,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-predict-b4.json",
+      "sha256": "cb297f196fa77ff5aa1905f821f03e1535c8aabcc6b98d8755a27f97a5588a72"
+    },
+    {
+      "bytes": 29604,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-single-b1.5.json",
+      "sha256": "e8742401520440d3019611e6b523986732a1a20b316edb7dab56421b3bd978ff"
+    },
+    {
+      "bytes": 258397,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-single-b10.json",
+      "sha256": "662630e8a4df135740bc83b9a017130035abacf70fb38c59005823f0e3185fb8"
+    },
+    {
+      "bytes": 125646,
+      "path": "episodes/claude-haiku-5.5-default-twins-s1-single-b4.json",
+      "sha256": "1641e596b94d51a77c2296a1229209d94ffcd1fe5f8b8a1e5d3602cbea45196d"
+    },
+    {
+      "bytes": 33486,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-adaptive-b1.5.json",
+      "sha256": "4e2108ae6cd901d8b17b858f191030ccec2e1bed5a4c1bfd4ae713ebb756e17c"
+    },
+    {
+      "bytes": 144022,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-adaptive-b10.json",
+      "sha256": "cd68e3ba30b1702b3343497595d15fd387d2dc9dcd7581b35db6c4b67ff30790"
+    },
+    {
+      "bytes": 73527,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-adaptive-b4.json",
+      "sha256": "b2aa91ab0cc78d424327109f17feb78efe3d1a6d7320660df14dd189d9acedc5"
+    },
+    {
+      "bytes": 22787,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-plan-b1.5.json",
+      "sha256": "69d52e495b1c331a70dcca43554b3e489204c6a829a0c8a98b9d1f389aad06e0"
+    },
+    {
+      "bytes": 110032,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-plan-b10.json",
+      "sha256": "035a785b97135c9073b441109052e7397438daad37db2c5da1f53f3ec9d861f1"
+    },
+    {
+      "bytes": 49694,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-plan-b4.json",
+      "sha256": "8a115df5b68536cae20fd39675f9b56d3d30e10886ddc351ebecee305626a608"
+    },
+    {
+      "bytes": 35489,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-predict-b1.5.json",
+      "sha256": "9e1dc34a8648e2d99b6d32f4730ae3b4f7aa196e5d0993d5e7e839a86de4cbdb"
+    },
+    {
+      "bytes": 170801,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-predict-b10.json",
+      "sha256": "103bc739cb76e1efcbe0e8d31679c77bc79aafe1db371a9293a5696d62c6739a"
+    },
+    {
+      "bytes": 75231,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-predict-b4.json",
+      "sha256": "071e37d6f277e2abde71f5e0e152180bf09852e62d3a9f9b6e697bddbcd73cd0"
+    },
+    {
+      "bytes": 33439,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-single-b1.5.json",
+      "sha256": "235357af851c21d2afb40ae895b73f9a48d5001b739cf34b5eac642ccc886c54"
+    },
+    {
+      "bytes": 187452,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-single-b10.json",
+      "sha256": "bc152b3b8f06894de30b3ca18a8dada0d20e0176b7cdec5c1411251bde92a4d8"
+    },
+    {
+      "bytes": 86375,
+      "path": "episodes/claude-haiku-5.5-default-twins-s2-single-b4.json",
+      "sha256": "df98ae331f2471d0d8e06031ccbb5aacaeb450595d608cedc0ccebed8c058a7b"
+    },
+    {
+      "bytes": 383,
+      "path": "events.jsonl",
+      "sha256": "334ffaee526db6709ce71aba213c5d37f69183eefea77b402d4a9db868a2de52"
+    },
+    {
+      "bytes": 20367,
+      "path": "original-events.jsonl",
+      "sha256": "594ae90f7adf4b9b86ed4ccde5409e2e8dbc84778e27c3f530f6b7fe05f475bb"
+    },
+    {
+      "bytes": 710,
+      "path": "plan.json",
+      "sha256": "f8477cf2975f863f3d4de67d2930bbea33b0739b0ae7c0218f0c2af78032eba0"
+    },
+    {
+      "bytes": 533,
+      "path": "redaction.json",
+      "sha256": "4b21d8ab6fc16e245903b1eea008062225636eefafb13d6cb688e32e75453f3d"
+    },
+    {
+      "bytes": 4852,
+      "path": "summary.json",
+      "sha256": "2935ae75e361966fea44e132bf2346267678a4d069aafbaceeb21dda4c06cf18"
+    }
+  ],
+  "format": "flowproof-evidence",
+  "id": "20261126T020845Z-15e91c31",
+  "label": "E1-redacted",
+  "sealed_at": "2026-11-26T02:08:47Z",
+  "version": 1
+}
