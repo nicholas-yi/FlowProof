@@ -13,8 +13,10 @@ property checks. See research/preregistration/E3.md.
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import statistics
+import threading
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from pathlib import Path
@@ -46,6 +48,7 @@ from flowproof.lang.tree import (
 from .campaign import ROOT, Campaign
 
 PREREG = ROOT / "research" / "preregistration" / "E3.md"
+PREREG_B = ROOT / "research" / "preregistration" / "E3b.md"
 EXAMPLES = sorted((ROOT / "examples").glob("*.fp"))
 PREAMBLE = ("Flowproof is a small language for orchestrating coding agents. Write one "
             "Flowproof workflow that meets every requirement below. Reply with only the "
@@ -76,7 +79,8 @@ def fork_with(wf: Workflow, n: int, isolated: bool, action: type, role: str) -> 
         if fork.count == n and fork.isolated == isolated:
             inner = [st.value if isinstance(st, (Let, Var, Set)) else getattr(st, "action", None)
                      for st in walk(fork.body)]
-            if any(isinstance(v, action) and v.role == role for v in inner):
+            if any(isinstance(v, action) and getattr(v, "role", None) == role
+                   for v in inner):
                 return True
     return False
 
@@ -344,20 +348,47 @@ def feedback(variant: str, result: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+class Budget:
+    """The campaign cap: no new call starts once spend reaches it or becomes unknown."""
+
+    def __init__(self, cap: float):
+        self.cap, self.spent, self.unknown = cap, 0.0, False
+        self.lock = threading.Lock()
+
+    def allow(self) -> bool:
+        with self.lock:
+            return not self.unknown and self.spent < self.cap
+
+    def add(self, credits: float | None) -> None:
+        with self.lock:
+            if credits is None:
+                self.unknown = True
+            else:
+                self.spent += credits
+
+
+class CapReached(Exception):
+    pass
+
+
 class Model:
-    def __init__(self, name: str, dry: bool):
+    def __init__(self, name: str, dry: bool, budget: Budget):
         self.name = name
         self.dry = dry
+        self.budget = budget
         self.harness = CopilotHarness()
 
     def ask(self, prompt: str) -> tuple[str, float | None, str]:
         if self.dry:
             return f"```\n{EXAMPLES[0].read_text('utf-8')}```", 0.0, "ok"
+        if not self.budget.allow():
+            raise CapReached(self.name)
         response = self.harness.invoke(AgentRequest("writer", prompt, "answer", None,
                                                     model=self.name, max_credits=30,
                                                     timeout_s=300))
-        return (response.text, response.usage.get("credits").value,
-                response.outcome.status.value)
+        credits = response.usage.get("credits").value
+        self.budget.add(credits)
+        return response.text, credits, response.outcome.status.value
 
 
 def job_for(campaign: Campaign, spec: Spec, model: Model, rounds: int):
@@ -393,6 +424,35 @@ def job_for(campaign: Campaign, spec: Spec, model: Model, rounds: int):
     return name, job
 
 
+def repair_job(campaign: Campaign, spec: Spec, model: Model, reply: str, first: dict[str, Any],
+               rounds: int):
+    """E3b: repair a failed `examples`-arm attempt, with diagnostics and blind."""
+    name = f"{spec.name}-{model.name}"
+
+    def job() -> dict[str, Any]:
+        prompt = prompt_for(spec, "examples")
+        row: dict[str, Any] = {"job": name, "spec": spec.name, "model": model.name,
+                               "first": first}
+        credits: list[float | None] = []
+        for variant in ("diag", "blind"):
+            history, result, trail, current = prompt, first, [], reply
+            for _ in range(rounds):
+                history = f"{history}\n\n{current}\n\n{feedback(variant, result)}"
+                current, cost, status = model.ask(history)
+                credits.append(cost)
+                result = evaluate(spec, extract(current))
+                trail.append({"result": result, "status": status, "reply": current[-4000:]})
+                if result["success"]:
+                    break
+            row[variant] = {"rounds": trail, "success": result["success"],
+                            "parsed": result["parsed"]}
+        row["credits"] = None if any(c is None for c in credits) else sum(c or 0 for c in credits)
+        campaign.save(f"jobs/{name}.json", row)
+        return row
+
+    return name, job
+
+
 def summarise(rows: Sequence[dict[str, Any]]) -> dict[str, Any]:
     out: dict[str, Any] = {}
     for model in sorted({r["model"] for r in rows}):
@@ -420,6 +480,41 @@ def summarise(rows: Sequence[dict[str, Any]]) -> dict[str, Any]:
     return out
 
 
+def run_repair(args: argparse.Namespace) -> int:
+    from flowproof.evidence import verify
+
+    if not verify(args.source).ok:
+        raise SystemExit(f"{args.source} does not verify")
+    failures = []
+    for path in sorted((args.source / "jobs").glob("*.json")):
+        row = json.loads(path.read_text("utf-8"))
+        if not row["arms"]["examples"]["first"]["success"]:
+            failures.append(row)
+    plan = {"experiment": "E3b", "source": args.source.name, "rounds": args.rounds,
+            "cap": args.cap, "items": [{"spec": r["spec"], "model": r["model"]}
+                                       for r in failures]}
+    campaign = Campaign("E3b", plan, root=args.out, preregistration=PREREG_B)
+    budget = Budget(args.cap)
+    specs = {s.name: s for s in SPECS}
+    models: dict[str, Model] = {}
+    jobs = []
+    for row in failures:
+        model = models.setdefault(row["model"], Model(row["model"], False, budget))
+        arm = row["arms"]["examples"]
+        jobs.append(repair_job(campaign, specs[row["spec"]], model, arm["reply"],
+                               arm["first"], args.rounds))
+    rows = campaign.run(jobs, workers=args.workers)
+    summary: dict[str, Any] = {}
+    for name in sorted(models):
+        sel = [r for r in rows if r["model"] == name]
+        summary[name] = {v: sum(r[v]["success"] for r in sel) for v in ("diag", "blind")}
+        summary[name]["items"] = len(sel)
+    root = campaign.seal(summary)
+    print(f"sealed: {root}")
+    print(summary)
+    return 0
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m research.e3_generate")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -429,13 +524,24 @@ def main(argv: Sequence[str] | None = None) -> int:
     p.add_argument("--rounds", type=int, default=2)
     p.add_argument("--workers", type=int, default=6)
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--cap", type=float, default=300.0, help="campaign credit cap")
     p.add_argument("--out", type=Path, default=ROOT / "research" / "runs")
+    r = sub.add_parser("repair", help="E3b: repair failed examples-arm attempts from an E3 record")
+    r.add_argument("--source", type=Path, required=True, help="the sealed E3 record")
+    r.add_argument("--rounds", type=int, default=2)
+    r.add_argument("--workers", type=int, default=6)
+    r.add_argument("--cap", type=float, default=150.0)
+    r.add_argument("--out", type=Path, default=ROOT / "research" / "runs")
     args = parser.parse_args(argv)
+    if args.command == "repair":
+        return run_repair(args)
     specs = [s for s in SPECS if s.name in args.specs.split(",")]
-    models = [Model(m, args.dry_run) for m in args.models.split(",")]
+    budget = Budget(args.cap)
+    models = [Model(m, args.dry_run, budget) for m in args.models.split(",")]
     plan = {"experiment": "E3", "models": [m.name for m in models], "rounds": args.rounds,
             "specs": [{"name": s.name, "text": s.text, "checks": [n for n, _ in s.checks]}
-                      for s in specs], "dry_run": args.dry_run, "preamble": PREAMBLE}
+                      for s in specs], "dry_run": args.dry_run, "preamble": PREAMBLE,
+            "cap": args.cap}
     campaign = Campaign("E3" + ("-dry" if args.dry_run else ""), plan, root=args.out,
                         preregistration=PREREG if PREREG.exists() and not args.dry_run else None)
     rows = campaign.run([job_for(campaign, s, m, args.rounds) for m in models for s in specs],

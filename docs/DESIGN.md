@@ -35,7 +35,7 @@ may rely on.
 | `flowproof/accounting.py` | core | `Amount`, `Usage`, `Ledger`, errors |
 | `flowproof/lang/` | language | lexer, parser, AST, printer, checker, graph |
 | `flowproof/runtime/` | runtime | executor, values, bindings, report |
-| `flowproof/harness/` | runtime | agent adapters: mock, replay, Copilot CLI |
+| `flowproof/harness/` | runtime | agent adapters: mock and Copilot CLI (a replay adapter is planned) |
 | `flowproof/workspace/` | workspace | backends, leases, changes, commands |
 | `flowproof/guards/` | workspace | fingerprints, read-only guard, frozen tests, grading |
 | `flowproof/evidence/` | workspace | sealed run store and verifier |

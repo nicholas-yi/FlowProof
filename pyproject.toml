@@ -36,7 +36,7 @@ max-complexity = 20
 known-first-party = ["flowproof", "research", "scripts"]
 
 [tool.pyright]
-include = ["flowproof", "tests"]
+include = ["flowproof", "tests", "research", "scripts"]
 typeCheckingMode = "standard"
 venvPath = "."
 venv = ".venv"
