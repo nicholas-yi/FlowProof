@@ -1,0 +1,50 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "13:20: E100: expected end of line, found a string"
+        ],
+        "failed": [
+          "planner asks",
+          "coder edits",
+          "exec command",
+          "gives",
+          "budget",
+          "bound within 2"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow plan_and_implement\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a plan for this goal: {goal}\"\n  let work = edit coder: \"\"\"\n    Implement this plan for the goal: {goal}\n    Plan:\n    {plan}\n    \"\"\"\n  let result = run \"python -m pytest -q\"\n  give result\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:9:3: warning W301: name 'change' is never used"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "planner asks",
+          "coder edits",
+          "exec command",
+          "gives",
+          "budget",
+          "bound within 2"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow plan_and_implement\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a plan to achieve this goal: {goal}\"\n\n  let change = edit coder: \"\"\"\n    Implement this plan for the goal: {goal}\n    Plan:\n    {plan}\n    \"\"\"\n\n  let result = exec \"python -m pytest -q\"\n  give result\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.4987199999999996,
+  "job": "plan_then_edit-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "plan_then_edit"
+}

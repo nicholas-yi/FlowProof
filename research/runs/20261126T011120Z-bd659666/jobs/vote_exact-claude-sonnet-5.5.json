@@ -1,0 +1,100 @@
+{
+  "blind": {
+    "parsed": false,
+    "rounds": [
+      {
+        "reply": "The example's budget line had only calls, which may be valid, but the prior answer was rejected. Likely culprits: the `frozen` list syntax (should be separate `frozen` clauses or comma-separated), or the budget. Since the first example uses `credits, calls`, I'll keep the calls-only form from the task and use repeated `frozen` clauses.\n\n```flowproof\nworkflow five_attempts\n  needs issue: text\n  role author can edit\n  budget at most 5 calls\n\n  fork 5 isolated into attempts\n    let patch = edit author: \"\"\"\n      Fix this issue: {issue}\n      Attempt {branch} of 5.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"npm test\" frozen \"test/**\" frozen \"package.json\"\n  let best = choose graded by tests, then behaviour, then votes else first\n  give best\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "14:63: E100: expected end of line, found 'frozen'"
+          ],
+          "failed": [
+            "isolated fork of 5 author edits",
+            "tests command",
+            "both frozen",
+            "tests, behavior, exact, first",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow five_attempts\n  needs issue: text\n  role author can edit\n  budget at most 5 calls\n\n  fork 5 isolated into attempts\n    let patch = edit author: \"\"\"\n      Fix this issue: {issue}\n      Attempt {branch} of 5.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"npm test\" frozen \"test/**\", \"package.json\"\n  let best = choose graded by tests, then behaviour, then votes else first candidate\n  give best\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "15:43: E100: expected a selection policy (tests, behavior, exact, pairwise), found 'behaviour'"
+          ],
+          "failed": [
+            "isolated fork of 5 author edits",
+            "tests command",
+            "both frozen",
+            "tests, behavior, exact, first",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "credits": 4.66483,
+  "diag": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "The checker wants `behavior` instead of `behaviour`, and \"exact patch votes\" maps to `exact`. I also changed the fallback to `first`, as stated in the requirements.\n\n```flowproof\nworkflow five_attempts\n  needs issue: text\n  role author can edit\n  budget at most 5 calls\n\n  fork 5 isolated into attempts\n    let patch = edit author: \"\"\"\n      Fix this issue: {issue}\n      Attempt {branch} of 5.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"npm test\" frozen \"test/**\", \"package.json\"\n  let best = choose graded by tests, then behavior, then exact else first\n  give best\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [],
+          "parsed": true,
+          "passed": [
+            "isolated fork of 5 author edits",
+            "tests command",
+            "both frozen",
+            "tests, behavior, exact, first",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "success": true
+        },
+        "status": "ok"
+      }
+    ],
+    "success": true
+  },
+  "first": {
+    "clean": false,
+    "diagnostics": [
+      "16:43: E100: expected a selection policy (tests, behavior, exact, pairwise), found 'behaviour'"
+    ],
+    "failed": [
+      "isolated fork of 5 author edits",
+      "tests command",
+      "both frozen",
+      "tests, behavior, exact, first",
+      "gives",
+      "budget",
+      "bound within 5"
+    ],
+    "parsed": false,
+    "passed": [],
+    "success": false
+  },
+  "job": "vote_exact-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "vote_exact"
+}

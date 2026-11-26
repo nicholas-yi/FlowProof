@@ -1,0 +1,52 @@
+{
+  "blind": 1,
+  "blind_ci": [
+    0.001204883448363503,
+    0.23815990993682107
+  ],
+  "blind_only": 0,
+  "chain_head": "a262f2d1f498946009d0930722f73df1c31f1e3adc12fedc0ca43d08c87294ae",
+  "credits": 39.678911,
+  "diag": 6,
+  "diag_ci": [
+    0.11280940392194078,
+    0.5217511182471137
+  ],
+  "diag_only": 5,
+  "items": 21,
+  "mcnemar_p": 0.0625,
+  "models": {
+    "claude-haiku-5.5": {
+      "blind": 0,
+      "blind_parsed": 1,
+      "diag": 2,
+      "diag_parsed": 6,
+      "items": 7
+    },
+    "claude-sonnet-5.5": {
+      "blind": 1,
+      "blind_parsed": 4,
+      "diag": 4,
+      "diag_parsed": 6,
+      "items": 7
+    },
+    "gpt-5.6-luna": {
+      "blind": 0,
+      "blind_parsed": 1,
+      "diag": 0,
+      "diag_parsed": 4,
+      "items": 7
+    }
+  },
+  "provenance": {
+    "flowproof_version": "0.1.0",
+    "git_head": "193547fd59867225b79ba0c2b452feb0cdcdfb1b",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "preregistration": {
+      "path": "research/preregistration/E3b.md",
+      "sha256": "affbb0b0b4b281a4b1e143108fad26eb4138271fe508c7f7e6f1b7a3e27adfbd"
+    },
+    "python": "3.12.10"
+  },
+  "run": "research/runs/20261126T011120Z-bd659666"
+}

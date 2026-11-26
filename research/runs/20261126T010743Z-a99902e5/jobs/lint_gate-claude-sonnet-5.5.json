@@ -1,0 +1,50 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "8:18: E100: expected end of line, found a string"
+        ],
+        "failed": [
+          "author edits",
+          "note",
+          "exec make lint",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow lint_change\n  needs ticket: text\n  role author can edit\n  budget at most 5 credits, 1 call\n\n  let change = edit author: \"{ticket}\"\n  note \"edit done\"\n  let lint = run \"make lint\"\n  require lint.passed, \"lint failed\"\n  give change\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "author edits",
+          "note",
+          "exec make lint",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow lint_edit\n  needs ticket: text\n  role author can edit\n  budget at most 1 calls, 5 credits\n\n  let change = edit author: \"{ticket}\"\n  note \"edit done\"\n  let lint = exec \"make lint\"\n  require lint.ok, \"lint failed\"\n  give change\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.6709699999999996,
+  "job": "lint_gate-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "lint_gate"
+}

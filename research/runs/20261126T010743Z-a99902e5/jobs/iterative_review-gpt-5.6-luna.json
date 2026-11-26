@@ -1,0 +1,51 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:1:1: warning W305: up to 4..6 agent calls may be needed; the run stops at 5"
+        ],
+        "failed": [
+          "critic bool ask",
+          "bound within 5"
+        ],
+        "parsed": true,
+        "passed": [
+          "var and set",
+          "repeat at most 2",
+          "author edits",
+          "gives",
+          "budget"
+        ],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow task_change\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  var latest = edit author: \"Make the requested change: {task}\"\n  var verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set latest = edit author: \"\"\"\n      Revise the latest change for this task:\n      {task}\n      The critic did not approve it. Inspect the current change and improve it.\n      \"\"\"\n    set verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n  end\n\n  give latest\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "var and set",
+          "repeat at most 2",
+          "critic bool ask",
+          "author edits",
+          "gives",
+          "budget",
+          "bound within 5"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow author_critic\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  var current = edit author: \"{task}\"\n  var approved = false\n\n  repeat at most 2 until approved\n    set approved = ask critic: \"\"\"\n      Is the latest change acceptable for this task?\n      Task: {task}\n      Latest change:\n      {current.patch}\n      Answer yes or no.\n      \"\"\" as bool\n    if not approved\n      set current = edit author: \"\"\"\n        Revise the latest change to address the task.\n        Task: {task}\n        Previous change:\n        {current.patch}\n        The critic did not approve it.\n        \"\"\"\n    end\n  end\n\n  give current\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.44526,
+  "job": "iterative_review-gpt-5.6-luna",
+  "model": "gpt-5.6-luna",
+  "spec": "iterative_review"
+}

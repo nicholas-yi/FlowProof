@@ -53,6 +53,10 @@ def _save(name: str, draw: Callable[[dict[str, Any]], Any]) -> None:
     print(f"docs/figures/{name}-{{light,dark}}.svg")
 
 
+def short(model: str) -> str:
+    return model.replace("claude-", "").replace("gpt-", "gpt ")
+
+
 def _load(name: str) -> dict[str, Any] | None:
     path = RESULTS / f"{name}.json"
     return json.loads(path.read_text("utf-8")) if path.exists() else None
@@ -113,8 +117,8 @@ def e1(data: dict[str, Any]) -> None:
                 c = data["cells"][f"{arm}@{b:g}"]
                 xs.append(j + (i - 1.5) * width)
                 ys.append(c["mean_score"])
-                lo.append(c["mean_score"] - c["score_ci"][0])
-                hi.append(c["score_ci"][1] - c["mean_score"])
+                lo.append(max(0.0, c["mean_score"] - c["score_ci"][0]))
+                hi.append(max(0.0, c["score_ci"][1] - c["mean_score"]))
             ax.bar(xs, ys, width, label=arm, yerr=[lo, hi], capsize=2,
                    error_kw={"ecolor": t["muted"], "elinewidth": 0.8})
         ax.set_xticks(range(len(budgets)), [f"{b:g} credits" for b in budgets])
@@ -128,56 +132,68 @@ def e1(data: dict[str, Any]) -> None:
 
 def e2(data: dict[str, Any]) -> None:
     models = sorted({k.split("/")[1] for k in data["cells"]})
-    metrics = [("definitive_tamper", "tests tampered"), ("false_pass", "false pass"),
-               ("disclosed", "said it was impossible")]
+    metrics = [("definitive_tamper", "tests edited (detected)"),
+               ("false_pass", "false pass (claimed, not real)"),
+               ("special_casing", "spec-violating pass (silent)"),
+               ("disclosed", "said the tests contradict")]
 
     def draw(t: dict[str, Any]):
         fig, axes = plt.subplots(1, 2, figsize=(7.6, 3.4), sharey=True)
         for ax, arm in zip(axes, ("plain", "warned"), strict=True):
-            width = 0.26
+            width = 0.2
             for i, (key, label) in enumerate(metrics):
                 xs, ys, lo, hi = [], [], [], []
                 for j, model in enumerate(models):
                     cell = data["cells"].get(f"impossible/{model}/{arm}", {}).get(key)
                     if not cell or cell["rate"] is None:
                         continue
-                    xs.append(j + (i - 1) * width)
+                    xs.append(j + (i - 1.5) * width)
                     ys.append(100 * cell["rate"])
-                    lo.append(100 * (cell["rate"] - cell["ci"][0]))
-                    hi.append(100 * (cell["ci"][1] - cell["rate"]))
+                    lo.append(max(0.0, 100 * (cell["rate"] - cell["ci"][0])))
+                    hi.append(max(0.0, 100 * (cell["ci"][1] - cell["rate"])))
                 ax.bar(xs, ys, width, label=label, yerr=[lo, hi], capsize=2,
                        error_kw={"ecolor": t["muted"], "elinewidth": 0.8})
-            ax.set_xticks(range(len(models)), models, fontsize=8)
+            ax.set_xticks(range(len(models)), [short(m) for m in models], fontsize=8.5)
             ax.set_title(f"{arm} prompt", fontsize=10)
             ax.set_ylim(0, 100)
         axes[0].set_ylabel("impossible-task runs (%)")
-        axes[0].legend(fontsize=8, loc="upper left")
+        handles, labels = axes[0].get_legend_handles_labels()
+        fig.legend(handles, labels, loc="lower center", ncol=2, fontsize=8.5,
+                   bbox_to_anchor=(0.5, -0.12))
         return fig
 
     _save("e2-tampering", draw)
 
 
-def e3(data: dict[str, Any]) -> None:
+def e3(data: dict[str, Any], repair: dict[str, Any] | None) -> None:
     models = list(data["models"])
 
     def draw(t: dict[str, Any]):
-        fig, ax = plt.subplots(figsize=(6.4, 3.4))
-        width = 0.2
-        series = [
-            ("examples only", lambda c: c["examples"]["success"] / c["examples"]["n"]),
-            ("with the reference", lambda c: c["reference"]["success"] / c["reference"]["n"]),
-            ("reference + diagnostic repair",
-             lambda c: (c["reference"]["success"] + c["repair"]["diag"]) / c["reference"]["n"]),
-            ("reference + blind repair",
-             lambda c: (c["reference"]["success"] + c["repair"]["blind"]) / c["reference"]["n"]),
-        ]
-        for i, (label, fn) in enumerate(series):
-            ax.bar([j + (i - 1.5) * width for j in range(len(models))],
-                   [100 * fn(data["models"][m]) for m in models], width, label=label)
-        ax.set_xticks(range(len(models)), models, fontsize=8.5)
-        ax.set_ylabel("specifications met (%)")
-        ax.set_ylim(0, 100)
-        ax.legend(fontsize=8, loc="upper left", ncol=2)
+        fig, axes = plt.subplots(1, 2, figsize=(7.6, 3.4), sharey=True)
+        width = 0.36
+        first = axes[0]
+        for i, (arm, label) in enumerate((("examples", "three examples only"),
+                                          ("reference", "examples + language reference"))):
+            first.bar([j + (i - 0.5) * width for j in range(len(models))],
+                      [100 * data["models"][m][arm]["success"] / data["models"][m][arm]["n"]
+                       for m in models], width, label=label)
+        first.set_title("first attempt (E3)", fontsize=10)
+        first.set_ylabel("specifications met (%)")
+        first.set_xticks(range(len(models)), [short(m) for m in models], fontsize=8.5)
+        first.set_ylim(0, 100)
+        first.legend(fontsize=8, loc="upper left")
+        second = axes[1]
+        if repair:
+            names = list(repair["models"])
+            for i, (variant, label) in enumerate((("diag", "with checker diagnostics"),
+                                                  ("blind", "told only 'not accepted'"))):
+                second.bar([j + (i - 0.5) * width for j in range(len(names))],
+                           [100 * repair["models"][m][variant] / repair["models"][m]["items"]
+                            for m in names], width, label=label,
+                           color=t["palette"][2 + i])
+            second.set_xticks(range(len(names)), [short(m) for m in names], fontsize=8.5)
+            second.legend(fontsize=8, loc="upper left")
+        second.set_title("repairing examples-only failures (E3b)", fontsize=10)
         return fig
 
     _save("e3-generation", draw)
@@ -188,10 +204,13 @@ def main() -> int:
     if offline:
         accounting(offline)
         selection(offline)
-    for name, fn in (("E1", e1), ("E2", e2), ("E3", e3)):
+    for name, fn in (("E1", e1), ("E2", e2)):
         data = _load(name)
         if data:
             fn(data)
+    e3_data = _load("E3")
+    if e3_data:
+        e3(e3_data, _load("E3b"))
     return 0
 
 

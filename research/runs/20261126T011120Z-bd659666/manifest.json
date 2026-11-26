@@ -1,0 +1,133 @@
+{
+  "chain": {
+    "head": "a262f2d1f498946009d0930722f73df1c31f1e3adc12fedc0ca43d08c87294ae",
+    "length": 24
+  },
+  "files": [
+    {
+      "bytes": 4013,
+      "path": "events.jsonl",
+      "sha256": "99daf116a74be2f51b115e702b5711eab93fbea8e2b2bab2ca5dd0861b453ad2"
+    },
+    {
+      "bytes": 4484,
+      "path": "jobs/guarded_question-claude-haiku-5.5.json",
+      "sha256": "74237dc10acceb76592e63655ee9181436b3e02358c2412ae98a171dffcffc6a"
+    },
+    {
+      "bytes": 3223,
+      "path": "jobs/guarded_question-claude-sonnet-5.5.json",
+      "sha256": "98aa69c6ad16372a467f2b7fd1b63f82cd58128aa30b30795d54b8b3afd20b85"
+    },
+    {
+      "bytes": 4120,
+      "path": "jobs/guarded_question-gpt-5.6-luna.json",
+      "sha256": "7b4f0a6dc96650fb39edaf984c0ff7d6a816ea57c9eb2502462e677ac5635550"
+    },
+    {
+      "bytes": 4118,
+      "path": "jobs/isolated_shell-claude-haiku-5.5.json",
+      "sha256": "3ed1a924e69123d97da36ebcf006dd77c443aeb55309f5c6b12788426540f370"
+    },
+    {
+      "bytes": 4152,
+      "path": "jobs/isolated_shell-claude-sonnet-5.5.json",
+      "sha256": "60cf4964c8d663db1b8d4d1b5c867d401fa0d7c49e68bfbc50321a5d91838291"
+    },
+    {
+      "bytes": 5137,
+      "path": "jobs/isolated_shell-gpt-5.6-luna.json",
+      "sha256": "502d265a8c438ed442170ee4fcd80b215a9c90305dd3956a0bbb625f5fdf8bce"
+    },
+    {
+      "bytes": 5529,
+      "path": "jobs/iterative_review-claude-haiku-5.5.json",
+      "sha256": "53a32c28b672e7c361160d619df765ccb0f724ad1a5a7d489b72036e5c8ea938"
+    },
+    {
+      "bytes": 4454,
+      "path": "jobs/iterative_review-claude-sonnet-5.5.json",
+      "sha256": "b5a0f8652dcb17262745fd65f635e6baae7d5eb0373681704124fa1e512bac52"
+    },
+    {
+      "bytes": 5674,
+      "path": "jobs/iterative_review-gpt-5.6-luna.json",
+      "sha256": "936a67043bbdce83acb29773a708601ec1bb400a06e3686b240a3e5f82429c51"
+    },
+    {
+      "bytes": 3771,
+      "path": "jobs/lint_gate-claude-haiku-5.5.json",
+      "sha256": "43573e0f8ebf66fb661c3a4798af9055efb21090729ab5ad5e0f273de18f07e9"
+    },
+    {
+      "bytes": 4480,
+      "path": "jobs/lint_gate-claude-sonnet-5.5.json",
+      "sha256": "d078f18afed9304dd9ed9900522cf1de03de7e02a1d5f063e3c72264471ea444"
+    },
+    {
+      "bytes": 3829,
+      "path": "jobs/lint_gate-gpt-5.6-luna.json",
+      "sha256": "318f83cce10a3d68348fb2b4186ad0f3e365b691da34efde18ea2de1001a7260"
+    },
+    {
+      "bytes": 4673,
+      "path": "jobs/plan_then_edit-claude-haiku-5.5.json",
+      "sha256": "9fd099bc653454c156077a5838a04be591afa73a11ab6551d5c608937550fe0d"
+    },
+    {
+      "bytes": 5031,
+      "path": "jobs/plan_then_edit-claude-sonnet-5.5.json",
+      "sha256": "59b036be535c86cf57aa043621ef6426e38d1abd405b50bbc8ed1adffdd9e684"
+    },
+    {
+      "bytes": 4360,
+      "path": "jobs/plan_then_edit-gpt-5.6-luna.json",
+      "sha256": "8b0257e466579d7e8584c1c359e80d2080854ab854598d307f2126f71c10451a"
+    },
+    {
+      "bytes": 4903,
+      "path": "jobs/triage_and_fix-claude-haiku-5.5.json",
+      "sha256": "cee2f429353058c0896dcb829dc0a99e8f14b337b18667d587b2a01d9fa89a54"
+    },
+    {
+      "bytes": 5207,
+      "path": "jobs/triage_and_fix-claude-sonnet-5.5.json",
+      "sha256": "bcc70815c732539d582c1a451409ceb07383b842355bff4b1f951836879217b2"
+    },
+    {
+      "bytes": 5041,
+      "path": "jobs/triage_and_fix-gpt-5.6-luna.json",
+      "sha256": "9673b292564918071244809660a45795b728ac2c5a91e690108c6f6bc3303bcc"
+    },
+    {
+      "bytes": 4265,
+      "path": "jobs/vote_exact-claude-haiku-5.5.json",
+      "sha256": "10eef67076e894ea31814378334a1f38771cdf2ef23c4ac5f77169fcd37ca1df"
+    },
+    {
+      "bytes": 4260,
+      "path": "jobs/vote_exact-claude-sonnet-5.5.json",
+      "sha256": "51cce12655c72835d58994eebd9b068e1e4bbbb274af48bdef2a1d42a62cd122"
+    },
+    {
+      "bytes": 5004,
+      "path": "jobs/vote_exact-gpt-5.6-luna.json",
+      "sha256": "f231232a053193f09409873022813657520e9f5591bd9dd739ecc920ffe985b3"
+    },
+    {
+      "bytes": 2088,
+      "path": "plan.json",
+      "sha256": "775cade3b00274b53a5158fa117cd84f2859035654f74cb17c1299992546e795"
+    },
+    {
+      "bytes": 225,
+      "path": "summary.json",
+      "sha256": "6d97fe902fcb21c225de15e8a2556e85e366878718519507a46eb3ebeade675d"
+    }
+  ],
+  "format": "flowproof-evidence",
+  "id": "20261126T011120Z-bd659666",
+  "label": "E3b",
+  "sealed_at": "2026-11-26T01:14:04Z",
+  "version": 1
+}

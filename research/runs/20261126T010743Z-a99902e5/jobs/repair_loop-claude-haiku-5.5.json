@@ -1,0 +1,52 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "var and set",
+          "repeat at most 3",
+          "tests command",
+          "frozen tests/**",
+          "failure output fed back",
+          "require",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\n# Edit once, grade against frozen tests, feed failures back at most three times.\nworkflow fix_until_green\n  needs task: text\n  role author can edit\n  budget at most 40 credits, 4 calls\n\n  let first = edit author: \"{task}\"\n  var check = test first with \"python -m unittest\" frozen \"tests/**\"\n\n  if not check.passed\n    repeat at most 3 until check.passed\n      let fix = edit author: \"\"\"\n        The frozen tests still fail:\n        {check.out}\n        Fix the code, not the tests.\n        \"\"\"\n      set check = test fix with \"python -m unittest\" frozen \"tests/**\"\n    end\n  end\n\n  require check.passed, \"still failing after 4 attempts\"\n  give check\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "var and set",
+          "repeat at most 3",
+          "tests command",
+          "frozen tests/**",
+          "failure output fed back",
+          "require",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow fix_until_green\n  needs task: text\n  role author can edit\n  budget at most 4 calls\n\n  let first = edit author: \"{task}\"\n  var check = test first with \"python -m unittest\" frozen \"tests/**\"\n\n  if not check.passed\n    repeat at most 3 until check.passed\n      let fix = edit author: \"\"\"\n        Fix this task: {task}\n        The frozen tests still fail:\n        {check.out}\n        Fix the code, not the tests.\n        \"\"\"\n      set check = test fix with \"python -m unittest\" frozen \"tests/**\"\n    end\n  end\n\n  require check.passed, \"still failing after 4 attempts\"\n  give check\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.2137695,
+  "job": "repair_loop-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "repair_loop"
+}

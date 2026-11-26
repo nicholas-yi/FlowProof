@@ -1,0 +1,93 @@
+{
+  "blind": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow check_implemented\n  needs question: text\n  needs strict: bool = true\n  role analyst can answer\n  budget at most 1 call\n\n  let answer = ask analyst: \"\"\"\n    Does the repository already implement what this question describes? Answer yes or no.\n    Question: {question}\n    \"\"\" as bool\n\n  require not strict or answer, \"not implemented\"\n  give answer\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [
+            "budget"
+          ],
+          "parsed": true,
+          "passed": [
+            "bool ask",
+            "strict input",
+            "require",
+            "gives",
+            "bound within 1"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow check_implemented\n  needs question: text\n  needs strict: bool = true\n  role analyst can answer\n  budget at most 1 calls\n\n  let answer = ask analyst: \"\"\"\n    Does the repository already implement what this question describes? Answer yes or no.\n    Question: {question}\n    \"\"\" as bool\n\n  require not strict or answer, \"not implemented\"\n  give answer\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [],
+          "parsed": true,
+          "passed": [
+            "bool ask",
+            "strict input",
+            "require",
+            "gives",
+            "budget",
+            "bound within 1"
+          ],
+          "success": true
+        },
+        "status": "ok"
+      }
+    ],
+    "success": true
+  },
+  "credits": 3.9645799999999998,
+  "diag": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "The checker rejected `fail` as a statement. The examples use `require cond, \"message\"` to fail, so I used that instead. I haven't run the checker on this version.\n\n```flowproof\nworkflow check_implemented\n  needs question: text\n  needs strict: bool = true\n  role analyst can answer\n  budget at most 5 credits, 1 calls\n\n  let answer = ask analyst: \"\"\"\n    Does the repository already implement what this question describes? Answer yes or no.\n    Question: {question}\n    \"\"\" as bool\n\n  require answer or not strict, \"not implemented\"\n  give answer\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [],
+          "parsed": true,
+          "passed": [
+            "bool ask",
+            "strict input",
+            "require",
+            "gives",
+            "budget",
+            "bound within 1"
+          ],
+          "success": true
+        },
+        "status": "ok"
+      }
+    ],
+    "success": true
+  },
+  "first": {
+    "clean": false,
+    "diagnostics": [
+      "13:5: E100: expected a statement, found 'fail'"
+    ],
+    "failed": [
+      "bool ask",
+      "strict input",
+      "require",
+      "gives",
+      "budget",
+      "bound within 1"
+    ],
+    "parsed": false,
+    "passed": [],
+    "success": false
+  },
+  "job": "guarded_question-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "guarded_question"
+}

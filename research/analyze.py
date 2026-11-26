@@ -36,6 +36,8 @@ def latest(experiment: str) -> Path | None:
     found = []
     for run in RUNS.iterdir() if RUNS.exists() else ():
         plan = run / "plan.json"
+        if not (run / "manifest.json").exists():
+            continue  # not sealed yet
         if plan.exists() and json.loads(plan.read_text("utf-8")).get("experiment") == experiment \
                 and not json.loads(plan.read_text("utf-8")).get("dry_run"):
             found.append(run)
@@ -222,6 +224,27 @@ def analyse_e3(run: Path) -> dict[str, Any]:
     return out
 
 
+def analyse_e3b(run: Path) -> dict[str, Any]:
+    rows = load_jsons(run / "jobs")
+    diag = [r["diag"]["success"] for r in rows]
+    blind = [r["blind"]["success"] for r in rows]
+    b = sum(1 for x, y in zip(diag, blind, strict=True) if x and not y)
+    c = sum(1 for x, y in zip(diag, blind, strict=True) if y and not x)
+    models = {}
+    for model in sorted({r["model"] for r in rows}):
+        sel = [r for r in rows if r["model"] == model]
+        models[model] = {"items": len(sel), "diag": sum(r["diag"]["success"] for r in sel),
+                         "blind": sum(r["blind"]["success"] for r in sel),
+                         "diag_parsed": sum(r["diag"]["parsed"] for r in sel),
+                         "blind_parsed": sum(r["blind"]["parsed"] for r in sel)}
+    credits = [r["credits"] for r in rows]
+    return {**provenance(run), "items": len(rows), "diag": sum(diag), "blind": sum(blind),
+            "diag_only": b, "blind_only": c, "mcnemar_p": mcnemar_exact(b, c),
+            "diag_ci": clopper_pearson(sum(diag), len(rows)),
+            "blind_ci": clopper_pearson(sum(blind), len(rows)), "models": models,
+            "credits": None if any(x is None for x in credits) else sum(credits)}
+
+
 # -- report ---------------------------------------------------------------------------
 
 
@@ -284,17 +307,28 @@ def markdown(results: dict[str, Any]) -> str:
                          f"{c['reference']['success']}/{c['reference']['n']} | "
                          f"{r['diag']}/{r['failing_first']} | {r['blind']}/{r['failing_first']} |")
         lines.append("")
+    e3b = results.get("E3b")
+    if e3b:
+        lines += ["## E3b (exploratory): repairing from examples alone", "",
+                  f"Record: `{e3b['run']}`. Items: {e3b['items']}. Repaired with diagnostics: "
+                  f"{e3b['diag']}; blind: {e3b['blind']} (diagnostics only: {e3b['diag_only']}, "
+                  f"blind only: {e3b['blind_only']}; McNemar exact p = {e3b['mcnemar_p']:.3f}).",
+                  "", "| Model | Items | Diagnostics | Blind |", "|---|---|---|---|"]
+        for model, m in e3b["models"].items():
+            lines.append(f"| {model} | {m['items']} | {m['diag']} | {m['blind']} |")
+        lines.append("")
     return "\n".join(lines)
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m research.analyze")
-    for name in ("e1", "e2", "e3"):
+    for name in ("e1", "e2", "e3", "e3b"):
         parser.add_argument(f"--{name}", type=Path)
     args = parser.parse_args(argv)
     RESULTS.mkdir(parents=True, exist_ok=True)
     results: dict[str, Any] = {}
-    for name, fn in (("E1", analyse_e1), ("E2", analyse_e2), ("E3", analyse_e3)):
+    for name, fn in (("E1", analyse_e1), ("E2", analyse_e2), ("E3", analyse_e3),
+                     ("E3b", analyse_e3b)):
         run = getattr(args, name.lower()) or latest(name)
         if run is None:
             print(f"{name}: no sealed run found")

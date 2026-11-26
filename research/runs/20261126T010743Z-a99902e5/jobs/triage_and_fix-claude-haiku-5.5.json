@@ -1,0 +1,52 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "17:20: E100: expected end of line, found a string"
+        ],
+        "failed": [
+          "triager asks for a list",
+          "for each at most 3 edits",
+          "no forks",
+          "exec pytest",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow fix_pr_problems\n  needs pr: text\n  role triager can answer\n  role fixer can edit\n  budget at most 4 calls\n\n  let problems = ask triager: \"List the problems in this pull request, at most three:\\n{pr}\" as list\n\n  for each problem in problems at most 3 into fixes\n    let fix = edit fixer: \"\"\"\n      Fix this problem in the shared workspace:\n      {problem}\n      \"\"\"\n    keep fix\n  end\n\n  let result = run \"pytest\"\n  give result\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:12:3: warning W301: name 'fixes' is never used"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "triager asks for a list",
+          "for each at most 3 edits",
+          "no forks",
+          "exec pytest",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow fix_pr_problems\n  needs pr: text\n  role triager can answer\n  role fixer can edit\n  budget at most 4 calls\n\n  let problems = ask triager: \"\"\"\n    List the problems in this pull request, one per item:\n    {pr}\n    \"\"\" as list\n\n  for each problem in problems at most 3 into fixes\n    let fix = edit fixer: \"\"\"\n      Fix this problem in the workspace: {problem}\n      Pull request context: {pr}\n      \"\"\"\n    keep fix\n  end\n\n  let result = exec \"pytest\"\n  give result\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.259882,
+  "job": "triage_and_fix-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "triage_and_fix"
+}

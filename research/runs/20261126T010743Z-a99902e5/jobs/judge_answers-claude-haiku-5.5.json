@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:13:31: warning W303: pairwise judging without 'tests' first relies on the judge alone"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "shared fork of 4 writer asks",
+          "pairwise judge, first",
+          "gives",
+          "budget",
+          "bound within 20"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\n# Four writers draft in parallel; a judge runs pairwise comparisons and picks the best (ties go to the first).\nworkflow pick_best_draft\n  needs prompt: text\n  role writer can answer\n  role judge can answer\n  budget at most 20 credits, 20 calls\n\n  fork 4 into drafts\n    let draft = ask writer: \"{prompt}\"\n    keep draft\n  end\n\n  let best = choose drafts by pairwise judge else first\n  give best\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:12:31: warning W303: pairwise judging without 'tests' first relies on the judge alone"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "shared fork of 4 writer asks",
+          "pairwise judge, first",
+          "gives",
+          "budget",
+          "bound within 20"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow pick_best\n  needs prompt: text\n  role writer can answer\n  role judge can answer\n  budget at most 20 calls\n\n  fork 4 into drafts\n    let draft = ask writer: \"{prompt}\"\n    keep draft\n  end\n\n  let best = choose drafts by pairwise judge else first\n  give best\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.2160695,
+  "job": "judge_answers-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "judge_answers"
+}

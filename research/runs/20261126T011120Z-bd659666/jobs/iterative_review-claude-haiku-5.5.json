@@ -1,0 +1,127 @@
+{
+  "blind": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow revise_until_approved\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 20 credits, 5 calls\n\n  let change = edit author: \"{task}\"\n  var verdict = ask critic: \"Is this change acceptable for the task '{task}'? Answer yes or no.\\n{change}\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set change = edit author: \"\"\"\n      The critic found this change unacceptable:\n      {verdict}\n      Revise the change for the task: {task}\n      \"\"\"\n    set verdict = ask critic: \"Is this change acceptable for the task '{task}'? Answer yes or no.\\n{change}\"\n  end\n\n  give change\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "generated.fp:1:1: warning W305: up to 4..6 agent calls may be needed; the run stops at 5",
+            "generated.fp:11:5: error E219: 'change' was bound with let, not var, so it cannot be set"
+          ],
+          "failed": [
+            "critic bool ask",
+            "bound within 5"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "repeat at most 2",
+            "author edits",
+            "gives",
+            "budget"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow revise_until_approved\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 20 credits, 5 calls\n\n  let change = edit author: \"{task}\"\n  var verdict = \"no\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set verdict = ask critic: \"Is this change acceptable for the task '{task}'? Answer yes or no.\\n{change}\"\n    if not (verdict == \"yes\")\n      set change = edit author: \"\"\"\n        The critic found this change unacceptable:\n        {verdict}\n        Revise the change for the task: {task}\n        \"\"\"\n    end\n  end\n\n  give change\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "generated.fp:13:7: error E219: 'change' was bound with let, not var, so it cannot be set"
+          ],
+          "failed": [
+            "critic bool ask"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "repeat at most 2",
+            "author edits",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "credits": 0.4467515,
+  "diag": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow revise_until_approved\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 20 credits, 5 calls\n\n  var change = edit author: \"{task}\"\n  var verdict = \"no\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set verdict = ask critic: \"Is this change acceptable for the task '{task}'? Answer yes or no.\\n{change}\"\n    if verdict != \"yes\"\n      set change = edit author: \"\"\"\n        The critic found this change unacceptable.\n        Revise the change for the task: {task}\n        \"\"\"\n    end\n  end\n\n  give change\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [
+            "critic bool ask"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "repeat at most 2",
+            "author edits",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow revise_until_approved\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 20 credits, 5 calls\n\n  var change = edit author: \"Make a change for this task: {task}\"\n  var verdict = \"no\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set verdict = ask critic: \"Is this change acceptable for the task '{task}'? Answer yes or no.\\n{change}\"\n    if verdict != \"yes\"\n      set change = edit author: \"\"\"\n        The critic found the previous change unacceptable. Their response:\n        {verdict}\n        Revise the change for the task: {task}\n        \"\"\"\n    end\n  end\n\n  give change\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [
+            "critic bool ask"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "repeat at most 2",
+            "author edits",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "first": {
+    "clean": false,
+    "diagnostics": [
+      "generated.fp:1:1: warning W305: up to 4..6 agent calls may be needed; the run stops at 5",
+      "generated.fp:11:5: error E219: 'change' was bound with let, not var, so it cannot be set"
+    ],
+    "failed": [
+      "critic bool ask",
+      "bound within 5"
+    ],
+    "parsed": true,
+    "passed": [
+      "var and set",
+      "repeat at most 2",
+      "author edits",
+      "gives",
+      "budget"
+    ],
+    "success": false
+  },
+  "job": "iterative_review-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "iterative_review"
+}

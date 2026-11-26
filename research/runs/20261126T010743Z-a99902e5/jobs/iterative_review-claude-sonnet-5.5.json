@@ -1,0 +1,50 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "15:17: E100: unexpected character '/'"
+        ],
+        "failed": [
+          "var and set",
+          "repeat at most 2",
+          "critic bool ask",
+          "author edits",
+          "gives",
+          "budget",
+          "bound within 5"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow author_critic\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 40 credits, 5 calls\n\n  var change = edit author: \"{task}\"\n  var ok = false\n\n  repeat at most 2 until ok\n    set ok = ask critic: \"\"\"\n      Task: {task}\n      Is the latest change acceptable?\n      {change}\n      \"\"\" as yes/no\n    if not ok\n      set change = edit author: \"\"\"\n        The critic rejected the latest change for this task: {task}\n        Revise it so it is acceptable.\n        \"\"\"\n    end\n  end\n\n  give change\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "var and set",
+          "repeat at most 2",
+          "critic bool ask",
+          "author edits",
+          "gives",
+          "budget",
+          "bound within 5"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow critic_loop\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  let first = edit author: \"{task}\"\n  var latest = first\n  var approved = false\n\n  repeat at most 2 until approved\n    set approved = ask critic: \"\"\"\n      Task: {task}\n      Is the latest change acceptable?\n      Change:\n      {latest.patch}\n      \"\"\" as bool\n    if not approved\n      set latest = edit author: \"\"\"\n        The critic rejected the latest change for this task: {task}\n        Revise it so it is acceptable.\n        \"\"\"\n    end\n  end\n\n  give latest\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 4.58472,
+  "job": "iterative_review-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "iterative_review"
+}

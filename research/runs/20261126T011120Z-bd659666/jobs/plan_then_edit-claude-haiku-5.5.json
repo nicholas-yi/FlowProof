@@ -1,0 +1,119 @@
+{
+  "blind": {
+    "parsed": false,
+    "rounds": [
+      {
+        "reply": "```flowproof\n# Planner writes a plan, coder implements it, then the test command runs and its result is returned.\nworkflow plan_code_run_tests\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a numbered implementation plan for: {goal}\"\n\n  let patch = edit coder: \"\"\"\n    Goal: {goal}\n    Implement this plan exactly:\n    {plan}\n    \"\"\"\n\n  let result = run \"python -m pytest -q\"\n  give result\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "16:20: E100: expected end of line, found a string"
+          ],
+          "failed": [
+            "planner asks",
+            "coder edits",
+            "exec command",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\n# Planner writes a plan, coder implements it, then the test command runs and its result is returned.\nworkflow plan_code_run_tests\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a numbered implementation plan for: {goal}\"\n\n  let patch = edit coder: \"\"\"\n    Goal: {goal}\n    Implement this plan exactly:\n    {plan}\n    \"\"\"\n\n  let result = run \"python -m pytest -q\"\n  give result\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "16:20: E100: expected end of line, found a string"
+          ],
+          "failed": [
+            "planner asks",
+            "coder edits",
+            "exec command",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "credits": 0.33001400000000003,
+  "diag": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\n# Planner outlines a plan, coder implements it, then the test command reports the result.\nworkflow plan_implement_test\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a step-by-step plan for: {goal}\"\n\n  let patch = edit coder: \"\"\"\n    Implement this goal: {goal}\n    Follow this plan:\n    {plan}\n    \"\"\"\n\n  let result = test patch with \"python -m pytest -q\"\n  give result\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [
+            "generated.fp:16:16: warning W304: test without 'frozen': an agent could edit the tests and this would not be detected"
+          ],
+          "failed": [
+            "exec command"
+          ],
+          "parsed": true,
+          "passed": [
+            "planner asks",
+            "coder edits",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\n# Planner outlines a plan, coder implements it, then the test command reports the result.\nworkflow plan_implement_test\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a step-by-step plan for: {goal}\"\n\n  let patch = edit coder: \"\"\"\n    Implement this goal: {goal}\n    Follow this plan:\n    {plan}\n    \"\"\"\n\n  let result = test patch with \"python -m pytest -q\" frozen \"tests/**\"\n  give result\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [
+            "exec command"
+          ],
+          "parsed": true,
+          "passed": [
+            "planner asks",
+            "coder edits",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "first": {
+    "clean": false,
+    "diagnostics": [
+      "16:20: E100: expected end of line, found a string"
+    ],
+    "failed": [
+      "planner asks",
+      "coder edits",
+      "exec command",
+      "gives",
+      "budget",
+      "bound within 2"
+    ],
+    "parsed": false,
+    "passed": [],
+    "success": false
+  },
+  "job": "plan_then_edit-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "plan_then_edit"
+}

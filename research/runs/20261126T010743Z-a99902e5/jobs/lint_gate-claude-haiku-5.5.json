@@ -1,0 +1,50 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "8:18: E100: expected end of line, found a string"
+        ],
+        "failed": [
+          "author edits",
+          "note",
+          "exec make lint",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow ticket_edit\n  needs ticket: text\n  role author can edit\n  budget at most 5 credits, 1 calls\n\n  let change = edit author: \"{ticket}\"\n  note \"edit done\"\n  let lint = run \"make lint\"\n  require lint.passed, \"lint failed\"\n  give change\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "author edits",
+          "note",
+          "exec make lint",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow ticket_change\n  needs ticket: text\n  role author can edit\n  budget at most 5 credits, 1 calls\n\n  let change = edit author: \"Make the change requested in this ticket: {ticket}\"\n  note \"edit done\"\n\n  let lint = exec \"make lint\"\n  require lint.ok, \"lint failed\"\n  give change\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.1950695,
+  "job": "lint_gate-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "lint_gate"
+}

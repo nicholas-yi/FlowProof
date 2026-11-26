@@ -1,0 +1,46 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "scout asks for a list",
+          "for each at most 4 asks",
+          "no edits",
+          "gives",
+          "budget",
+          "bound within 6"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow review_summary\n  needs summary: text\n  role scout can answer\n  role reviewer can answer\n  budget at most 6 calls\n\n  let files = ask scout: \"List the files likely affected by this summary as a list: {summary}\" as list\n\n  for each file in files at most 4 into reviews\n    let review = ask reviewer: \"Review this file for risks or relevant changes related to: {summary}\\nFile: {file}\"\n    keep review\n  end\n\n  let result = ask scout: \"\"\"\n    Summarise these reviews in relation to the summary:\n    {reviews}\n    \"\"\"\n  give result\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "scout asks for a list",
+          "for each at most 4 asks",
+          "no edits",
+          "gives",
+          "budget",
+          "bound within 6"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow review_files\n  needs summary: text\n  role scout can answer\n  role reviewer can answer\n  budget at most 6 calls\n\n  let files = ask scout: \"List the files most likely affected by this summary: {summary}\" as list\n\n  for each file in files at most 4 into reviews\n    let review = ask reviewer: \"Review this file for risks related to the summary: {summary}\\nFile: {file}\"\n    keep review\n  end\n\n  let result = ask scout: \"\"\"\n    Summarise these reviews in light of the summary:\n    {summary}\n    Reviews:\n    {reviews}\n    \"\"\"\n  give result\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.307475,
+  "job": "review_fanout-gpt-5.6-luna",
+  "model": "gpt-5.6-luna",
+  "spec": "review_fanout"
+}

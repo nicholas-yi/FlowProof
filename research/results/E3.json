@@ -1,0 +1,134 @@
+{
+  "chain_head": "1a5c8dfda394d1dafe9d6500acd731735de19be3a1d8adb28f965d13c925a7e5",
+  "jobs": 36,
+  "models": {
+    "claude-haiku-5.5": {
+      "credits": 2.5104465,
+      "examples": {
+        "ci": [
+          0.15165222980843013,
+          0.7233303143178942
+        ],
+        "clean": 5,
+        "n": 12,
+        "parsed": 6,
+        "property_rate": 0.4761904761904762,
+        "success": 5
+      },
+      "examples_vs_reference": {
+        "examples_only": 0,
+        "mcnemar_p": 0.015625,
+        "reference_only": 7
+      },
+      "reference": {
+        "ci": [
+          0.7353515306029486,
+          1.0
+        ],
+        "clean": 12,
+        "n": 12,
+        "parsed": 12,
+        "property_rate": 1.0,
+        "success": 12
+      },
+      "repair": {
+        "blind": 0,
+        "blind_only": 0,
+        "diag": 0,
+        "diag_only": 0,
+        "failing_first": 0,
+        "mcnemar_p": 1.0
+      },
+      "specs": 12
+    },
+    "claude-sonnet-5.5": {
+      "credits": 44.04489,
+      "examples": {
+        "ci": [
+          0.15165222980843013,
+          0.7233303143178942
+        ],
+        "clean": 6,
+        "n": 12,
+        "parsed": 6,
+        "property_rate": 0.4880952380952381,
+        "success": 5
+      },
+      "examples_vs_reference": {
+        "examples_only": 0,
+        "mcnemar_p": 0.015625,
+        "reference_only": 7
+      },
+      "reference": {
+        "ci": [
+          0.7353515306029486,
+          1.0
+        ],
+        "clean": 12,
+        "n": 12,
+        "parsed": 12,
+        "property_rate": 1.0,
+        "success": 12
+      },
+      "repair": {
+        "blind": 0,
+        "blind_only": 0,
+        "diag": 0,
+        "diag_only": 0,
+        "failing_first": 0,
+        "mcnemar_p": 1.0
+      },
+      "specs": 12
+    },
+    "gpt-5.6-luna": {
+      "credits": 4.15917,
+      "examples": {
+        "ci": [
+          0.15165222980843013,
+          0.7233303143178942
+        ],
+        "clean": 6,
+        "n": 12,
+        "parsed": 6,
+        "property_rate": 0.4761904761904762,
+        "success": 5
+      },
+      "examples_vs_reference": {
+        "examples_only": 0,
+        "mcnemar_p": 0.015625,
+        "reference_only": 7
+      },
+      "reference": {
+        "ci": [
+          0.7353515306029486,
+          1.0
+        ],
+        "clean": 12,
+        "n": 12,
+        "parsed": 12,
+        "property_rate": 1.0,
+        "success": 12
+      },
+      "repair": {
+        "blind": 0,
+        "blind_only": 0,
+        "diag": 0,
+        "diag_only": 0,
+        "failing_first": 0,
+        "mcnemar_p": 1.0
+      },
+      "specs": 12
+    }
+  },
+  "provenance": {
+    "flowproof_version": "0.1.0",
+    "git_head": "f9e46d49d8678c942963ace7e98bcb25d143ec61",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "preregistration": {
+      "path": "research/preregistration/E3.md",
+      "sha256": "e079103b18f80e518db63613e4724464ddb0463fdffc155efb1740703e70161f"
+    },
+    "python": "3.12.10"
+  },
+  "run": "research/runs/20261126T010743Z-a99902e5"
+}

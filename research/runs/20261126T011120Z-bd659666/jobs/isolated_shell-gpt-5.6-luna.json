@@ -1,0 +1,130 @@
+{
+  "blind": {
+    "parsed": false,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow build_target\n  needs target: text\n  role builder can edit and run shell commands\n  budget at most 2 calls\n\n  fork 2 isolated into attempts\n    let attempt = edit builder: \"\"\"\n      Build the target: {target}\n      This is isolated attempt {branch} of 2. Implement the best solution you can.\n      \"\"\"\n    keep attempt\n  end\n\n  let graded = test attempts with \"cargo test\" frozen \"tests/**\"\n  let choice = choose graded by tests else abstain\n  give choice\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "3:25: E100: expected end of line, found 'and'"
+          ],
+          "failed": [
+            "builder can edit and shell",
+            "isolated fork of 2 builder edits",
+            "tests command",
+            "frozen tests/**",
+            "tests, abstain",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow build_target\n  needs target: text\n  role builder can edit and run shell commands\n  budget at most 2 calls\n\n  fork 2 isolated into attempts\n    let attempt = edit builder: \"\"\"\n      Build the target: {target}\n      This is isolated attempt {branch} of 2. Implement the best solution you can.\n      \"\"\"\n    keep attempt\n  end\n\n  let graded = test attempts with \"cargo test\" frozen \"tests/**\"\n  let choice = choose graded by tests else abstain\n  give choice\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "3:25: E100: expected end of line, found 'and'"
+          ],
+          "failed": [
+            "builder can edit and shell",
+            "isolated fork of 2 builder edits",
+            "tests command",
+            "frozen tests/**",
+            "tests, abstain",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "credits": 0.50151,
+  "diag": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow build_target\n  needs target: text\n  role builder can edit\n  role builder can run shell commands\n  budget at most 2 calls\n\n  fork 2 isolated into attempts\n    let attempt = edit builder: \"\"\"\n      Build the target: {target}\n      This is isolated attempt {branch} of 2. Implement the best solution you can.\n      \"\"\"\n    keep attempt\n  end\n\n  let graded = test attempts with \"cargo test\" frozen \"tests/**\"\n  let choice = choose graded by tests else abstain\n  give choice\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "4:20: E100: expected a capability (answer, edit, shell), found 'run'"
+          ],
+          "failed": [
+            "builder can edit and shell",
+            "isolated fork of 2 builder edits",
+            "tests command",
+            "frozen tests/**",
+            "tests, abstain",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow build_target\n  needs target: text\n  role builder can edit\n  role builder can shell\n  budget at most 2 calls\n\n  fork 2 isolated into attempts\n    let attempt = edit builder: \"\"\"\n      Build the target: {target}\n      This is isolated attempt {branch} of 2. Implement the best solution you can.\n      \"\"\"\n    keep attempt\n  end\n\n  let graded = test attempts with \"cargo test\" frozen \"tests/**\"\n  let choice = choose graded by tests else abstain\n  give choice\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "generated.fp:4:8: error E217: role 'builder' is declared twice"
+          ],
+          "failed": [
+            "builder can edit and shell"
+          ],
+          "parsed": true,
+          "passed": [
+            "isolated fork of 2 builder edits",
+            "tests command",
+            "frozen tests/**",
+            "tests, abstain",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "first": {
+    "clean": false,
+    "diagnostics": [
+      "3:25: E100: expected end of line, found 'and'"
+    ],
+    "failed": [
+      "builder can edit and shell",
+      "isolated fork of 2 builder edits",
+      "tests command",
+      "frozen tests/**",
+      "tests, abstain",
+      "gives",
+      "budget",
+      "bound within 2"
+    ],
+    "parsed": false,
+    "passed": [],
+    "success": false
+  },
+  "job": "isolated_shell-gpt-5.6-luna",
+  "model": "gpt-5.6-luna",
+  "spec": "isolated_shell"
+}

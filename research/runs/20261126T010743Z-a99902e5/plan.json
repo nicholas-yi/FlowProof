@@ -1,0 +1,177 @@
+{
+  "cap": 300.0,
+  "dry_run": false,
+  "experiment": "E3",
+  "models": [
+    "claude-haiku-5.5",
+    "gpt-5.6-luna",
+    "claude-sonnet-5.5"
+  ],
+  "preamble": "Flowproof is a small language for orchestrating coding agents. Write one Flowproof workflow that meets every requirement below. Reply with only the workflow inside a single fenced code block.",
+  "provenance": {
+    "flowproof_version": "0.1.0",
+    "git_head": "f9e46d49d8678c942963ace7e98bcb25d143ec61",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "preregistration": {
+      "path": "research/preregistration/E3.md",
+      "sha256": "e079103b18f80e518db63613e4724464ddb0463fdffc155efb1740703e70161f"
+    },
+    "python": "3.12.10"
+  },
+  "rounds": 2,
+  "specs": [
+    {
+      "checks": [
+        "isolated fork of 3 author edits",
+        "tests command",
+        "frozen tests/**",
+        "tests then pairwise reviewer, abstain",
+        "require",
+        "gives",
+        "budget",
+        "bound within 10"
+      ],
+      "name": "best_of_three",
+      "text": "Input `issue` (text). Role `author` edits; role `reviewer` only answers. Make three isolated attempts in which the author fixes the issue. Grade every attempt with `python -m pytest -q`, freezing `tests/**`. Choose by tests, then let the reviewer judge pairwise; if still tied, abstain. Fail with a message if the chosen attempt did not pass. Give the chosen attempt. Budget: at most 40 credits and 10 calls."
+    },
+    {
+      "checks": [
+        "var and set",
+        "repeat at most 3",
+        "tests command",
+        "frozen tests/**",
+        "failure output fed back",
+        "require",
+        "gives",
+        "budget",
+        "bound within 4"
+      ],
+      "name": "repair_loop",
+      "text": "Input `task` (text). One role `author` that edits. The author attempts the task once; grade it with `python -m unittest`, freezing `tests/**`. If it did not pass, repeat at most three times: have the author fix the code, showing it the failing test output, then grade again. Finally require a pass and give the last grade. Budget: 4 calls."
+    },
+    {
+      "checks": [
+        "scout asks for a list",
+        "for each at most 4 asks",
+        "no edits",
+        "gives",
+        "budget",
+        "bound within 6"
+      ],
+      "name": "review_fanout",
+      "text": "Input `summary` (text). Roles `scout` and `reviewer` only answer. The scout lists the files likely affected by the summary (a list). The reviewer reviews at most four of them, one at a time. The scout then summarises the reviews. Give the summary. Budget: 6 calls."
+    },
+    {
+      "checks": [
+        "planner asks",
+        "coder edits",
+        "exec command",
+        "gives",
+        "budget",
+        "bound within 2"
+      ],
+      "name": "plan_then_edit",
+      "text": "Input `goal` (text). Role `planner` only answers; role `coder` edits. The planner writes a plan for the goal, the coder implements the plan, and then the workflow runs `python -m pytest -q` as a command. Give the command's result. Budget: 2 calls and 10 credits."
+    },
+    {
+      "checks": [
+        "isolated fork of 5 author edits",
+        "tests command",
+        "both frozen",
+        "tests, behavior, exact, first",
+        "gives",
+        "budget",
+        "bound within 5"
+      ],
+      "name": "vote_exact",
+      "text": "Input `issue` (text). Role `author` edits. Make five isolated attempts at the issue. Grade them all with `npm test`, freezing both `test/**` and `package.json`. Choose by tests, then by behaviour, then by exact patch votes, and fall back to the first candidate. Give it. Budget: 5 calls."
+    },
+    {
+      "checks": [
+        "bool ask",
+        "strict input",
+        "require",
+        "gives",
+        "budget",
+        "bound within 1"
+      ],
+      "name": "guarded_question",
+      "text": "Inputs `question` (text) and `strict` (bool, default true). Role `analyst` only answers. Ask the analyst whether the repository already implements what the question describes, as a yes/no answer. If strict and the answer is no, fail with the message 'not implemented'. Give the answer. Budget: 1 call."
+    },
+    {
+      "checks": [
+        "number ask",
+        "shared fork of 3 asks",
+        "gives",
+        "budget",
+        "bound within 4"
+      ],
+      "name": "count_and_fanout",
+      "text": "Input `topic` (text). Role `analyst` only answers. Ask the analyst how many independent sub-questions the topic has, as a number. Then ask three analysts at once, without isolating them because they only answer, for an answer to the topic each, and give all three answers. Budget: 4 calls."
+    },
+    {
+      "checks": [
+        "shared fork of 4 writer asks",
+        "pairwise judge, first",
+        "gives",
+        "budget",
+        "bound within 20"
+      ],
+      "name": "judge_answers",
+      "text": "Input `prompt` (text). Roles `writer` and `judge` only answer. Four writers each draft a response at once (no isolation needed). The judge picks the best one by pairwise comparison; if that is a tie, take the first. Give the choice. Budget: at most 20 calls."
+    },
+    {
+      "checks": [
+        "var and set",
+        "repeat at most 2",
+        "critic bool ask",
+        "author edits",
+        "gives",
+        "budget",
+        "bound within 5"
+      ],
+      "name": "iterative_review",
+      "text": "Input `task` (text). Role `author` edits; role `critic` only answers. The author makes a change for the task. Then, at most twice, until the critic approves: ask the critic whether the latest change is acceptable (yes/no), and if it is not, have the author revise it. Give the final change. Budget: 5 calls."
+    },
+    {
+      "checks": [
+        "author edits",
+        "note",
+        "exec make lint",
+        "require",
+        "gives",
+        "budget",
+        "bound within 1"
+      ],
+      "name": "lint_gate",
+      "text": "Input `ticket` (text). Role `author` edits. The author makes the change; write a note saying 'edit done'; run `make lint` as a command and require that it succeeded, with the message 'lint failed'; then give the change. Budget: 1 call and 5 credits."
+    },
+    {
+      "checks": [
+        "builder can edit and shell",
+        "isolated fork of 2 builder edits",
+        "tests command",
+        "frozen tests/**",
+        "tests, abstain",
+        "gives",
+        "budget",
+        "bound within 2"
+      ],
+      "name": "isolated_shell",
+      "text": "Input `target` (text). Role `builder` can edit and run shell commands. Make two isolated attempts by the builder to build the target. Grade each with `cargo test`, freezing `tests/**`. Choose by tests and otherwise abstain. Give the choice. Budget: 2 calls."
+    },
+    {
+      "checks": [
+        "triager asks for a list",
+        "for each at most 3 edits",
+        "no forks",
+        "exec pytest",
+        "gives",
+        "budget",
+        "bound within 4"
+      ],
+      "name": "triage_and_fix",
+      "text": "Input `pr` (text). Role `triager` only answers; role `fixer` edits. The triager lists the problems in the pull request (a list). For each problem, at most three, the fixer fixes it in the shared workspace (no forks). Then run `pytest` as a command and give its result. Budget: 4 calls."
+    }
+  ]
+}

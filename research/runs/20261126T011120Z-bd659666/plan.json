@@ -1,0 +1,102 @@
+{
+  "cap": 150.0,
+  "experiment": "E3b",
+  "items": [
+    {
+      "model": "claude-haiku-5.5",
+      "spec": "guarded_question"
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "spec": "guarded_question"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "spec": "guarded_question"
+    },
+    {
+      "model": "claude-haiku-5.5",
+      "spec": "isolated_shell"
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "spec": "isolated_shell"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "spec": "isolated_shell"
+    },
+    {
+      "model": "claude-haiku-5.5",
+      "spec": "iterative_review"
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "spec": "iterative_review"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "spec": "iterative_review"
+    },
+    {
+      "model": "claude-haiku-5.5",
+      "spec": "lint_gate"
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "spec": "lint_gate"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "spec": "lint_gate"
+    },
+    {
+      "model": "claude-haiku-5.5",
+      "spec": "plan_then_edit"
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "spec": "plan_then_edit"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "spec": "plan_then_edit"
+    },
+    {
+      "model": "claude-haiku-5.5",
+      "spec": "triage_and_fix"
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "spec": "triage_and_fix"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "spec": "triage_and_fix"
+    },
+    {
+      "model": "claude-haiku-5.5",
+      "spec": "vote_exact"
+    },
+    {
+      "model": "claude-sonnet-5.5",
+      "spec": "vote_exact"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "spec": "vote_exact"
+    }
+  ],
+  "provenance": {
+    "flowproof_version": "0.1.0",
+    "git_head": "193547fd59867225b79ba0c2b452feb0cdcdfb1b",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "preregistration": {
+      "path": "research/preregistration/E3b.md",
+      "sha256": "affbb0b0b4b281a4b1e143108fad26eb4138271fe508c7f7e6f1b7a3e27adfbd"
+    },
+    "python": "3.12.10"
+  },
+  "rounds": 2,
+  "source": "20261126T010743Z-a99902e5"
+}

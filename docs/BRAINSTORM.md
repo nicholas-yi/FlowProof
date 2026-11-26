@@ -47,17 +47,23 @@ smallest experiment that would test it. Ordered roughly by expected value per ef
     from its recorded responses, for debugging and for auditing changes to selection
     policies.
 
+13. **"Did you mean" diagnostics.** In E3, most examples-only failures were near misses:
+    `run` or `command` instead of `exec`, `fail` instead of `require`, and *behaviour*
+    instead of `behavior`. Suggesting the nearest keyword is cheap, and E3b suggests that
+    diagnostics are what make repair work.
+    - Test: rerun E3b with suggestions on, against the same items.
+
 ## Testbed
 
-13. **Tuning the adaptive arm.** Sweep `M` (the predictions needed before switching) and
+14. **Tuning the adaptive arm.** Sweep `M` (the predictions needed before switching) and
     let the arm switch back after a mismatch inside a plan, not only between calls.
-14. **Predicting only where it is new.** Ask for predictions only for actions the agent
+15. **Predicting only where it is new.** Ask for predictions only for actions the agent
     has not seen in the current level, and batch the rest.
-15. **Harder rule changes.** Rules that change mid-level, or depend on history, to test
+16. **Harder rule changes.** Rules that change mid-level, or depend on history, to test
     whether gating helps more when the world is less stationary.
 
 ## Safety
 
-16. **A real sandbox.** E2 showed that a shell allowlist is not a sandbox. Run agentic
+17. **A real sandbox.** E2 showed that a shell allowlist is not a sandbox. Run agentic
     sessions in a container with the workspace mounted and no network, and keep the
     fingerprint check as a second line of defence.

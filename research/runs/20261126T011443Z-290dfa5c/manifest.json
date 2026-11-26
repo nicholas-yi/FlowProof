@@ -1,0 +1,638 @@
+{
+  "chain": {
+    "head": "9728630b99d23fa73781c98bfb4575171d69d14a0df49973e63cefd3657cd64d",
+    "length": 2
+  },
+  "files": [
+    {
+      "bytes": 381,
+      "path": "events.jsonl",
+      "sha256": "fc323fa52c83495dbb524161d6b4914e69de06de5b896142bfbcf43396109fca"
+    },
+    {
+      "bytes": 1354,
+      "path": "jobs/celsius-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "64157a0dd9a0690ccfb43f0a1db1b7a02988cceb57a91a2dcf515e4c29230e4c"
+    },
+    {
+      "bytes": 1184,
+      "path": "jobs/celsius-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "ce887c2423c9261530a4ec44ba44e73e14e30c598b3455ec7654837a36032e85"
+    },
+    {
+      "bytes": 789,
+      "path": "jobs/celsius-plain-gpt-5.6-luna-r1.json",
+      "sha256": "a9f26dddd95e6d7685f547283aaabbe59bccdc2ccaaaecc662faa58ab61ebab7"
+    },
+    {
+      "bytes": 1310,
+      "path": "jobs/celsius-plain-gpt-5.6-luna-r2.json",
+      "sha256": "0b943de1eedeab48ad4eac9c566e088e87c3452053f81779e40575f8a6df8bad"
+    },
+    {
+      "bytes": 1305,
+      "path": "jobs/celsius-plain-gpt-5.6-sol-r1.json",
+      "sha256": "2fb019900825e7404935bd54549a1e9588711b655c3125676384288fb037415b"
+    },
+    {
+      "bytes": 1072,
+      "path": "jobs/celsius-plain-gpt-5.6-sol-r2.json",
+      "sha256": "b3bd1b43f7940123a723aeee7d3f77e7b2fc4ee866116f9be1faf29b69e70441"
+    },
+    {
+      "bytes": 1263,
+      "path": "jobs/celsius-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "57742cb1fefbc7019272c39dcd33865cdfd02df2bd2917071e3c73c6b6d201c0"
+    },
+    {
+      "bytes": 1044,
+      "path": "jobs/celsius-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "e0705e5927ff353a803c26f66a5016bb0ebc40bfbe7759769fac087666725573"
+    },
+    {
+      "bytes": 828,
+      "path": "jobs/celsius-warned-gpt-5.6-luna-r1.json",
+      "sha256": "cb1650a75b42474cc5c035beb7e7f1e44cc43bb1545d9ab04928a7e1f9ad4b5a"
+    },
+    {
+      "bytes": 823,
+      "path": "jobs/celsius-warned-gpt-5.6-luna-r2.json",
+      "sha256": "ea13e9010af8e354a20950419698c49c65f29a4b4848eb8301bafda66c94be19"
+    },
+    {
+      "bytes": 827,
+      "path": "jobs/celsius-warned-gpt-5.6-sol-r1.json",
+      "sha256": "b3c119a0382b4cf9411932ba77e2168457f774156b71bb51b4ee3866136d57de"
+    },
+    {
+      "bytes": 831,
+      "path": "jobs/celsius-warned-gpt-5.6-sol-r2.json",
+      "sha256": "0598854b5a2534db58e796362b61219ef6587d39f8b7ef068af25c324a24a4cd"
+    },
+    {
+      "bytes": 1202,
+      "path": "jobs/clamp-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "179c4bb0e73a50ae860ebfe3ca9f75808a73d57afb531970e74631c9d714777b"
+    },
+    {
+      "bytes": 1199,
+      "path": "jobs/clamp-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "9c9d1b4583e34700028bc63da1a5668e542f50d22ff1e0dba1b52ab0f760f218"
+    },
+    {
+      "bytes": 761,
+      "path": "jobs/clamp-plain-gpt-5.6-luna-r1.json",
+      "sha256": "e22cc40b843cff4421ac3c28ab468e6ac116c5a4119915915a30208da4cd7006"
+    },
+    {
+      "bytes": 1165,
+      "path": "jobs/clamp-plain-gpt-5.6-luna-r2.json",
+      "sha256": "420314d0f577b1072f761cd3a36f3ad593c7d8a319d131f4ccd27ba032d1ab91"
+    },
+    {
+      "bytes": 1046,
+      "path": "jobs/clamp-plain-gpt-5.6-sol-r1.json",
+      "sha256": "c3e38fa48dc886f240f75e760d333f239e8149e6bb737997a26671ea98ae875d"
+    },
+    {
+      "bytes": 1047,
+      "path": "jobs/clamp-plain-gpt-5.6-sol-r2.json",
+      "sha256": "27e9b8f7528a3b82607ad580f2572fb28eadc1385c6942fc57c3e4ffafa4543d"
+    },
+    {
+      "bytes": 1288,
+      "path": "jobs/clamp-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "286d8c226419eb9fa67e1775a33c4cdcc47099ff1ce3efc7a5bfedf9104652ca"
+    },
+    {
+      "bytes": 1314,
+      "path": "jobs/clamp-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "dd61dcab1030823fafd7dfb6c85a75e799115b7d2a21dde94031bad57e7baf54"
+    },
+    {
+      "bytes": 757,
+      "path": "jobs/clamp-warned-gpt-5.6-luna-r1.json",
+      "sha256": "1eb794d76511c755bbf3756c15deffced9b86a6dcb9bfeb8cb950e79e7c03c07"
+    },
+    {
+      "bytes": 1108,
+      "path": "jobs/clamp-warned-gpt-5.6-luna-r2.json",
+      "sha256": "bbf8cc7561a3b93c78a9d3762d216056223dfbcdddbd54b1b10ffc3779e26660"
+    },
+    {
+      "bytes": 1095,
+      "path": "jobs/clamp-warned-gpt-5.6-sol-r1.json",
+      "sha256": "3b93c4e1fa6b05cf16193edd7d72503a2224ae5162c6f55093c941ee165262fb"
+    },
+    {
+      "bytes": 1044,
+      "path": "jobs/clamp-warned-gpt-5.6-sol-r2.json",
+      "sha256": "4aa25c0b7453f16283ff79bd20e74b579e432f210cc12d363f46cb2a98545a0f"
+    },
+    {
+      "bytes": 1196,
+      "path": "jobs/dedupe-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "5b12e2fbbf6ca170111da4a632f95abf33cb752642fc8649dbd34e2f9664d0f8"
+    },
+    {
+      "bytes": 1244,
+      "path": "jobs/dedupe-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "23863fd166385a6f53cfbc3d3dd598ac37215ec525d58e868390ad59d243b3a7"
+    },
+    {
+      "bytes": 838,
+      "path": "jobs/dedupe-plain-gpt-5.6-luna-r1.json",
+      "sha256": "36f685d9bb710a9c63702a937f457d1b050121a217ca59562e083757302426ce"
+    },
+    {
+      "bytes": 619,
+      "path": "jobs/dedupe-plain-gpt-5.6-luna-r2.json",
+      "sha256": "254e010e518fd740528512090c829aba9aec0b72eebc3c5bae5ca3ff55c36f29"
+    },
+    {
+      "bytes": 990,
+      "path": "jobs/dedupe-plain-gpt-5.6-sol-r1.json",
+      "sha256": "628291ba078736c5ab69d93dc47aeba6c8d3082ea7be37ab7cd7dd507986c83a"
+    },
+    {
+      "bytes": 1284,
+      "path": "jobs/dedupe-plain-gpt-5.6-sol-r2.json",
+      "sha256": "1435171a31ace2c3ab72776928d46c2cd56214351e476b5b82c8945476b062bd"
+    },
+    {
+      "bytes": 1288,
+      "path": "jobs/dedupe-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "89018ed414097ca9beb75d3035758b7fcacd5f8db8e233e1390c3dce18cd5bae"
+    },
+    {
+      "bytes": 1520,
+      "path": "jobs/dedupe-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "52f499ed0211ab1719629197e48e8fd9c41b933186d0ec994a27e9b40cd94338"
+    },
+    {
+      "bytes": 961,
+      "path": "jobs/dedupe-warned-gpt-5.6-luna-r1.json",
+      "sha256": "35c812af41bc5f828b5e3b4995dcd817cc9a5f33c3ab4fa032f6df9d177980d5"
+    },
+    {
+      "bytes": 1027,
+      "path": "jobs/dedupe-warned-gpt-5.6-luna-r2.json",
+      "sha256": "5df619ad43867b52706d08c79b8dddf79297c5222346f1eed9f6ff63965247f8"
+    },
+    {
+      "bytes": 1373,
+      "path": "jobs/dedupe-warned-gpt-5.6-sol-r1.json",
+      "sha256": "360b88b21fadc347cfed6793f3857ea169954a248c482218a9af726b02d3f6ae"
+    },
+    {
+      "bytes": 1115,
+      "path": "jobs/dedupe-warned-gpt-5.6-sol-r2.json",
+      "sha256": "43be76be9f160ae73e8333a456fda2cc45c8c8674b6ba1901cd2123cfecb81d3"
+    },
+    {
+      "bytes": 1251,
+      "path": "jobs/fizzbuzz-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "0b0a9721bf5484437d86a4548a42f6faab5ca3a777ba08ace3a1afd97165c8ed"
+    },
+    {
+      "bytes": 1187,
+      "path": "jobs/fizzbuzz-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "dc425d8d9203f40577c9e020ba151d308c216c10575fda2f45b03c8bb551e774"
+    },
+    {
+      "bytes": 852,
+      "path": "jobs/fizzbuzz-plain-gpt-5.6-luna-r1.json",
+      "sha256": "3d26e839a886fcb1bb8a7fdacf64f3e80893f21e3caee1e80a0d7da04ef5b16d"
+    },
+    {
+      "bytes": 811,
+      "path": "jobs/fizzbuzz-plain-gpt-5.6-luna-r2.json",
+      "sha256": "5b90b3c5b2aa67f8520aa74c24aa420c21e39396e7917d1f14c3eb0eebd39314"
+    },
+    {
+      "bytes": 1340,
+      "path": "jobs/fizzbuzz-plain-gpt-5.6-sol-r1.json",
+      "sha256": "74580ef792c81e075fc3634bc39502029d82eea389e60297b9bfd2239bf4241b"
+    },
+    {
+      "bytes": 1008,
+      "path": "jobs/fizzbuzz-plain-gpt-5.6-sol-r2.json",
+      "sha256": "744032eb4574af937d185b593d18bd8bcb57ef40a008e990a44778f79f049e8f"
+    },
+    {
+      "bytes": 1292,
+      "path": "jobs/fizzbuzz-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "ffbdea4a6dec8617b75d9ab1312de4f6fee635986ec881049804c28c9b6c402b"
+    },
+    {
+      "bytes": 1223,
+      "path": "jobs/fizzbuzz-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "7a72a5323e110f546e9aff6e0b2280770fc27cfc8b83ce642f6b0d8b69db7e2a"
+    },
+    {
+      "bytes": 748,
+      "path": "jobs/fizzbuzz-warned-gpt-5.6-luna-r1.json",
+      "sha256": "e1641a0a8cf7f040f396a9ee5840be97e3f2ca67f52ccfac6d4450d3edb69209"
+    },
+    {
+      "bytes": 800,
+      "path": "jobs/fizzbuzz-warned-gpt-5.6-luna-r2.json",
+      "sha256": "415b43b492a48bc74b3bf13fb611075c1f8833ee0ee5f1173457c8c7274ca091"
+    },
+    {
+      "bytes": 823,
+      "path": "jobs/fizzbuzz-warned-gpt-5.6-sol-r1.json",
+      "sha256": "6304507066f9a2c37eeabf4f424359327db4a3b2a965263fb3384746d103835d"
+    },
+    {
+      "bytes": 926,
+      "path": "jobs/fizzbuzz-warned-gpt-5.6-sol-r2.json",
+      "sha256": "4cde88adb21be4fe3a520c041fd3e5c20af9154ea875dcb6a1fbd5697e96e1f8"
+    },
+    {
+      "bytes": 1189,
+      "path": "jobs/median-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "24f2deee701d36c0be526ea6d4572d5eb511d5360037924ae9c96e15c3b23856"
+    },
+    {
+      "bytes": 1064,
+      "path": "jobs/median-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "42e82a4d24228c61dd1ecc83e10b5188c373695b72f0a9cd9f8385e758997a0d"
+    },
+    {
+      "bytes": 688,
+      "path": "jobs/median-plain-gpt-5.6-luna-r1.json",
+      "sha256": "b726d86056856d0048803ef8a259ea7a0df734585bc2fb1a34dc1f48991d2dfd"
+    },
+    {
+      "bytes": 717,
+      "path": "jobs/median-plain-gpt-5.6-luna-r2.json",
+      "sha256": "73185afa31a437f865f78e51dd8b0e3b34403645393300e09046c0be30fe7046"
+    },
+    {
+      "bytes": 871,
+      "path": "jobs/median-plain-gpt-5.6-sol-r1.json",
+      "sha256": "8a95a5d62e3d50fd4663053e26cbbc3517129249ce601cf6901aab6ead4312dd"
+    },
+    {
+      "bytes": 937,
+      "path": "jobs/median-plain-gpt-5.6-sol-r2.json",
+      "sha256": "c481dfd54e7dd6a878d066421608bac4745f8e445b01f1f07acd25e1249936cf"
+    },
+    {
+      "bytes": 870,
+      "path": "jobs/median-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "1135a2a7c1e869bc11a2ff182312a7b4e0fc6296ee0ad44df51545f765b18fc2"
+    },
+    {
+      "bytes": 1341,
+      "path": "jobs/median-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "9b3b9ff69f8ef9dcf7c40614a05e98252752a73efc16344b19ca14edd0e2bc11"
+    },
+    {
+      "bytes": 687,
+      "path": "jobs/median-warned-gpt-5.6-luna-r1.json",
+      "sha256": "8c24d1f67144efb39bc3c1d3a7eb50c6b8e43d460ce587bdb9da7eda7f50e683"
+    },
+    {
+      "bytes": 687,
+      "path": "jobs/median-warned-gpt-5.6-luna-r2.json",
+      "sha256": "fdb7d0ba949d7a952760a675d9aa1e57f9518415620303efe6521e94c6bb809c"
+    },
+    {
+      "bytes": 803,
+      "path": "jobs/median-warned-gpt-5.6-sol-r1.json",
+      "sha256": "4e5662dd524d653294fe061c8134ad0e561377c2991effb7b34c6bf5ae8a5c6c"
+    },
+    {
+      "bytes": 867,
+      "path": "jobs/median-warned-gpt-5.6-sol-r2.json",
+      "sha256": "ea04d883d3e884f30b4dcd32681a7f3f27cf78c4b995730aa1f49ddba96379de"
+    },
+    {
+      "bytes": 1334,
+      "path": "jobs/parity-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "4f06dfd82ec138c3e4943297f904205b2b52001ab0fc251caab915df19699223"
+    },
+    {
+      "bytes": 1177,
+      "path": "jobs/parity-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "cbf43b376119b7016ee9549278438fb286c246b5ba1418704208efa533e1a1de"
+    },
+    {
+      "bytes": 976,
+      "path": "jobs/parity-plain-gpt-5.6-luna-r1.json",
+      "sha256": "0cd93a4010500aaa886bc4de8493d68080aa0684312015b96fdd4b89f8ce8de3"
+    },
+    {
+      "bytes": 817,
+      "path": "jobs/parity-plain-gpt-5.6-luna-r2.json",
+      "sha256": "2c07c4c9c3c66b0c5712b2cc642d71ee771fb4cea40f4d037571958027842c85"
+    },
+    {
+      "bytes": 1039,
+      "path": "jobs/parity-plain-gpt-5.6-sol-r1.json",
+      "sha256": "45375abc6747c6a5359a95d8351c2fce016b8bb44e2ca112abb36d8a2c46c61f"
+    },
+    {
+      "bytes": 1022,
+      "path": "jobs/parity-plain-gpt-5.6-sol-r2.json",
+      "sha256": "afaa760841fcf74ae8bfac73353d4304d101e54a7f87c180cb5c214de7f3da72"
+    },
+    {
+      "bytes": 1277,
+      "path": "jobs/parity-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "ce53be02c9fe8c1835576533fd1dcfaa64e2944658fb899706e4e2a6bfb206cb"
+    },
+    {
+      "bytes": 1252,
+      "path": "jobs/parity-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "370e6cbc698d4904d9eb3804d934a5ca865f8d5c53f1cd7f11c25d65c342a898"
+    },
+    {
+      "bytes": 798,
+      "path": "jobs/parity-warned-gpt-5.6-luna-r1.json",
+      "sha256": "39b1d86f2f8cb9a4046169a7f98cfc258c9a2e849b0577dfa1d7815e90e6e8ef"
+    },
+    {
+      "bytes": 781,
+      "path": "jobs/parity-warned-gpt-5.6-luna-r2.json",
+      "sha256": "2c5b6c66dfc40521211975a896cb82a0cf3992130ca212636b36502f359974d5"
+    },
+    {
+      "bytes": 1044,
+      "path": "jobs/parity-warned-gpt-5.6-sol-r1.json",
+      "sha256": "cbe4fb7474a0622095f70443235c2cae31c1d2a4fda6d269e742a4a2a2c29ee8"
+    },
+    {
+      "bytes": 1225,
+      "path": "jobs/parity-warned-gpt-5.6-sol-r2.json",
+      "sha256": "56e585f3b307b4ec7b9f63b9a2221290760d8bc31b20f3d11135905bcc260750"
+    },
+    {
+      "bytes": 932,
+      "path": "jobs/roman-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "d88fff9111178c061dcbc59c50c12a55592378a8b53b3b6f04f96aa4e18bdcf4"
+    },
+    {
+      "bytes": 898,
+      "path": "jobs/roman-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "5a2256e09a448d85e8fdbe7e83c80afc779c61dfb07d2ad64551e30849daa927"
+    },
+    {
+      "bytes": 704,
+      "path": "jobs/roman-plain-gpt-5.6-luna-r1.json",
+      "sha256": "29c27cf3ac8fd987feda68805b9a93981e61268bcc73232c8ba23b8f19eae4bd"
+    },
+    {
+      "bytes": 1033,
+      "path": "jobs/roman-plain-gpt-5.6-luna-r2.json",
+      "sha256": "7b3cc92261ee1927dbb926a728e6627ffd7304c45531bf3f380fe57dfe25f906"
+    },
+    {
+      "bytes": 985,
+      "path": "jobs/roman-plain-gpt-5.6-sol-r1.json",
+      "sha256": "96bf2e08e15a4da3a5df4597f7ea48c69db63f4b4f0447dd269cc5b1c694f995"
+    },
+    {
+      "bytes": 940,
+      "path": "jobs/roman-plain-gpt-5.6-sol-r2.json",
+      "sha256": "b72e84c5a86a294de7ef8ec73f136b6cfec7ec329188ead1ee6dd277e5a54789"
+    },
+    {
+      "bytes": 959,
+      "path": "jobs/roman-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "0bd030c8e7ffa3cbea028adad27e20b8286c00d4ed83ecb363c8ddef34e2df7d"
+    },
+    {
+      "bytes": 993,
+      "path": "jobs/roman-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "b56f00e5905b2202ed191e719a3dc56290e438eee64477e523cb0c7117ced4e1"
+    },
+    {
+      "bytes": 702,
+      "path": "jobs/roman-warned-gpt-5.6-luna-r1.json",
+      "sha256": "6987decfea06b094806a95057f78844cd32d69f24d7f2b6fbdb62175e3c5a656"
+    },
+    {
+      "bytes": 685,
+      "path": "jobs/roman-warned-gpt-5.6-luna-r2.json",
+      "sha256": "09904e96d67b650b4c2504f6b8f4f4d2bd3437fadeb29ad6c8603fcf531360b9"
+    },
+    {
+      "bytes": 951,
+      "path": "jobs/roman-warned-gpt-5.6-sol-r1.json",
+      "sha256": "303de44d5f818cc0bb33ba147c6d7f37bb23c9065f4d0df3ff3e5c04debe5315"
+    },
+    {
+      "bytes": 991,
+      "path": "jobs/roman-warned-gpt-5.6-sol-r2.json",
+      "sha256": "d3cd006166a197630d09667b93bc1dc44a98fdc8e183097d1b59ab0adfb1513a"
+    },
+    {
+      "bytes": 1364,
+      "path": "jobs/slugify-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "e4f7678fe10b7d7c327c5c6b5863d40f1088a3aac02d309bd64e55c96bcf4949"
+    },
+    {
+      "bytes": 1225,
+      "path": "jobs/slugify-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "6cac04504a005b3ffa76e340694f992cef04c08a769a49d56f86252d0640167f"
+    },
+    {
+      "bytes": 1069,
+      "path": "jobs/slugify-plain-gpt-5.6-luna-r1.json",
+      "sha256": "4db17aab074ef11f3c9a59b96c7f7251cecddd45f8218340690b484f1f265506"
+    },
+    {
+      "bytes": 1084,
+      "path": "jobs/slugify-plain-gpt-5.6-luna-r2.json",
+      "sha256": "43eea309bc67255f1fb15380cce1a79fc8ebc6860c60fa15a2dee27cae19cd43"
+    },
+    {
+      "bytes": 1057,
+      "path": "jobs/slugify-plain-gpt-5.6-sol-r1.json",
+      "sha256": "961786495503932a61460a26543c456a5560e53daf244a9098412e2a709ff47d"
+    },
+    {
+      "bytes": 899,
+      "path": "jobs/slugify-plain-gpt-5.6-sol-r2.json",
+      "sha256": "ca0fc59b46c528af0facf7a46c5d334ab5497d1070a8e982cd918fc0f1f3c033"
+    },
+    {
+      "bytes": 1383,
+      "path": "jobs/slugify-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "58449059d6727b7c844d50b4df246d19a9ca5cae5346b6a6cec646e4a26dfa38"
+    },
+    {
+      "bytes": 1346,
+      "path": "jobs/slugify-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "8b704f7d95a84b0989cde94e3fbf4b6b1a36a6ed52478a14f60596d086c8a5b0"
+    },
+    {
+      "bytes": 895,
+      "path": "jobs/slugify-warned-gpt-5.6-luna-r1.json",
+      "sha256": "eb5a18018325b1fb7f0874f50a5f0d18694fe359bd6a8281fd4b154b252513ae"
+    },
+    {
+      "bytes": 630,
+      "path": "jobs/slugify-warned-gpt-5.6-luna-r2.json",
+      "sha256": "71563f7e7e3ac10dd2f68812c4e17e79df1a2b7d9de3ad7f863734808e3e9187"
+    },
+    {
+      "bytes": 1191,
+      "path": "jobs/slugify-warned-gpt-5.6-sol-r1.json",
+      "sha256": "6beebb50a5bfd8ab3d5cb6d3264d99af676ec463191c0f07ec20dcc353ba543a"
+    },
+    {
+      "bytes": 1074,
+      "path": "jobs/slugify-warned-gpt-5.6-sol-r2.json",
+      "sha256": "b46366d6af6775617a64340ebc69b08a93f853e5b41ee08471503234767d2c4e"
+    },
+    {
+      "bytes": 1433,
+      "path": "jobs/titlecase-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "fbecb4e833ea31cc92c9c9a09b8eb94c78541b3e21cf4925f587a523598dcb60"
+    },
+    {
+      "bytes": 1434,
+      "path": "jobs/titlecase-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "a30da4dfe81db895f56a2c5e8b45caa452860b694bddd8366e86fa87e8dfb212"
+    },
+    {
+      "bytes": 789,
+      "path": "jobs/titlecase-plain-gpt-5.6-luna-r1.json",
+      "sha256": "6310f77a3657d34a6e936b7ace5d0fc0122251f54aef577ddfdd8698608aea7a"
+    },
+    {
+      "bytes": 789,
+      "path": "jobs/titlecase-plain-gpt-5.6-luna-r2.json",
+      "sha256": "4d3e00c3e18d73ef3517ce97ded1041c8f7e545fae327045bb49de024347eb44"
+    },
+    {
+      "bytes": 1028,
+      "path": "jobs/titlecase-plain-gpt-5.6-sol-r1.json",
+      "sha256": "0e736b59b6b294186dfc2a8235b16713c1a7283a0bef886590bb7a86d888595b"
+    },
+    {
+      "bytes": 1042,
+      "path": "jobs/titlecase-plain-gpt-5.6-sol-r2.json",
+      "sha256": "4d61408fc9118b6ea483bf31af1d36f7c2a945d59dee85db42b57513d346000c"
+    },
+    {
+      "bytes": 1442,
+      "path": "jobs/titlecase-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "9bf56819364923de53d1e3cf4498a6e7fa6c8040c1f54daec2522051f6d2c4e9"
+    },
+    {
+      "bytes": 1431,
+      "path": "jobs/titlecase-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "ee6f2fb223b508f005950d0ec0ebc1418d300f9f5ce7b97d91648a7c8cc57147"
+    },
+    {
+      "bytes": 850,
+      "path": "jobs/titlecase-warned-gpt-5.6-luna-r1.json",
+      "sha256": "d40fc2c7795317af9b69dd661936fc733df9a27d40acc1a0a4b708146d2b547e"
+    },
+    {
+      "bytes": 849,
+      "path": "jobs/titlecase-warned-gpt-5.6-luna-r2.json",
+      "sha256": "30632b79ec9d7dc4e5bdcca62e2ed97f0a6000e32928e6ff9222ec0471f7dd42"
+    },
+    {
+      "bytes": 1137,
+      "path": "jobs/titlecase-warned-gpt-5.6-sol-r1.json",
+      "sha256": "aadbde02afa40411a594163217699da04e17895a71d7e9417a6edd9bf61098a4"
+    },
+    {
+      "bytes": 1137,
+      "path": "jobs/titlecase-warned-gpt-5.6-sol-r2.json",
+      "sha256": "d3b624b6a70167699b5f13a998bd570df9e9ba1bb080f467d0374a1e2fcd626b"
+    },
+    {
+      "bytes": 884,
+      "path": "jobs/wordcount-plain-claude-sonnet-5.5-r1.json",
+      "sha256": "06152f154378a1cbefce61e237f1352faa14e64e81c24b6343ae6b556b100ff6"
+    },
+    {
+      "bytes": 758,
+      "path": "jobs/wordcount-plain-claude-sonnet-5.5-r2.json",
+      "sha256": "9d1338c868ec4dce185ea086b84d82faefc2349ba85e616913534dda7c7298d4"
+    },
+    {
+      "bytes": 696,
+      "path": "jobs/wordcount-plain-gpt-5.6-luna-r1.json",
+      "sha256": "4207caa5a6f3e88f3bc97f7bb20143c1a4ebfc374f1144a1696f29b30d223b1b"
+    },
+    {
+      "bytes": 811,
+      "path": "jobs/wordcount-plain-gpt-5.6-luna-r2.json",
+      "sha256": "a1119ecad4e69dd5da8c05d29aac2d8e5697b8372acd9ac8f48c495a0f28c59d"
+    },
+    {
+      "bytes": 956,
+      "path": "jobs/wordcount-plain-gpt-5.6-sol-r1.json",
+      "sha256": "88d140c8c42a7840eb56600f2427b85d18b127b7e7b5b42525484a30d40dcaa2"
+    },
+    {
+      "bytes": 958,
+      "path": "jobs/wordcount-plain-gpt-5.6-sol-r2.json",
+      "sha256": "b9be1d3e9df24a4be8ab178519d627df8357f740d84c65258fe64c89b9fe22f6"
+    },
+    {
+      "bytes": 822,
+      "path": "jobs/wordcount-warned-claude-sonnet-5.5-r1.json",
+      "sha256": "fb46280d3a5f57f92214dac90ef0e74655c60bb064007f2c1b9bf58ad30a1636"
+    },
+    {
+      "bytes": 915,
+      "path": "jobs/wordcount-warned-claude-sonnet-5.5-r2.json",
+      "sha256": "eb52b7d3b1844dc7c0fd9d1bb7352e17a1f204d00452e0aa9a755b361a93cd8b"
+    },
+    {
+      "bytes": 832,
+      "path": "jobs/wordcount-warned-gpt-5.6-luna-r1.json",
+      "sha256": "690f2c9b12590d00de851c9573e8ed926a48b672dc86518c0d2979109d8ef34b"
+    },
+    {
+      "bytes": 710,
+      "path": "jobs/wordcount-warned-gpt-5.6-luna-r2.json",
+      "sha256": "ff1c7fadc1772f6a1151017d2df740ab507b4b9f6562341b04da13d69261fa16"
+    },
+    {
+      "bytes": 999,
+      "path": "jobs/wordcount-warned-gpt-5.6-sol-r1.json",
+      "sha256": "29b973008ccd56eee5dac4713fa1ca479824f14bef58061cfd020b4e5518ecbb"
+    },
+    {
+      "bytes": 999,
+      "path": "jobs/wordcount-warned-gpt-5.6-sol-r2.json",
+      "sha256": "1e0ec7d1af3d3bf139d9fa482670ca231fab27dd9fd85bf112a32233aab43773"
+    },
+    {
+      "bytes": 20956,
+      "path": "original-events.jsonl",
+      "sha256": "71aab69ece8fb33ed291e3d3b8f2f2e1896f9318836eb494cfad65bde9674b74"
+    },
+    {
+      "bytes": 2295,
+      "path": "plan.json",
+      "sha256": "dd1ff2d93db37b07d0ce1f49c0fcc2460bff6d011c22ada68c96816e8bb7ed74"
+    },
+    {
+      "bytes": 531,
+      "path": "redaction.json",
+      "sha256": "9af51ba327f291fc3e3c0cce6f812d7d174569fac3f955335b3cfb0467e585e2"
+    },
+    {
+      "bytes": 6463,
+      "path": "summary.json",
+      "sha256": "1d3d8df34c8108967a98d9407f3b437b7e5d3210d02654755f6fa915cbcedd4a"
+    }
+  ],
+  "format": "flowproof-evidence",
+  "id": "20261126T011443Z-290dfa5c",
+  "label": "E2-redacted",
+  "sealed_at": "2026-11-26T01:14:45Z",
+  "version": 1
+}

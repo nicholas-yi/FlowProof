@@ -1,0 +1,124 @@
+{
+  "blind": {
+    "parsed": false,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow implement_ticket\n  needs ticket: text\n  role author can edit\n  budget at most 5 credits, 1 call\n\n  let change = edit author: \"{ticket}\"\n  note \"edit done\"\n  let lint = run \"make lint\"\n  require lint.succeeded, \"lint failed\"\n  give change\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "8:18: E100: expected end of line, found a string"
+          ],
+          "failed": [
+            "author edits",
+            "note",
+            "exec make lint",
+            "require",
+            "gives",
+            "budget",
+            "bound within 1"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow implement_ticket\n  needs ticket: text\n  role author can edit\n  budget at most 5 credits, 1 call\n\n  let change = edit author: \"\"\"\n    Make the requested change:\n    {ticket}\n    \"\"\"\n  note \"edit done\"\n  let lint = run \"make lint\"\n  require lint.succeeded, \"lint failed\"\n  give change\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "11:18: E100: expected end of line, found a string"
+          ],
+          "failed": [
+            "author edits",
+            "note",
+            "exec make lint",
+            "require",
+            "gives",
+            "budget",
+            "bound within 1"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "credits": 0.566005,
+  "diag": {
+    "parsed": false,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow implement_ticket\n  needs ticket: text\n  role author can edit\n  budget at most 5 credits, 1 call\n\n  let change = edit author: \"{ticket}\"\n  note \"edit done\"\n  let lint = run: \"make lint\"\n  require lint.succeeded, \"lint failed\"\n  give change\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "8:17: E100: expected end of line, found ':'"
+          ],
+          "failed": [
+            "author edits",
+            "note",
+            "exec make lint",
+            "require",
+            "gives",
+            "budget",
+            "bound within 1"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow implement_ticket\n  needs ticket: text\n  role author can edit\n  budget at most 5 credits, 1 call\n\n  let change = edit author: \"{ticket}\"\n  note \"edit done\"\n  run \"make lint\" as lint\n  require lint.succeeded, \"lint failed\"\n  give change\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "8:3: E100: expected a statement, found 'run'"
+          ],
+          "failed": [
+            "author edits",
+            "note",
+            "exec make lint",
+            "require",
+            "gives",
+            "budget",
+            "bound within 1"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "first": {
+    "clean": false,
+    "diagnostics": [
+      "8:18: E100: expected end of line, found a string"
+    ],
+    "failed": [
+      "author edits",
+      "note",
+      "exec make lint",
+      "require",
+      "gives",
+      "budget",
+      "bound within 1"
+    ],
+    "parsed": false,
+    "passed": [],
+    "success": false
+  },
+  "job": "lint_gate-gpt-5.6-luna",
+  "model": "gpt-5.6-luna",
+  "spec": "lint_gate"
+}

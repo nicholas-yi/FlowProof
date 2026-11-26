@@ -1,0 +1,50 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "isolated fork of 3 author edits",
+          "tests command",
+          "frozen tests/**",
+          "tests then pairwise reviewer, abstain",
+          "require",
+          "gives",
+          "budget",
+          "bound within 10"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\n# Three isolated attempts, graded by frozen tests; a reviewer breaks ties.\nworkflow fix_and_pick\n  needs issue: text\n  role author can edit\n  role reviewer can answer\n  budget at most 40 credits, 10 calls\n\n  fork 3 isolated into attempts\n    let patch = edit author: \"\"\"\n      Fix this issue: {issue}\n      Attempt {branch} of 3.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"python -m pytest -q\" frozen \"tests/**\"\n  let best = choose graded by tests, then pairwise reviewer else abstain\n  require best.passed, \"no attempt passed the frozen tests\"\n  give best\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "isolated fork of 3 author edits",
+          "tests command",
+          "frozen tests/**",
+          "tests then pairwise reviewer, abstain",
+          "require",
+          "gives",
+          "budget",
+          "bound within 10"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow fix_and_pick\n  needs issue: text\n  role author can edit\n  role reviewer can answer\n  budget at most 40 credits, 10 calls\n\n  fork 3 isolated into attempts\n    let patch = edit author: \"\"\"\n      Fix this issue: {issue}\n      Do not modify the tests.\n      Attempt {branch} of 3.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"python -m pytest -q\" frozen \"tests/**\"\n  let best = choose graded by tests, then pairwise reviewer else abstain\n  require best.passed, \"the chosen attempt did not pass the frozen tests\"\n  give best\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.69022,
+  "job": "best_of_three-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "best_of_three"
+}

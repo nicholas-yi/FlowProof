@@ -1,0 +1,17 @@
+{
+  "claude-haiku-5.5": {
+    "blind": 0,
+    "diag": 2,
+    "items": 7
+  },
+  "claude-sonnet-5.5": {
+    "blind": 1,
+    "diag": 4,
+    "items": 7
+  },
+  "gpt-5.6-luna": {
+    "blind": 0,
+    "diag": 0,
+    "items": 7
+  }
+}

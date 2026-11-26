@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "15:5: E100: expected a statement, found 'fail'"
+        ],
+        "failed": [
+          "bool ask",
+          "strict input",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\n# Ask the analyst whether the repo already implements the question; fail in strict mode if not.\nworkflow check_implemented\n  needs question: text\n  needs strict: bool = true\n  role analyst can answer\n  budget at most 10 credits, 1 call\n\n  let answer = ask analyst: \"\"\"\n    Does the repository already implement what this question describes?\n    Answer yes or no.\n    Question: {question}\n    \"\"\"\n\n  if strict and answer == \"no\"\n    fail \"not implemented\"\n  end\n\n  give answer\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "bool ask",
+          "strict input",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow answer_if_implemented\n  needs question: text, strict: bool = true\n  role analyst can answer\n  budget at most 1 calls\n\n  let implemented = ask analyst: \"\"\"\n    Does this repository already implement what the following question describes?\n    Question: {question}\n    Answer yes or no.\n    \"\"\" as bool\n\n  require implemented or not strict, \"not implemented\"\n  give implemented\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.200007,
+  "job": "guarded_question-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "guarded_question"
+}

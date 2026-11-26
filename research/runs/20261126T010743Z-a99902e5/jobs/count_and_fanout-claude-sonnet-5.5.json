@@ -1,0 +1,44 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "number ask",
+          "shared fork of 3 asks",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow topic_panel\n  needs topic: text\n  role analyst can answer\n  budget at most 20 credits, 4 calls\n\n  let count = ask analyst: \"How many independent sub-questions does this topic have? Answer with a number. Topic: {topic}\" as number\n\n  fork 3 into answers\n    let answer = ask analyst: \"\"\"\n      Answer this topic: {topic}\n      Independent sub-questions: {count}\n      Answer {branch} of 3.\n      \"\"\"\n    keep answer\n  end\n\n  give answers\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "number ask",
+          "shared fork of 3 asks",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow topic_answers\n  needs topic: text\n  role analyst can answer\n  budget at most 4 calls\n\n  let count = ask analyst: \"How many independent sub-questions does this topic have? Topic: {topic}\" as number\n\n  fork 3 into answers\n    let answer = ask analyst: \"\"\"\n      Answer this topic. There are {count} independent sub-questions.\n      Topic: {topic}\n      \"\"\"\n    keep answer\n  end\n\n  give answers\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.52772,
+  "job": "count_and_fanout-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "count_and_fanout"
+}

@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "13:5: E100: expected a statement, found 'fail'"
+        ],
+        "failed": [
+          "bool ask",
+          "strict input",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow check_implemented\n  needs question: text\n  needs strict: bool = true\n  role analyst can answer\n  budget at most 5 credits, 1 calls\n\n  let answer = ask analyst: \"\"\"\n    Does the repository already implement what this question describes? Answer yes or no.\n    Question: {question}\n    \"\"\" as bool\n\n  if strict and not answer\n    fail \"not implemented\"\n  end\n\n  give answer\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "bool ask",
+          "strict input",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow check_implemented\n  needs question: text, strict: bool = true\n  role analyst can answer\n  budget at most 1 calls\n\n  let implemented = ask analyst: \"\"\"\n    Does the repository already implement what the following describes?\n    {question}\n    \"\"\" as bool\n  if strict\n    require implemented, \"not implemented\"\n  end\n  give implemented\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.46422,
+  "job": "guarded_question-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "guarded_question"
+}

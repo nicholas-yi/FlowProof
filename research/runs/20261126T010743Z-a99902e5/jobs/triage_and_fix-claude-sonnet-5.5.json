@@ -1,0 +1,53 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:17:16: warning W304: test without 'frozen': an agent could edit the tests and this would not be detected"
+        ],
+        "failed": [
+          "exec pytest"
+        ],
+        "parsed": true,
+        "passed": [
+          "triager asks for a list",
+          "for each at most 3 edits",
+          "no forks",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": false
+      },
+      "reply": "Budget is 4 calls: 1 triager ask + up to 3 fixer edits. The pytest command is a `test` step, which may or may not count as a call. I'm assuming the examples show it doesn't, since `repair` has 4 calls for 1 edit + 3 repeat edits alongside tests. Without `isolated`, the `for each` loop runs in the shared workspace.\n\n```flowproof\nworkflow triage_and_fix\n  needs pr: text\n  role triager can answer\n  role fixer can edit\n  budget at most 40 credits, 4 calls\n\n  let problems = ask triager: \"List the problems in this pull request: {pr}\" as list\n\n  for each problem in problems at most 3 into fixes\n    let fix = edit fixer: \"\"\"\n      Fix this problem in the pull request: {problem}\n      Pull request: {pr}\n      \"\"\"\n    keep fix\n  end\n\n  let result = test fixes with \"pytest\"\n  give result\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:9:3: warning W301: name 'fixes' is never used"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "triager asks for a list",
+          "for each at most 3 edits",
+          "no forks",
+          "exec pytest",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "Budget: 1 triager call + up to 3 fixer calls = 4 calls.\n\n```flowproof\nworkflow triage_and_fix\n  needs pr: text\n  role triager can answer\n  role fixer can edit\n  budget at most 4 calls\n\n  let problems = ask triager: \"List the problems in this pull request: {pr}\" as list\n\n  for each problem in problems at most 3 into fixes\n    let fix = edit fixer: \"\"\"\n      Fix this problem in the pull request: {problem}\n      Pull request: {pr}\n      \"\"\"\n    keep fix\n  end\n\n  let result = exec \"pytest\"\n  give result\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.70747,
+  "job": "triage_and_fix-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "triage_and_fix"
+}

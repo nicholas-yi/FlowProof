@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "16:20: E100: expected end of line, found a string"
+        ],
+        "failed": [
+          "planner asks",
+          "coder edits",
+          "exec command",
+          "gives",
+          "budget",
+          "bound within 2"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\n# Planner outlines a plan, coder implements it, then the test command reports the result.\nworkflow plan_implement_test\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a step-by-step plan for: {goal}\"\n\n  let patch = edit coder: \"\"\"\n    Implement this goal: {goal}\n    Follow this plan:\n    {plan}\n    \"\"\"\n\n  let result = run \"python -m pytest -q\"\n  give result\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "planner asks",
+          "coder edits",
+          "exec command",
+          "gives",
+          "budget",
+          "bound within 2"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow plan_code_test\n  needs goal: text\n  role planner can answer\n  role coder can edit\n  budget at most 10 credits, 2 calls\n\n  let plan = ask planner: \"Write a concise implementation plan for: {goal}\"\n\n  let change = edit coder: \"\"\"\n    Implement this plan for the goal: {goal}\n    Plan:\n    {plan}\n    \"\"\"\n\n  exec \"python -m pytest -q\"\n  give change\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.177757,
+  "job": "plan_then_edit-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "plan_then_edit"
+}

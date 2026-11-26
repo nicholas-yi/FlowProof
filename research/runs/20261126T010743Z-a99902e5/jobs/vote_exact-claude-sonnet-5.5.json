@@ -1,0 +1,50 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "16:43: E100: expected a selection policy (tests, behavior, exact, pairwise), found 'behaviour'"
+        ],
+        "failed": [
+          "isolated fork of 5 author edits",
+          "tests command",
+          "both frozen",
+          "tests, behavior, exact, first",
+          "gives",
+          "budget",
+          "bound within 5"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\n# Five isolated attempts, graded by frozen tests, chosen by tests, behaviour, then patch votes.\nworkflow five_attempts\n  needs issue: text\n  role author can edit\n  budget at most 5 calls\n\n  fork 5 isolated into attempts\n    let patch = edit author: \"\"\"\n      Fix this issue: {issue}\n      Attempt {branch} of 5.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"npm test\" frozen \"test/**\", \"package.json\"\n  let best = choose graded by tests, then behaviour, then votes else first\n  give best\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "isolated fork of 5 author edits",
+          "tests command",
+          "both frozen",
+          "tests, behavior, exact, first",
+          "gives",
+          "budget",
+          "bound within 5"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow five_attempts\n  needs issue: text\n  role author can edit\n  budget at most 5 calls\n\n  fork 5 isolated into attempts\n    let patch = edit author: \"\"\"\n      Fix this issue: {issue}\n      Attempt {branch} of 5.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"npm test\" frozen \"test/**\", \"package.json\"\n  let best = choose graded by tests, then behavior, then exact else first\n  give best\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.57247,
+  "job": "vote_exact-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "vote_exact"
+}

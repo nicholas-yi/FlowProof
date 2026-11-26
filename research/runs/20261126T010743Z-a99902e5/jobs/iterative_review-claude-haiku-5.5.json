@@ -1,0 +1,52 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "generated.fp:1:1: warning W305: up to 4..6 agent calls may be needed; the run stops at 5",
+          "generated.fp:11:5: error E219: 'change' was bound with let, not var, so it cannot be set"
+        ],
+        "failed": [
+          "critic bool ask",
+          "bound within 5"
+        ],
+        "parsed": true,
+        "passed": [
+          "var and set",
+          "repeat at most 2",
+          "author edits",
+          "gives",
+          "budget"
+        ],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow revise_until_approved\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 20 credits, 5 calls\n\n  let change = edit author: \"{task}\"\n  var verdict = ask critic: \"Is this change acceptable for the task '{task}'? Answer yes or no.\\n{change}\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set change = edit author: \"\"\"\n      The critic found this change unacceptable:\n      {verdict}\n      Revise the change for the task: {task}\n      \"\"\"\n    set verdict = ask critic: \"Is this change acceptable for the task '{task}'? Answer yes or no.\\n{change}\"\n  end\n\n  give change\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "var and set",
+          "repeat at most 2",
+          "critic bool ask",
+          "author edits",
+          "gives",
+          "budget",
+          "bound within 5"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow critic_loop\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  var change = edit author: \"{task}\"\n  var approved = false\n  repeat at most 2 until approved\n    set approved = ask critic: \"\"\"\n      Task: {task}\n      Proposed change:\n      {change.patch}\n      Is this change acceptable for the task? Answer yes or no.\n      \"\"\" as bool\n    if not approved\n      set change = edit author: \"\"\"\n        Task: {task}\n        The critic rejected the change below. Revise it to satisfy the task.\n        {change.patch}\n        \"\"\"\n    end\n  end\n  give change\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.2574945,
+  "job": "iterative_review-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "iterative_review"
+}

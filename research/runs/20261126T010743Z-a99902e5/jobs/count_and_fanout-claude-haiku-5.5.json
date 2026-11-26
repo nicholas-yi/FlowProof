@@ -1,0 +1,46 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:7:3: warning W301: name 'count' is never used"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "number ask",
+          "shared fork of 3 asks",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\n# Ask the analyst for a sub-question count, then get three independent answers.\nworkflow analyze_topic\n  needs topic: text\n  role analyst can answer\n  budget at most 10 credits, 4 calls\n\n  let count = ask analyst: \"How many independent sub-questions does this topic have? Answer with a number only: {topic}\" as number\n\n  fork 3 into answers\n    let answer = ask analyst: \"Answer this topic: {topic}\"\n    keep answer\n  end\n\n  give answers\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "number ask",
+          "shared fork of 3 asks",
+          "gives",
+          "budget",
+          "bound within 4"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow analyze_topic\n  needs topic: text\n  role analyst can answer\n  budget at most 4 calls\n\n  let count = ask analyst: \"\"\"\n    How many independent sub-questions does this topic have? Reply with one number.\n    Topic: {topic}\n    \"\"\" as number\n\n  fork 3 into answers\n    let answer = ask analyst: \"\"\"\n      Topic: {topic}\n      It has {count} independent sub-questions. Answer the topic as a whole.\n      \"\"\"\n    keep answer\n  end\n\n  give answers\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.23059449999999998,
+  "job": "count_and_fanout-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "count_and_fanout"
+}

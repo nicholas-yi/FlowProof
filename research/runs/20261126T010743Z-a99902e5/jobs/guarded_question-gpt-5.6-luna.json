@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": false,
+        "diagnostics": [
+          "14:5: E100: expected a statement, found 'fail'"
+        ],
+        "failed": [
+          "bool ask",
+          "strict input",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "parsed": false,
+        "passed": [],
+        "success": false
+      },
+      "reply": "```flowproof\nworkflow check_implementation\n  needs question: text\n  needs strict: bool = true\n  role analyst can answer\n  budget at most 1 call\n\n  let answer = ask analyst: \"\"\"\n    Does the repository already implement what this question describes?\n    Question: {question}\n    Answer with exactly yes or no.\n    \"\"\"\n\n  if strict and answer == \"no\"\n    fail \"not implemented\"\n  end\n\n  give answer\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "bool ask",
+          "strict input",
+          "require",
+          "gives",
+          "budget",
+          "bound within 1"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow implementation_check\n  needs question: text, strict: bool = true\n  role analyst can answer\n  budget at most 1 calls\n\n  let answer = ask analyst: \"Does the repository already implement what this describes? Answer only yes or no. Question: {question}\" as bool\n  require not (strict and not answer), \"not implemented\"\n  give answer\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.33521999999999996,
+  "job": "guarded_question-gpt-5.6-luna",
+  "model": "gpt-5.6-luna",
+  "spec": "guarded_question"
+}

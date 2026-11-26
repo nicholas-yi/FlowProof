@@ -1,0 +1,125 @@
+{
+  "blind": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow task_change\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  var latest = edit author: \"Make the requested change for this task: {task}\"\n  var verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set latest = edit author: \"\"\"\n      Revise the latest change to satisfy this task:\n      {task}\n      The critic rejected the latest change. Inspect it and improve it.\n      \"\"\"\n    set verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n  end\n\n  give latest\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [
+            "generated.fp:1:1: warning W305: up to 4..6 agent calls may be needed; the run stops at 5"
+          ],
+          "failed": [
+            "critic bool ask",
+            "bound within 5"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "repeat at most 2",
+            "author edits",
+            "gives",
+            "budget"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow task_change\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  var latest = edit author: \"Make the requested change for this task: {task}\"\n  var verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n\n  if verdict != \"yes\"\n    set latest = edit author: \"\"\"\n      Revise the latest change for this task:\n      {task}\n      The critic rejected the latest change. Inspect it and improve it.\n      \"\"\"\n    set verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n\n    if verdict != \"yes\"\n      set latest = edit author: \"\"\"\n        Revise the latest change for this task:\n        {task}\n        The critic rejected the latest change. Inspect it and improve it.\n        \"\"\"\n      set verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n    end\n  end\n\n  give latest\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [
+            "generated.fp:1:1: warning W305: up to 2..6 agent calls may be needed; the run stops at 5"
+          ],
+          "failed": [
+            "repeat at most 2",
+            "critic bool ask",
+            "bound within 5"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "author edits",
+            "gives",
+            "budget"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "credits": 0.74857,
+  "diag": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\nworkflow task_change\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  var latest = edit author: \"Make the requested change: {task}\"\n  var verdict = \"no\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n    if verdict != \"yes\"\n      set latest = edit author: \"\"\"\n        Revise the latest change for this task:\n        {task}\n        The critic did not approve it. Inspect the current change and improve it.\n        \"\"\"\n    end\n  end\n\n  give latest\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [
+            "critic bool ask"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "repeat at most 2",
+            "author edits",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\nworkflow task_change\n  needs task: text\n  role author can edit\n  role critic can answer\n  budget at most 5 calls\n\n  var latest = edit author: \"Make the requested change for this task: {task}\"\n  var verdict = \"no\"\n\n  repeat at most 2 until verdict == \"yes\"\n    set verdict = ask critic: \"Is the latest change acceptable? Answer only yes or no.\"\n    if verdict == \"no\"\n      set latest = edit author: \"\"\"\n        Revise the latest change to complete this task:\n        {task}\n        The critic rejected the latest change. Inspect the current change and improve it.\n        \"\"\"\n    end\n  end\n\n  give latest\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [
+            "critic bool ask"
+          ],
+          "parsed": true,
+          "passed": [
+            "var and set",
+            "repeat at most 2",
+            "author edits",
+            "gives",
+            "budget",
+            "bound within 5"
+          ],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "first": {
+    "clean": true,
+    "diagnostics": [
+      "generated.fp:1:1: warning W305: up to 4..6 agent calls may be needed; the run stops at 5"
+    ],
+    "failed": [
+      "critic bool ask",
+      "bound within 5"
+    ],
+    "parsed": true,
+    "passed": [
+      "var and set",
+      "repeat at most 2",
+      "author edits",
+      "gives",
+      "budget"
+    ],
+    "success": false
+  },
+  "job": "iterative_review-gpt-5.6-luna",
+  "model": "gpt-5.6-luna",
+  "spec": "iterative_review"
+}

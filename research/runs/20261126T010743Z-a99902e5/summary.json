@@ -1,0 +1,65 @@
+{
+  "claude-haiku-5.5": {
+    "credits": 2.5104465,
+    "examples": {
+      "clean": 5,
+      "parsed": 6,
+      "property_rate": 0.4761904761904762,
+      "success": 5
+    },
+    "reference": {
+      "clean": 12,
+      "parsed": 12,
+      "property_rate": 1.0,
+      "success": 12
+    },
+    "repair": {
+      "blind_success": 0,
+      "diag_success": 0,
+      "failing_first": 0
+    },
+    "specs": 12
+  },
+  "claude-sonnet-5.5": {
+    "credits": 44.04489,
+    "examples": {
+      "clean": 6,
+      "parsed": 6,
+      "property_rate": 0.4880952380952381,
+      "success": 5
+    },
+    "reference": {
+      "clean": 12,
+      "parsed": 12,
+      "property_rate": 1.0,
+      "success": 12
+    },
+    "repair": {
+      "blind_success": 0,
+      "diag_success": 0,
+      "failing_first": 0
+    },
+    "specs": 12
+  },
+  "gpt-5.6-luna": {
+    "credits": 4.15917,
+    "examples": {
+      "clean": 6,
+      "parsed": 6,
+      "property_rate": 0.4761904761904762,
+      "success": 5
+    },
+    "reference": {
+      "clean": 12,
+      "parsed": 12,
+      "property_rate": 1.0,
+      "success": 12
+    },
+    "repair": {
+      "blind_success": 0,
+      "diag_success": 0,
+      "failing_first": 0
+    },
+    "specs": 12
+  }
+}

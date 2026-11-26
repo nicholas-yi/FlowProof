@@ -1,0 +1,104 @@
+{
+  "blind": {
+    "parsed": false,
+    "rounds": [
+      {
+        "reply": "```flowproof\n# Two isolated builder attempts, graded by frozen cargo tests; choose by tests, else abstain; give the choice.\nworkflow build_target\n  needs target: text\n  role builder can edit, run\n  budget at most 30 credits, 2 calls\n\n  fork 2 isolated into attempts\n    let patch = edit builder: \"\"\"\n      Build this target: {target}\n      Attempt {branch} of 2.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"cargo test\" frozen \"tests/**\"\n  let best = choose graded by tests else abstain\n  give best\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "4:26: E100: expected a capability (answer, edit, shell), found 'run'"
+          ],
+          "failed": [
+            "builder can edit and shell",
+            "isolated fork of 2 builder edits",
+            "tests command",
+            "frozen tests/**",
+            "tests, abstain",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      },
+      {
+        "reply": "```flowproof\n# Two isolated builder attempts, graded by frozen cargo tests; choose by tests, else abstain; give the choice.\nworkflow build_target\n  needs target: text\n  role builder can edit, run\n  budget at most 30 credits, 2 calls\n\n  fork 2 isolated into attempts\n    let patch = edit builder: \"\"\"\n      Build this target: {target}\n      Attempt {branch} of 2.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"cargo test\" frozen \"tests/**\"\n  let best = choose graded by tests else abstain\n  give best\n  give choice best\nend\n```",
+        "result": {
+          "clean": false,
+          "diagnostics": [
+            "4:26: E100: expected a capability (answer, edit, shell), found 'run'"
+          ],
+          "failed": [
+            "builder can edit and shell",
+            "isolated fork of 2 builder edits",
+            "tests command",
+            "frozen tests/**",
+            "tests, abstain",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "parsed": false,
+          "passed": [],
+          "success": false
+        },
+        "status": "ok"
+      }
+    ],
+    "success": false
+  },
+  "credits": 0.1780605,
+  "diag": {
+    "parsed": true,
+    "rounds": [
+      {
+        "reply": "```flowproof\n# Two isolated builder attempts, graded by frozen cargo tests; choose by tests, else abstain.\nworkflow build_target\n  needs target: text\n  role builder can edit, shell\n  budget at most 30 credits, 2 calls\n\n  fork 2 isolated into attempts\n    let patch = edit builder: \"\"\"\n      Build this target: {target}\n      Attempt {branch} of 2.\n      \"\"\"\n    keep patch\n  end\n\n  let graded = test attempts with \"cargo test\" frozen \"tests/**\"\n  let best = choose graded by tests else abstain\n  give best\nend\n```",
+        "result": {
+          "clean": true,
+          "diagnostics": [],
+          "failed": [],
+          "parsed": true,
+          "passed": [
+            "builder can edit and shell",
+            "isolated fork of 2 builder edits",
+            "tests command",
+            "frozen tests/**",
+            "tests, abstain",
+            "gives",
+            "budget",
+            "bound within 2"
+          ],
+          "success": true
+        },
+        "status": "ok"
+      }
+    ],
+    "success": true
+  },
+  "first": {
+    "clean": false,
+    "diagnostics": [
+      "4:26: E100: expected a capability (answer, edit, shell), found 'run'"
+    ],
+    "failed": [
+      "builder can edit and shell",
+      "isolated fork of 2 builder edits",
+      "tests command",
+      "frozen tests/**",
+      "tests, abstain",
+      "gives",
+      "budget",
+      "bound within 2"
+    ],
+    "parsed": false,
+    "passed": [],
+    "success": false
+  },
+  "job": "isolated_shell-claude-haiku-5.5",
+  "model": "claude-haiku-5.5",
+  "spec": "isolated_shell"
+}

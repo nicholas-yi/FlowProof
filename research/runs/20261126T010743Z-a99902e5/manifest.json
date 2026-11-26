@@ -1,0 +1,208 @@
+{
+  "chain": {
+    "head": "1a5c8dfda394d1dafe9d6500acd731735de19be3a1d8adb28f965d13c925a7e5",
+    "length": 39
+  },
+  "files": [
+    {
+      "bytes": 6549,
+      "path": "events.jsonl",
+      "sha256": "1cb6c907665f8a3d611083dc31f8d0850fe5c30ca8f2166d6771080149971678"
+    },
+    {
+      "bytes": 2331,
+      "path": "jobs/best_of_three-claude-haiku-5.5.json",
+      "sha256": "7f014e1502faf17cb49cec8acebb7c248394465cd9bf64c7b64a25585912e7fb"
+    },
+    {
+      "bytes": 2347,
+      "path": "jobs/best_of_three-claude-sonnet-5.5.json",
+      "sha256": "671b9c3406dacfe86ff58c7c9c9c7c683a77ae7f6051c3081cf334d0761d4bbe"
+    },
+    {
+      "bytes": 2279,
+      "path": "jobs/best_of_three-gpt-5.6-luna.json",
+      "sha256": "818f5ef4c9fede56b02e8e11be923713a7c66e89f26b30eb7804f5905de1cbc3"
+    },
+    {
+      "bytes": 1956,
+      "path": "jobs/count_and_fanout-claude-haiku-5.5.json",
+      "sha256": "415633e78a606994c30780693af619fbe84cc90a4985980edc20c11d591da39e"
+    },
+    {
+      "bytes": 1825,
+      "path": "jobs/count_and_fanout-claude-sonnet-5.5.json",
+      "sha256": "969595178de9a8d7d1c274089d0ff575f40197efe1c893301edbd4bc076ecc57"
+    },
+    {
+      "bytes": 1838,
+      "path": "jobs/count_and_fanout-gpt-5.6-luna.json",
+      "sha256": "a35409034a54c13101d10e70c62c982b4451220ce4858c586beeb228de40d43f"
+    },
+    {
+      "bytes": 1928,
+      "path": "jobs/guarded_question-claude-haiku-5.5.json",
+      "sha256": "e766c195da7767c4f294f29f6087ed1253304f2e73e644d205da4e6da5fbc137"
+    },
+    {
+      "bytes": 1788,
+      "path": "jobs/guarded_question-claude-sonnet-5.5.json",
+      "sha256": "8734e904a88830962e540c20eb53dcdc2a17f4dd3f77514025ebd1d0479c7e8a"
+    },
+    {
+      "bytes": 1783,
+      "path": "jobs/guarded_question-gpt-5.6-luna.json",
+      "sha256": "4e4fec81428d0e4a7a86ebfc1a2ccae6f44ea1c22836911cddb3d8875f811c4f"
+    },
+    {
+      "bytes": 2236,
+      "path": "jobs/isolated_shell-claude-haiku-5.5.json",
+      "sha256": "a19809e75e3835374cb559b9e6d584f7a7e88db96fe19ff0a8acf183dcc65ace"
+    },
+    {
+      "bytes": 2149,
+      "path": "jobs/isolated_shell-claude-sonnet-5.5.json",
+      "sha256": "29d01b4ba02da4c5094ea65629e51ce47ed05615b3588d462f082a31fc6dc12c"
+    },
+    {
+      "bytes": 2163,
+      "path": "jobs/isolated_shell-gpt-5.6-luna.json",
+      "sha256": "d8b84dfd424cd82326261c26c7356ca93db634bcc46776c30b1238a320cd612f"
+    },
+    {
+      "bytes": 2538,
+      "path": "jobs/iterative_review-claude-haiku-5.5.json",
+      "sha256": "a738ad45e46977f7f9a006dbf61569a183b2f9fb44e1e4918589d04997c761b2"
+    },
+    {
+      "bytes": 2281,
+      "path": "jobs/iterative_review-claude-sonnet-5.5.json",
+      "sha256": "71ec3d6ac9ec0e1498f5186945ca59f7d721bac7ce44142cb6b062f2dbcb7ceb"
+    },
+    {
+      "bytes": 2481,
+      "path": "jobs/iterative_review-gpt-5.6-luna.json",
+      "sha256": "a4b118e22d1b49feb5e76c1abc3b8fd8d5247edb2fb711d73f2a1841a6068f61"
+    },
+    {
+      "bytes": 1893,
+      "path": "jobs/judge_answers-claude-haiku-5.5.json",
+      "sha256": "f4ca55d9ef9a5e7d200c74ff5d9b860b981b1f97c30d93a80d4e408bc5ebb008"
+    },
+    {
+      "bytes": 2190,
+      "path": "jobs/judge_answers-claude-sonnet-5.5.json",
+      "sha256": "62891128676d0139190155fa7c592f4c89ba2cf1e2cf4de7bb31c06a859aef4b"
+    },
+    {
+      "bytes": 1839,
+      "path": "jobs/judge_answers-gpt-5.6-luna.json",
+      "sha256": "caf554bc5a4c440e10cef7f1805689f3f2934bfb8b5a5c6c4cee996de51b7eae"
+    },
+    {
+      "bytes": 1615,
+      "path": "jobs/lint_gate-claude-haiku-5.5.json",
+      "sha256": "3b0a1227c815a48e3f407ff78db108a50515da1594c2ce346461acf8b154e6b5"
+    },
+    {
+      "bytes": 1577,
+      "path": "jobs/lint_gate-claude-sonnet-5.5.json",
+      "sha256": "998e703ad7eba577d6c177e487eee9f58a536054de78c27e0efa2d9beada62bf"
+    },
+    {
+      "bytes": 1569,
+      "path": "jobs/lint_gate-gpt-5.6-luna.json",
+      "sha256": "ea56070a6d9a0f308ef210c2e092ce6bb0cde7f80c5648b902745de73f9c4f8d"
+    },
+    {
+      "bytes": 1892,
+      "path": "jobs/plan_then_edit-claude-haiku-5.5.json",
+      "sha256": "c9704bb6c2ee52548c679f3d026061384e2c216ce1c90fa14db3a81056bab6e0"
+    },
+    {
+      "bytes": 1897,
+      "path": "jobs/plan_then_edit-claude-sonnet-5.5.json",
+      "sha256": "b6119ff7b4ddd2417056178e5a52627388dfd1d165e12f2939d333a58a8f3104"
+    },
+    {
+      "bytes": 1920,
+      "path": "jobs/plan_then_edit-gpt-5.6-luna.json",
+      "sha256": "05e228a5915022abcf67633238fcf96d4acc22a796df14247f9662b8e8a7c54e"
+    },
+    {
+      "bytes": 2454,
+      "path": "jobs/repair_loop-claude-haiku-5.5.json",
+      "sha256": "b11d8f8b8369aef00e57392bc85302bd1a12279ab1b2c236cb95a0f13194ac93"
+    },
+    {
+      "bytes": 2395,
+      "path": "jobs/repair_loop-claude-sonnet-5.5.json",
+      "sha256": "3b7e023b9a937161a07424e5e44670b53bce91a59f0d19677f5f81e8b64969a4"
+    },
+    {
+      "bytes": 2358,
+      "path": "jobs/repair_loop-gpt-5.6-luna.json",
+      "sha256": "049ad0d852247648f6a37e644943edaa034207132d8ef23f87c0818623cd4b04"
+    },
+    {
+      "bytes": 1966,
+      "path": "jobs/review_fanout-claude-haiku-5.5.json",
+      "sha256": "0347adec0b417fc33689d4ff730e3c19f7343471bf564fa99540c3a9505385f5"
+    },
+    {
+      "bytes": 2084,
+      "path": "jobs/review_fanout-claude-sonnet-5.5.json",
+      "sha256": "0d6a8ef34b252e66dba0908d028d8a14b066c84ca5b67d22dd81dc013513de58"
+    },
+    {
+      "bytes": 2125,
+      "path": "jobs/review_fanout-gpt-5.6-luna.json",
+      "sha256": "721a1dc666b99e21316014156fcd81f1fb314b508aaa9896abf17582b1e942b9"
+    },
+    {
+      "bytes": 2178,
+      "path": "jobs/triage_and_fix-claude-haiku-5.5.json",
+      "sha256": "0904c83837b9d91d095b38ded1e56c870249d17c7900bac718db9a7045ee7474"
+    },
+    {
+      "bytes": 2606,
+      "path": "jobs/triage_and_fix-claude-sonnet-5.5.json",
+      "sha256": "66ce55007b1dc0450f4a7e409127df09acdea4c2947f876fccb0b0f25dc33416"
+    },
+    {
+      "bytes": 2249,
+      "path": "jobs/triage_and_fix-gpt-5.6-luna.json",
+      "sha256": "aee5ec0306ded5374d466e1a3ed0f534e0758aba4937427bab86fa73887b4887"
+    },
+    {
+      "bytes": 2252,
+      "path": "jobs/vote_exact-claude-haiku-5.5.json",
+      "sha256": "39364eb9e489b09f0500b26ca536a4ae04ad2b437ecad0d525c029c937c1c13b"
+    },
+    {
+      "bytes": 2176,
+      "path": "jobs/vote_exact-claude-sonnet-5.5.json",
+      "sha256": "63d70d164705795cc298a4ee7e1c859bbb12859aded07cb2d286b02d54d4de7f"
+    },
+    {
+      "bytes": 2123,
+      "path": "jobs/vote_exact-gpt-5.6-luna.json",
+      "sha256": "0e8e1006863e0151bbf0b4a4bf47a8d06e56985ff575211a7447babb942ef67a"
+    },
+    {
+      "bytes": 7288,
+      "path": "plan.json",
+      "sha256": "e495003bb8544da85954be8aadcec8be2d0db0dc07883c56ff2517ec86960fd7"
+    },
+    {
+      "bytes": 1218,
+      "path": "summary.json",
+      "sha256": "f41731fd817dafe97f484d3419c9fc6abf1a958166b1a50e2c068fcf6144277d"
+    }
+  ],
+  "format": "flowproof-evidence",
+  "id": "20261126T010743Z-a99902e5",
+  "label": "E3",
+  "sealed_at": "2026-11-26T01:10:13Z",
+  "version": 1
+}

@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:17:31: warning W303: pairwise judging without 'tests' first relies on the judge alone"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "shared fork of 4 writer asks",
+          "pairwise judge, first",
+          "gives",
+          "budget",
+          "bound within 20"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\n# Four writers draft in parallel; a judge picks the best by pairwise comparison.\nworkflow best_of_four\n  needs prompt: text\n  role writer can answer\n  role judge can answer\n  budget at most 20 calls\n\n  fork 4 into drafts\n    let draft = ask writer: \"\"\"\n      Respond to the following:\n      {prompt}\n      Draft {branch} of 4.\n      \"\"\"\n    keep draft\n  end\n\n  let best = choose drafts by pairwise judge else first\n  give best\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:15:31: warning W303: pairwise judging without 'tests' first relies on the judge alone"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "shared fork of 4 writer asks",
+          "pairwise judge, first",
+          "gives",
+          "budget",
+          "bound within 20"
+        ],
+        "success": true
+      },
+      "reply": "Four writers use a non-isolated fork containing only `ask`. Pairwise over 4 candidates costs 4×3 = 12 calls, so the worst case is 4 + 12 = 16, within the 20-call ceiling. `else first` handles ties.\n\n```flowproof\nworkflow best_of_four\n  needs prompt: text\n  role writer can answer\n  role judge can answer\n  budget at most 20 calls\n\n  fork 4 into drafts\n    let draft = ask writer: \"\"\"\n      {prompt}\n      Draft {branch} of 4.\n      \"\"\"\n    keep draft\n  end\n\n  let best = choose drafts by pairwise judge else first\n  give best\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 3.58047,
+  "job": "judge_answers-claude-sonnet-5.5",
+  "model": "claude-sonnet-5.5",
+  "spec": "judge_answers"
+}

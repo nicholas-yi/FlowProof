@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "examples": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:12:31: warning W303: pairwise judging without 'tests' first relies on the judge alone"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "shared fork of 4 writer asks",
+          "pairwise judge, first",
+          "gives",
+          "budget",
+          "bound within 20"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow draft_and_choose\n  needs prompt: text\n  role writer can answer\n  role judge can answer\n  budget at most 20 calls\n\n  fork 4 into drafts\n    let draft = ask writer: \"{prompt}\"\n    keep draft\n  end\n\n  let best = choose drafts by pairwise judge else first\n  give best\nend\n```",
+      "status": "ok"
+    },
+    "reference": {
+      "first": {
+        "clean": true,
+        "diagnostics": [
+          "generated.fp:15:33: warning W303: pairwise judging without 'tests' first relies on the judge alone"
+        ],
+        "failed": [],
+        "parsed": true,
+        "passed": [
+          "shared fork of 4 writer asks",
+          "pairwise judge, first",
+          "gives",
+          "budget",
+          "bound within 20"
+        ],
+        "success": true
+      },
+      "reply": "```flowproof\nworkflow pick_best\n  needs prompt: text\n  role writer can answer\n  role judge can answer\n  budget at most 20 calls\n\n  fork 4 into drafts\n    let response = ask writer: \"\"\"\n      Draft the best possible response to:\n      {prompt}\n      \"\"\"\n    keep response\n  end\n\n  let choice = choose drafts by pairwise judge else first\n  give choice\nend\n```",
+      "status": "ok"
+    }
+  },
+  "credits": 0.344855,
+  "job": "judge_answers-gpt-5.6-luna",
+  "model": "gpt-5.6-luna",
+  "spec": "judge_answers"
+}
