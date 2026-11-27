@@ -19,6 +19,7 @@ before its first evaluation run. Every campaign writes one sealed, hash-chained 
 python -m pip install -e ".[dev,figures]"
 python -m research.offline                 # O1 and O2: no model, deterministic
 python -m research.analyze                 # verify every sealed record, write results/
+python -m research.explore                 # exploratory breakdowns -> results/EXPLORATORY.json
 python -m research.figures                 # docs/figures/*.svg
 flowproof evidence verify research/runs/<run-id>
 ```
@@ -43,6 +44,22 @@ Each runner also has an offline mode: `--client oracle` for E1, `--dry-run` for 
   `scripts/redact_record.py`. The copy names the original's id and manifest digest in
   `redaction.json`, and the original is kept privately. Redaction replaces paths and
   account names only; it never changes results.
+
+## Exploratory analyses
+
+[`explore.py`](explore.py) adds descriptive breakdowns that were not pre-registered:
+- per game, per level and per arm;
+- prediction accuracy after rule changes;
+- ledger overshoot and power;
+- E2 agent behaviour and E3 failure causes;
+- campaign totals.
+
+The README labels every number it takes from there as exploratory.
+
+E2's per-run agent transcripts and patches were first written to a private scratch store, because
+they contain local paths. [`e2_detail.py`](e2_detail.py) copies them into a separate sealed record
+(`E2-detail`), with paths, account names and CLI session ids replaced, and adds behaviour features
+read from the transcripts. Every behaviour number can therefore be recomputed from the repository.
 
 ## Costs
 

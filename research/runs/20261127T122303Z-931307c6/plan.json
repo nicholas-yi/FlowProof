@@ -1,0 +1,7 @@
+{
+  "contents": "per-run redacted agent transcript, redacted patch and behaviour features",
+  "experiment": "E2-detail",
+  "redaction": "local paths, account names and CLI session ids replaced with placeholders",
+  "source": "20261126T011443Z-290dfa5c",
+  "source_original": "20261126T004813Z-4347c6de"
+}
