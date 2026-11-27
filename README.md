@@ -1,6 +1,6 @@
 <div align="center">
 
-# Flowproof
+# FlowProof
 
 **When a coding agent says "all tests pass", can you believe it?<br>
 And can you know what a multi-agent workflow will cost before you run it?**
